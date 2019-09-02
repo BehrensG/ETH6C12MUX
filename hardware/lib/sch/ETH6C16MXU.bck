@@ -20,6 +20,22 @@ $CMP HE3621A0500
 D HE3600 Miniature Single In-line Reed Relay
 $ENDCMP
 #
+$CMP OKI-T3-W40
+D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
+$ENDCMP
+#
+$CMP OKI-T3-W40N-C
+D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
+$ENDCMP
+#
+$CMP OKI-T3-W40P-C
+D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
+$ENDCMP
+#
+$CMP OKI-T_3-W40N-C
+D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
+$ENDCMP
+#
 $CMP THL15WI_Single
 D DC/DC Converter THL 15WI Series, 15 Watt
 $ENDCMP
