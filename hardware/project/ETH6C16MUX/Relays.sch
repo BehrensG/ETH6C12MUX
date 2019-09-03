@@ -4960,10 +4960,10 @@ Connection ~ 8800 6750
 Connection ~ 10100 6750
 Connection ~ 11400 6750
 Connection ~ 12700 6750
+Text Notes 600  8100 0    50   ~ 0
+D3408-5302-AR
 Wire Bus Line
 	3150 1200 3150 7150
 Wire Bus Line
 	1150 900  1150 7150
-Text Notes 600  8100 0    50   ~ 0
-D3408-5302-AR
 $EndSCHEMATC
