@@ -32,6 +32,10 @@ $CMP OKI-T3-W40P-C
 D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
 $ENDCMP
 #
+$CMP S25FL064L_SOIC
+D 64-Mbit (8-Mbyte)3.0 V FL-L SPI Flash Memory
+$ENDCMP
+#
 $CMP THL15WI_Single
 D DC/DC Converter THL 15WI Series, 15 Watt
 $ENDCMP
