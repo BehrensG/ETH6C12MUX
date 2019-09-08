@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:C64AC J802
+L Connector:C64AC J801
 U 1 1 5DB3A84B
 P 5950 4000
-F 0 "J802" H 6130 4096 50  0000 L CNN
+F 0 "J801" H 6130 4096 50  0000 L CNN
 F 1 "C64AC" H 6130 4005 50  0000 L CNN
 F 2 "ETH6C16MXU:Socket_DIN41612-CaseC1-AC-Male-64Pin-2rows" H 5950 4050 50  0001 C CNN
 F 3 " ~" H 5950 4050 50  0001 C CNN
@@ -209,63 +209,36 @@ NoConn ~ 5650 1700
 NoConn ~ 5650 1600
 NoConn ~ 5650 1300
 NoConn ~ 5650 1200
-Wire Wire Line
-	5600 1050 5550 1050
 Connection ~ 5600 1050
 Wire Wire Line
 	5600 1050 5600 1100
-Wire Wire Line
-	5600 1450 5550 1450
 Connection ~ 5600 1450
 Wire Wire Line
 	5600 1450 5600 1500
-Wire Wire Line
-	5600 1850 5550 1850
 Connection ~ 5600 1850
 Wire Wire Line
 	5600 1850 5600 1900
-Wire Wire Line
-	5600 2250 5550 2250
 Connection ~ 5600 2250
 Wire Wire Line
 	5600 2250 5600 2300
-Wire Wire Line
-	5600 2650 5550 2650
 Connection ~ 5600 2650
 Wire Wire Line
 	5600 2650 5600 2700
-Wire Wire Line
-	5600 3050 5550 3050
 Connection ~ 5600 3050
 Wire Wire Line
 	5600 3050 5600 3100
-Text HLabel 5550 1050 0    50   BiDi ~ 0
+Text HLabel 5300 1050 0    50   BiDi ~ 0
 A
-Text HLabel 5550 1450 0    50   BiDi ~ 0
+Text HLabel 5300 1450 0    50   BiDi ~ 0
 B
-Text HLabel 5550 1850 0    50   BiDi ~ 0
+Text HLabel 5300 1850 0    50   BiDi ~ 0
 C
-Text HLabel 5550 2250 0    50   BiDi ~ 0
+Text HLabel 5300 2250 0    50   BiDi ~ 0
 D
-Text HLabel 5550 2650 0    50   BiDi ~ 0
+Text HLabel 5300 2650 0    50   BiDi ~ 0
 E
-Text HLabel 5550 3050 0    50   BiDi ~ 0
+Text HLabel 5300 3050 0    50   BiDi ~ 0
 F
-$Comp
-L Connector:RJ45_Shielded J801
-U 1 1 5E56A100
-P 1350 1550
-F 0 "J801" H 1350 2200 50  0000 C CNN
-F 1 "615008145221" H 1350 2100 50  0000 C CNN
-F 2 "ETH6C16MXU:615008145221" V 1350 1575 50  0001 C CNN
-F 3 "~" V 1350 1575 50  0001 C CNN
-	1    1350 1550
-	1    0    0    -1  
-$EndComp
-NoConn ~ 1750 1150
-NoConn ~ 1750 1250
-NoConn ~ 1750 1450
-NoConn ~ 1750 1550
 Wire Wire Line
 	5300 4900 5650 4900
 Wire Wire Line
@@ -282,33 +255,63 @@ Text Label 5350 4800 0    50   ~ 0
 RX-
 Text Label 5350 4900 0    50   ~ 0
 TX-
-Text Label 2050 1650 2    50   ~ 0
-RX+
-Text Label 2050 1850 2    50   ~ 0
-TX+
-Text Label 2050 1350 2    50   ~ 0
-RX-
-Text Label 2050 1750 2    50   ~ 0
-TX-
 Wire Wire Line
-	2050 1350 1750 1350
+	5300 3050 5600 3050
 Wire Wire Line
-	1750 1650 2050 1650
+	5300 2650 5600 2650
 Wire Wire Line
-	1750 1750 2050 1750
+	5300 2250 5600 2250
 Wire Wire Line
-	1750 1850 2050 1850
+	5300 1850 5600 1850
+Wire Wire Line
+	5300 1450 5600 1450
+Wire Wire Line
+	5300 1050 5600 1050
+Text Label 5350 1050 0    50   ~ 0
+A
+Text Label 5350 1450 0    50   ~ 0
+B
+Text Label 5350 1850 0    50   ~ 0
+C
+Text Label 5350 2250 0    50   ~ 0
+D
+Text Label 5350 2650 0    50   ~ 0
+E
+Text Label 5350 3050 0    50   ~ 0
+F
+Text Label 3650 1000 2    50   ~ 0
+A
+Text Label 3650 1100 2    50   ~ 0
+B
+Text Label 3650 1200 2    50   ~ 0
+C
+Text Label 3650 1300 2    50   ~ 0
+D
+Text Label 3650 1400 2    50   ~ 0
+E
+Text Label 3650 1500 2    50   ~ 0
+F
 $Comp
-L power:Earth #PWR0801
-U 1 1 5E5917B7
-P 1350 2100
-F 0 "#PWR0801" H 1350 1850 50  0001 C CNN
-F 1 "Earth" H 1350 1950 50  0001 C CNN
-F 2 "" H 1350 2100 50  0001 C CNN
-F 3 "~" H 1350 2100 50  0001 C CNN
-	1    1350 2100
-	1    0    0    -1  
+L Connector_Generic:Conn_01x06 J802
+U 1 1 61D03557
+P 3200 1200
+F 0 "J802" H 3118 1617 50  0000 C CNN
+F 1 "Conn_01x06" H 3118 1526 50  0000 C CNN
+F 2 "" H 3200 1200 50  0001 C CNN
+F 3 "~" H 3200 1200 50  0001 C CNN
+	1    3200 1200
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1350 2100 1350 2050
+	3400 1000 3650 1000
+Wire Wire Line
+	3400 1100 3650 1100
+Wire Wire Line
+	3400 1200 3650 1200
+Wire Wire Line
+	3400 1300 3650 1300
+Wire Wire Line
+	3400 1400 3650 1400
+Wire Wire Line
+	3400 1500 3650 1500
 $EndSCHEMATC
