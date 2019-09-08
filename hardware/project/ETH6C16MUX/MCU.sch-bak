@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 3 8
+Sheet 3 7
 Title "MCU"
 Date ""
 Rev "1.0"
@@ -155,14 +155,6 @@ Wire Wire Line
 	3750 7300 3700 7300
 Wire Wire Line
 	3700 7100 3750 7100
-Text HLabel 15200 6700 2    50   Output ~ 0
-MCU_TX_UART3
-Text HLabel 15200 6800 2    50   Input ~ 0
-MCU_RX_UART3
-Wire Wire Line
-	15150 6800 15200 6800
-Wire Wire Line
-	15150 6700 15200 6700
 Wire Wire Line
 	3700 5300 3750 5300
 Wire Wire Line
@@ -1754,4 +1746,6 @@ Wire Wire Line
 	2750 8600 2950 8600
 Wire Wire Line
 	2500 8600 2750 8600
+NoConn ~ 15150 6700
+NoConn ~ 15150 6800
 $EndSCHEMATC

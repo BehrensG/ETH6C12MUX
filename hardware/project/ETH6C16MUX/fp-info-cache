@@ -1,4 +1,4 @@
-16363497791143416
+16365065751294416
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -44680,6 +44680,13 @@ HE3600 Miniature Single In-line Reed Relay
 0
 4
 4
+ETH6C16MXU
+IDC-Header_2x08_P2.54mm_Horizontal_Lock
+Connector IDC Locked, 10 contacts, compatible header: PANCON HE10 (Series 50, (https://www.reboul.fr/storage/00003af6.pdf)
+connector idc locked
+0
+18
+16
 ETH6C16MXU
 OKI-T3-W40
 Adjustable Output 3-Amp DOSA-SMT DC/DC Converters

@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 8
+Sheet 7 7
 Title ""
 Date ""
 Rev ""
@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:C64AC J803
+L Connector:C64AC J703
 U 1 1 5DB3A84B
 P 5950 4000
-F 0 "J803" H 6130 4096 50  0000 L CNN
+F 0 "J703" H 6130 4096 50  0000 L CNN
 F 1 "C64AC" H 6130 4005 50  0000 L CNN
 F 2 "ETH6C16MXU:Socket_DIN41612-CaseC1-AC-Male-64Pin-2rows" H 5950 4050 50  0001 C CNN
 F 3 " ~" H 5950 4050 50  0001 C CNN
@@ -62,10 +62,10 @@ Connection ~ 5600 6200
 Wire Wire Line
 	5600 6200 5600 6100
 $Comp
-L power:+24V #PWR0808
+L power:+24V #PWR0706
 U 1 1 5D7D1F7C
 P 5550 7100
-F 0 "#PWR0808" H 5550 6950 50  0001 C CNN
+F 0 "#PWR0706" H 5550 6950 50  0001 C CNN
 F 1 "+24V" V 5565 7228 50  0000 L CNN
 F 2 "" H 5550 7100 50  0001 C CNN
 F 3 "" H 5550 7100 50  0001 C CNN
@@ -76,10 +76,10 @@ Wire Wire Line
 	5550 7100 5600 7100
 Connection ~ 5600 7100
 $Comp
-L power:GND #PWR0807
+L power:GND #PWR0705
 U 1 1 5D7D46BE
 P 5550 6300
-F 0 "#PWR0807" H 5550 6050 50  0001 C CNN
+F 0 "#PWR0705" H 5550 6050 50  0001 C CNN
 F 1 "GND" V 5555 6172 50  0000 R CNN
 F 2 "" H 5550 6300 50  0001 C CNN
 F 3 "" H 5550 6300 50  0001 C CNN
@@ -112,10 +112,10 @@ RX+
 Text HLabel 5300 4800 0    50   BiDi ~ 0
 RX-
 $Comp
-L power:Earth #PWR0806
+L power:Earth #PWR0704
 U 1 1 5D7F1666
 P 5550 5050
-F 0 "#PWR0806" H 5550 4800 50  0001 C CNN
+F 0 "#PWR0704" H 5550 4800 50  0001 C CNN
 F 1 "Earth" H 5550 4900 50  0001 C CNN
 F 2 "" H 5550 5050 50  0001 C CNN
 F 3 "~" H 5550 5050 50  0001 C CNN
@@ -128,10 +128,10 @@ Connection ~ 5600 5050
 Wire Wire Line
 	5600 5050 5600 5000
 $Comp
-L power:Earth #PWR0805
+L power:Earth #PWR0703
 U 1 1 5D7F6C0C
 P 5550 4250
-F 0 "#PWR0805" H 5550 4000 50  0001 C CNN
+F 0 "#PWR0703" H 5550 4000 50  0001 C CNN
 F 1 "Earth" H 5550 4100 50  0001 C CNN
 F 2 "" H 5550 4250 50  0001 C CNN
 F 3 "~" H 5550 4250 50  0001 C CNN
@@ -160,11 +160,23 @@ Wire Wire Line
 Wire Wire Line
 	5600 1100 5650 1100
 Wire Wire Line
+	5650 1200 5600 1200
+Wire Wire Line
+	5600 1200 5600 1250
+Wire Wire Line
+	5600 1300 5650 1300
+Wire Wire Line
 	5650 1400 5600 1400
 Wire Wire Line
 	5600 1400 5600 1450
 Wire Wire Line
 	5600 1500 5650 1500
+Wire Wire Line
+	5650 1600 5600 1600
+Wire Wire Line
+	5600 1600 5600 1650
+Wire Wire Line
+	5600 1700 5650 1700
 Wire Wire Line
 	5650 1800 5600 1800
 Wire Wire Line
@@ -172,23 +184,11 @@ Wire Wire Line
 Wire Wire Line
 	5600 1900 5650 1900
 Wire Wire Line
-	5650 2200 5600 2200
+	5650 2000 5600 2000
 Wire Wire Line
-	5600 2200 5600 2250
+	5600 2000 5600 2050
 Wire Wire Line
-	5600 2300 5650 2300
-Wire Wire Line
-	5650 2600 5600 2600
-Wire Wire Line
-	5600 2600 5600 2650
-Wire Wire Line
-	5600 2700 5650 2700
-Wire Wire Line
-	5650 3000 5600 3000
-Wire Wire Line
-	5600 3000 5600 3050
-Wire Wire Line
-	5600 3100 5650 3100
+	5600 2100 5650 2100
 NoConn ~ 5650 4100
 NoConn ~ 5650 4000
 NoConn ~ 5650 3900
@@ -203,41 +203,35 @@ NoConn ~ 5650 2900
 NoConn ~ 5650 2800
 NoConn ~ 5650 2500
 NoConn ~ 5650 2400
-NoConn ~ 5650 2100
-NoConn ~ 5650 2000
-NoConn ~ 5650 1700
-NoConn ~ 5650 1600
-NoConn ~ 5650 1300
-NoConn ~ 5650 1200
 Connection ~ 5600 1050
 Wire Wire Line
 	5600 1050 5600 1100
+Connection ~ 5600 1250
+Wire Wire Line
+	5600 1250 5600 1300
 Connection ~ 5600 1450
 Wire Wire Line
 	5600 1450 5600 1500
+Connection ~ 5600 1650
+Wire Wire Line
+	5600 1650 5600 1700
 Connection ~ 5600 1850
 Wire Wire Line
 	5600 1850 5600 1900
-Connection ~ 5600 2250
+Connection ~ 5600 2050
 Wire Wire Line
-	5600 2250 5600 2300
-Connection ~ 5600 2650
-Wire Wire Line
-	5600 2650 5600 2700
-Connection ~ 5600 3050
-Wire Wire Line
-	5600 3050 5600 3100
+	5600 2050 5600 2100
 Text HLabel 5300 1050 0    50   BiDi ~ 0
 A
-Text HLabel 5300 1450 0    50   BiDi ~ 0
+Text HLabel 5300 1250 0    50   BiDi ~ 0
 B
-Text HLabel 5300 1850 0    50   BiDi ~ 0
+Text HLabel 5300 1450 0    50   BiDi ~ 0
 C
-Text HLabel 5300 2250 0    50   BiDi ~ 0
+Text HLabel 5300 1650 0    50   BiDi ~ 0
 D
-Text HLabel 5300 2650 0    50   BiDi ~ 0
+Text HLabel 5300 1850 0    50   BiDi ~ 0
 E
-Text HLabel 5300 3050 0    50   BiDi ~ 0
+Text HLabel 5300 2050 0    50   BiDi ~ 0
 F
 Wire Wire Line
 	5300 4900 5650 4900
@@ -256,28 +250,28 @@ RX-
 Text Label 5350 4900 0    50   ~ 0
 TX-
 Wire Wire Line
-	5300 3050 5600 3050
-Wire Wire Line
-	5300 2650 5600 2650
-Wire Wire Line
-	5300 2250 5600 2250
+	5300 2050 5600 2050
 Wire Wire Line
 	5300 1850 5600 1850
 Wire Wire Line
+	5300 1650 5600 1650
+Wire Wire Line
 	5300 1450 5600 1450
+Wire Wire Line
+	5300 1250 5600 1250
 Wire Wire Line
 	5300 1050 5600 1050
 Text Label 5350 1050 0    50   ~ 0
 A
-Text Label 5350 1450 0    50   ~ 0
+Text Label 5350 1250 0    50   ~ 0
 B
-Text Label 5350 1850 0    50   ~ 0
+Text Label 5350 1450 0    50   ~ 0
 C
-Text Label 5350 2250 0    50   ~ 0
+Text Label 5350 1650 0    50   ~ 0
 D
-Text Label 5350 2650 0    50   ~ 0
+Text Label 5350 1850 0    50   ~ 0
 E
-Text Label 5350 3050 0    50   ~ 0
+Text Label 5350 2050 0    50   ~ 0
 F
 Wire Wire Line
 	3550 2500 3500 2500
@@ -326,12 +320,12 @@ Wire Wire Line
 Text HLabel 2850 2700 0    50   Input ~ 0
 MODULE_DETECT
 $Comp
-L power:GND #PWR0804
+L power:GND #PWR0702
 U 1 1 5D777B58
 P 3550 2500
-AR Path="/5DB25E5A/5D777B58" Ref="#PWR0804"  Part="1" 
+AR Path="/5DB25E5A/5D777B58" Ref="#PWR0702"  Part="1" 
 AR Path="/5D7599BA/5D777B58" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0804" H 3550 2250 50  0001 C CNN
+F 0 "#PWR0702" H 3550 2250 50  0001 C CNN
 F 1 "GND" V 3555 2372 50  0000 R CNN
 F 2 "" H 3550 2500 50  0001 C CNN
 F 3 "" H 3550 2500 50  0001 C CNN
@@ -339,12 +333,12 @@ F 3 "" H 3550 2500 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+5V #PWR0803
+L power:+5V #PWR0701
 U 1 1 5D777B5E
 P 3550 2300
-AR Path="/5DB25E5A/5D777B5E" Ref="#PWR0803"  Part="1" 
+AR Path="/5DB25E5A/5D777B5E" Ref="#PWR0701"  Part="1" 
 AR Path="/5D7599BA/5D777B5E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0803" H 3550 2150 50  0001 C CNN
+F 0 "#PWR0701" H 3550 2150 50  0001 C CNN
 F 1 "+5V" V 3550 2450 50  0000 L CNN
 F 2 "" H 3550 2300 50  0001 C CNN
 F 3 "" H 3550 2300 50  0001 C CNN
@@ -392,8 +386,8 @@ L Connector_Generic:Conn_01x06 J?
 U 1 1 5D777B7C
 P 3050 1500
 AR Path="/5D7599BA/5D777B7C" Ref="J?"  Part="1" 
-AR Path="/5DB25E5A/5D777B7C" Ref="J801"  Part="1" 
-F 0 "J801" H 2968 1917 50  0000 C CNN
+AR Path="/5DB25E5A/5D777B7C" Ref="J701"  Part="1" 
+F 0 "J701" H 2968 1917 50  0000 C CNN
 F 1 "Conn_01x06" H 2968 1826 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 3050 1500 50  0001 C CNN
 F 3 "~" H 3050 1500 50  0001 C CNN
@@ -413,10 +407,10 @@ Wire Wire Line
 Wire Wire Line
 	3250 1800 3500 1800
 $Comp
-L Connector_Generic:Conn_02x09_Odd_Even J802
+L Connector_Generic:Conn_02x09_Odd_Even J702
 U 1 1 5D8AE50E
 P 3150 2700
-F 0 "J802" H 3200 3317 50  0000 C CNN
+F 0 "J702" H 3200 3317 50  0000 C CNN
 F 1 "Conn_02x09_Odd_Even" H 3200 3226 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x09_P2.54mm_Vertical" H 3150 2700 50  0001 C CNN
 F 3 "~" H 3150 2700 50  0001 C CNN
@@ -428,4 +422,10 @@ Wire Wire Line
 Wire Wire Line
 	3500 2700 3450 2700
 Connection ~ 3500 2600
+NoConn ~ 5650 2200
+NoConn ~ 5650 2300
+NoConn ~ 5650 3000
+NoConn ~ 5650 3100
+NoConn ~ 5650 2600
+NoConn ~ 5650 2700
 $EndSCHEMATC
