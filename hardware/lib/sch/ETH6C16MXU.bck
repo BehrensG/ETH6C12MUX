@@ -20,6 +20,10 @@ $CMP HE3621A0500
 D HE3600 Miniature Single In-line Reed Relay
 $ENDCMP
 #
+$CMP MCZ33996
+D 16 Output Switch with SPI Control
+$ENDCMP
+#
 $CMP OKI-T3-W40
 D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
 $ENDCMP
@@ -42,6 +46,22 @@ $ENDCMP
 #
 $CMP THL_15-2411WI
 D DC/DC Converter THL 15WI Series, 15 Watt
+$ENDCMP
+#
+$CMP TSR2
+D TSR 2 Series, 2 A
+$ENDCMP
+#
+$CMP TSR2-2450
+D TSR 2 Series, 5 V output
+$ENDCMP
+#
+$CMP TSR_2-2450,_5V_output
+D TSR 2 Series, 2 A
+$ENDCMP
+#
+$CMP TSR_2_Series,_2_A
+D TSR 2 Series, 5 V output
 $ENDCMP
 #
 #End Doc Library

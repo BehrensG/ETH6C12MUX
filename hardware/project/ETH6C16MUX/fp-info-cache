@@ -1,4 +1,4 @@
-16365065751294416
+16369768539525416
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -44541,6 +44541,13 @@ ETH6C16MXU
 1
 1
 ETH6C16MXU
+150121M153000
+WL-SFCD  SMD Full-color ChipLED Diffused
+
+0
+4
+4
+ETH6C16MXU
 744031004
 WE-TPC SMD Shielded Tiny Power Inductor
 
@@ -44681,6 +44688,13 @@ HE3600 Miniature Single In-line Reed Relay
 4
 4
 ETH6C16MXU
+HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias
+HSOP32, plastic, thermal enhanced small outline package; 32 terminals; 0.65 mm pitch; 7.5 mm x 11 mmx 2.22 mm body
+HSOP 7.5 x 11.0mm Pitch 0.65mm
+0
+33
+33
+ETH6C16MXU
 IDC-Header_2x08_P2.54mm_Horizontal_Lock
 Connector IDC Locked, 10 contacts, compatible header: PANCON HE10 (Series 50, (https://www.reboul.fr/storage/00003af6.pdf)
 connector idc locked
@@ -44796,6 +44810,13 @@ ETH6C16MXU
 TO-252-2_Rectifier
 TO-252-2
 TO-252-2 Rectifier
+0
+3
+3
+ETH6C16MXU
+TSR2
+
+
 0
 3
 3
