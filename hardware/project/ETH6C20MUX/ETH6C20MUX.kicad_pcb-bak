@@ -12,8 +12,8 @@
   (page A4)
   (layers
     (0 Top signal)
-    (1 GND power)
-    (2 Power power)
+    (1 GND power hide)
+    (2 Power power hide)
     (31 Bottom signal)
     (32 B.Adhes user)
     (33 F.Adhes user)
