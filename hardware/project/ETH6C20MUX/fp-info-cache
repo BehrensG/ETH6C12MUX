@@ -1,4 +1,4 @@
-16369768539525416
+16376044007640416
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -44527,6 +44527,13 @@ ETH6C16MXU
 18
 16
 ETH6C16MXU
+0470
+Thin Film® Fuse, 470 Series, 1206 Fast Acting
+
+0
+2
+2
+ETH6C16MXU
 551-xx07
 LED CBI Circuit Board Indicator .200” High LED Centerline
 
@@ -44702,6 +44709,20 @@ connector idc locked
 18
 16
 ETH6C16MXU
+NX3225GD
+ A small surface-mount type crystal unit, ideal for an engine control CPU clock
+
+0
+2
+2
+ETH6C16MXU
+NX5032GA
+Crystal
+
+0
+2
+2
+ETH6C16MXU
 OKI-T3-W40
 Adjustable Output 3-Amp DOSA-SMT DC/DC Converters
 
@@ -44813,6 +44834,13 @@ TO-252-2 Rectifier
 0
 3
 3
+ETH6C16MXU
+TQFP-144_20x20mm_P0.5mm
+TQFP, 144 Pin (http://www.microsemi.com/index.php?option=com_docman&task=doc_download&gid=131095), generated with kicad-footprint-generator ipc_qfp_generator.py
+TQFP QFP
+0
+144
+144
 ETH6C16MXU
 TSR2
 

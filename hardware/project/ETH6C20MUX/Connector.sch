@@ -156,37 +156,25 @@ NoConn ~ 5650 900
 Wire Wire Line
 	5650 1000 5600 1000
 Wire Wire Line
-	5600 1000 5600 1050
-Wire Wire Line
 	5600 1100 5650 1100
 Wire Wire Line
 	5650 1200 5600 1200
-Wire Wire Line
-	5600 1200 5600 1250
 Wire Wire Line
 	5600 1300 5650 1300
 Wire Wire Line
 	5650 1400 5600 1400
 Wire Wire Line
-	5600 1400 5600 1450
-Wire Wire Line
 	5600 1500 5650 1500
 Wire Wire Line
 	5650 1600 5600 1600
-Wire Wire Line
-	5600 1600 5600 1650
 Wire Wire Line
 	5600 1700 5650 1700
 Wire Wire Line
 	5650 1800 5600 1800
 Wire Wire Line
-	5600 1800 5600 1850
-Wire Wire Line
 	5600 1900 5650 1900
 Wire Wire Line
 	5650 2000 5600 2000
-Wire Wire Line
-	5600 2000 5600 2050
 Wire Wire Line
 	5600 2100 5650 2100
 NoConn ~ 5650 4100
@@ -203,35 +191,17 @@ NoConn ~ 5650 2900
 NoConn ~ 5650 2800
 NoConn ~ 5650 2500
 NoConn ~ 5650 2400
-Connection ~ 5600 1050
-Wire Wire Line
-	5600 1050 5600 1100
-Connection ~ 5600 1250
-Wire Wire Line
-	5600 1250 5600 1300
-Connection ~ 5600 1450
-Wire Wire Line
-	5600 1450 5600 1500
-Connection ~ 5600 1650
-Wire Wire Line
-	5600 1650 5600 1700
-Connection ~ 5600 1850
-Wire Wire Line
-	5600 1850 5600 1900
-Connection ~ 5600 2050
-Wire Wire Line
-	5600 2050 5600 2100
-Text HLabel 5300 1050 0    50   BiDi ~ 0
+Text HLabel 4600 750  0    50   BiDi ~ 0
 A
-Text HLabel 5300 1250 0    50   BiDi ~ 0
+Text HLabel 4600 1050 0    50   BiDi ~ 0
 B
-Text HLabel 5300 1450 0    50   BiDi ~ 0
+Text HLabel 4600 1350 0    50   BiDi ~ 0
 C
-Text HLabel 5300 1650 0    50   BiDi ~ 0
+Text HLabel 4600 1650 0    50   BiDi ~ 0
 D
-Text HLabel 5300 1850 0    50   BiDi ~ 0
+Text HLabel 4600 1950 0    50   BiDi ~ 0
 E
-Text HLabel 5300 2050 0    50   BiDi ~ 0
+Text HLabel 4600 2250 0    50   BiDi ~ 0
 F
 Wire Wire Line
 	5300 4900 5650 4900
@@ -250,38 +220,38 @@ RX-
 Text Label 5350 4900 0    50   ~ 0
 TX-
 Wire Wire Line
-	5300 2050 5600 2050
+	4600 2250 4800 2250
 Wire Wire Line
-	5300 1850 5600 1850
+	4600 1950 4800 1950
 Wire Wire Line
-	5300 1650 5600 1650
+	4600 1650 4800 1650
 Wire Wire Line
-	5300 1450 5600 1450
+	4600 1350 4800 1350
 Wire Wire Line
-	5300 1250 5600 1250
+	4600 1050 4800 1050
 Wire Wire Line
-	5300 1050 5600 1050
-Text Label 5350 1050 0    50   ~ 0
+	4600 750  4800 750 
+Text Label 4650 750  0    50   ~ 0
 A
-Text Label 5350 1250 0    50   ~ 0
+Text Label 4650 1050 0    50   ~ 0
 B
-Text Label 5350 1450 0    50   ~ 0
+Text Label 4650 1350 0    50   ~ 0
 C
-Text Label 5350 1650 0    50   ~ 0
+Text Label 4650 1650 0    50   ~ 0
 D
-Text Label 5350 1850 0    50   ~ 0
+Text Label 4650 1950 0    50   ~ 0
 E
-Text Label 5350 2050 0    50   ~ 0
+Text Label 4650 2250 0    50   ~ 0
 F
 Wire Wire Line
-	3550 2600 3500 2600
-Wire Wire Line
-	3450 2700 3500 2700
-Wire Wire Line
-	3500 2600 3500 2700
-Connection ~ 3500 2600
+	3550 2500 3500 2500
 Wire Wire Line
 	3450 2600 3500 2600
+Wire Wire Line
+	3500 2500 3500 2600
+Connection ~ 3500 2500
+Wire Wire Line
+	3450 2500 3500 2500
 Wire Wire Line
 	3500 2300 3550 2300
 Wire Wire Line
@@ -300,9 +270,9 @@ Wire Wire Line
 Wire Wire Line
 	2850 2600 2950 2600
 Wire Wire Line
-	3550 3000 3450 3000
-Wire Wire Line
 	3550 2900 3450 2900
+Wire Wire Line
+	3550 2800 3450 2800
 Wire Wire Line
 	2950 2500 2850 2500
 Wire Wire Line
@@ -312,14 +282,14 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0502
 U 1 1 5D777B58
-P 3550 2600
+P 3550 2500
 AR Path="/5DB25E5A/5D777B58" Ref="#PWR0502"  Part="1" 
 AR Path="/5D7599BA/5D777B58" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0502" H 3550 2350 50  0001 C CNN
-F 1 "GND" V 3555 2472 50  0000 R CNN
-F 2 "" H 3550 2600 50  0001 C CNN
-F 3 "" H 3550 2600 50  0001 C CNN
-	1    3550 2600
+F 0 "#PWR0502" H 3550 2250 50  0001 C CNN
+F 1 "GND" V 3555 2372 50  0000 R CNN
+F 2 "" H 3550 2500 50  0001 C CNN
+F 3 "" H 3550 2500 50  0001 C CNN
+	1    3550 2500
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -372,11 +342,6 @@ Wire Wire Line
 	3250 1700 3500 1700
 Wire Wire Line
 	3250 1800 3500 1800
-Wire Wire Line
-	3500 2700 3500 2800
-Wire Wire Line
-	3500 2800 3450 2800
-Connection ~ 3500 2700
 NoConn ~ 5650 2200
 NoConn ~ 5650 2300
 NoConn ~ 5650 3000
@@ -397,19 +362,14 @@ Text HLabel 2850 2400 0    50   Output ~ 0
 RELAY2_SO
 Text HLabel 2850 2600 0    50   Output ~ 0
 RELAY2_~RST
-Text HLabel 3550 2900 2    50   Input ~ 0
+Text HLabel 3550 2800 2    50   Input ~ 0
 MODULE_DETECT0
-Text HLabel 3550 3000 2    50   Input ~ 0
+Text HLabel 3550 2900 2    50   Input ~ 0
 MODULE_DETECT1
 Text HLabel 2850 3000 0    50   Input ~ 0
 RELAY2_~CS3
 Wire Wire Line
 	2850 3000 2950 3000
-Wire Wire Line
-	3450 2500 3500 2500
-Wire Wire Line
-	3500 2500 3500 2400
-Connection ~ 3500 2400
 $Comp
 L Connector_Generic:Conn_02x08_Odd_Even J502
 U 1 1 5F5E8DBC
@@ -421,4 +381,127 @@ F 3 "~" H 3150 2600 50  0001 C CNN
 	1    3150 2600
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5600 1000 5600 1100
+Wire Wire Line
+	5600 1200 5600 1300
+Wire Wire Line
+	5600 1400 5600 1500
+Wire Wire Line
+	5600 1600 5600 1650
+Wire Wire Line
+	5600 1800 5600 1900
+Wire Wire Line
+	5600 2000 5600 2100
+$Comp
+L Device:Fuse F501
+U 1 1 5D85BE06
+P 4950 750
+F 0 "F501" V 4753 750 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 750 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 750 50  0001 C CNN
+F 3 "~" H 4950 750 50  0001 C CNN
+	1    4950 750 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Fuse F502
+U 1 1 5D86B547
+P 4950 1050
+F 0 "F502" V 4753 1050 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 1050 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 1050 50  0001 C CNN
+F 3 "~" H 4950 1050 50  0001 C CNN
+	1    4950 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Fuse F503
+U 1 1 5D873848
+P 4950 1350
+F 0 "F503" V 4753 1350 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 1350 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 1350 50  0001 C CNN
+F 3 "~" H 4950 1350 50  0001 C CNN
+	1    4950 1350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Fuse F504
+U 1 1 5D878920
+P 4950 1650
+F 0 "F504" V 4753 1650 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 1650 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 1650 50  0001 C CNN
+F 3 "~" H 4950 1650 50  0001 C CNN
+	1    4950 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Fuse F505
+U 1 1 5D87E9B8
+P 4950 1950
+F 0 "F505" V 4753 1950 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 1950 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 1950 50  0001 C CNN
+F 3 "~" H 4950 1950 50  0001 C CNN
+	1    4950 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Fuse F506
+U 1 1 5D888312
+P 4950 2250
+F 0 "F506" V 4753 2250 50  0000 C CNN
+F 1 "0470001.DRSNP" V 4844 2250 50  0000 C CNN
+F 2 "ETH6C16MXU:0470" V 4880 2250 50  0001 C CNN
+F 3 "~" H 4950 2250 50  0001 C CNN
+	1    4950 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5100 750  5500 750 
+Wire Wire Line
+	5500 750  5500 1000
+Wire Wire Line
+	5500 1000 5600 1000
+Connection ~ 5600 1000
+Wire Wire Line
+	5100 1050 5400 1050
+Wire Wire Line
+	5400 1050 5400 1200
+Wire Wire Line
+	5400 1200 5600 1200
+Connection ~ 5600 1200
+Wire Wire Line
+	5100 1350 5300 1350
+Wire Wire Line
+	5300 1350 5300 1400
+Wire Wire Line
+	5300 1400 5600 1400
+Connection ~ 5600 1400
+Wire Wire Line
+	5600 1650 5100 1650
+Connection ~ 5600 1650
+Wire Wire Line
+	5600 1650 5600 1700
+Wire Wire Line
+	5100 1950 5300 1950
+Wire Wire Line
+	5300 1950 5300 1900
+Wire Wire Line
+	5300 1900 5600 1900
+Connection ~ 5600 1900
+Wire Wire Line
+	5100 2250 5400 2250
+Wire Wire Line
+	5400 2250 5400 2100
+Wire Wire Line
+	5400 2100 5600 2100
+Connection ~ 5600 2100
+Text HLabel 3550 3000 2    50   Input ~ 0
+RELAY2_~CS4
+Wire Wire Line
+	3550 3000 3450 3000
+NoConn ~ 3450 2700
 $EndSCHEMATC
