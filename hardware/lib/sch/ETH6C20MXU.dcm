@@ -17,7 +17,11 @@ D HE3600 Miniature Single In-line Reed Relay
 $ENDCMP
 #
 $CMP HE3621A0500
-D HE3600 Miniature Single In-line Reed Relay
+D 00 - No Options
+$ENDCMP
+#
+$CMP HE3621A0510
+D 10 - Diode Supressed Coil
 $ENDCMP
 #
 $CMP MCZ33996

@@ -112,10 +112,10 @@ Wire Wire Line
 	3750 4800 3000 4800
 Wire Wire Line
 	3750 4900 3000 4900
-Text Label 2400 5900 0    50   ~ 0
+Text Label 3150 3100 0    50   ~ 0
 MCU_FLASH1_CS
 Wire Wire Line
-	3000 5900 2400 5900
+	3750 3100 3150 3100
 Text Label 3150 6400 0    50   ~ 0
 MCU_SPI3_MOSI
 Text Label 3150 6300 0    50   ~ 0
@@ -846,8 +846,8 @@ Wire Wire Line
 Wire Wire Line
 	15200 8800 15150 8800
 Wire Wire Line
-	3000 6000 2400 6000
-Text Label 2400 6000 0    50   ~ 0
+	3750 3200 3150 3200
+Text Label 3150 3200 0    50   ~ 0
 MCU_FLASH2_CS
 $Comp
 L Device:R R601
@@ -1313,8 +1313,6 @@ NoConn ~ 15150 7500
 NoConn ~ 3750 2800
 NoConn ~ 3750 2900
 NoConn ~ 3750 3000
-NoConn ~ 3750 3100
-NoConn ~ 3750 3200
 $Comp
 L ETH6C20MUX:STM32F765ZGT6 U603
 U 1 1 5D61C76C
