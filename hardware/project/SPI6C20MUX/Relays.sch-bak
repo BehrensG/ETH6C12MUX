@@ -1,0 +1,4297 @@
+EESchema Schematic File Version 4
+LIBS:SPI6C20MUX-cache
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 2 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	10700 10100 10450 10100
+Wire Wire Line
+	10700 10200 10450 10200
+Wire Wire Line
+	10700 10300 10450 10300
+Wire Wire Line
+	10700 10400 10450 10400
+Wire Wire Line
+	10700 10500 10450 10500
+Wire Wire Line
+	10700 10600 10450 10600
+Wire Wire Line
+	10700 10700 10450 10700
+Wire Wire Line
+	10700 10800 10450 10800
+Wire Wire Line
+	10700 10900 10450 10900
+Wire Wire Line
+	10700 11000 10450 11000
+Wire Wire Line
+	11200 11000 11450 11000
+Wire Wire Line
+	11200 10900 11450 10900
+Wire Wire Line
+	11200 10800 11450 10800
+Wire Wire Line
+	11200 10700 11450 10700
+Wire Wire Line
+	11200 10600 11450 10600
+Wire Wire Line
+	11200 10500 11450 10500
+Text Label 10450 10100 0    50   ~ 0
+PIN21
+Text Label 10450 10200 0    50   ~ 0
+PIN22
+Text Label 10450 10300 0    50   ~ 0
+PIN23
+Text Label 10450 10400 0    50   ~ 0
+PIN24
+Text Label 10450 10500 0    50   ~ 0
+PIN25
+Text Label 10450 10600 0    50   ~ 0
+PIN26
+Text Label 10450 10700 0    50   ~ 0
+PIN27
+Text Label 10450 10800 0    50   ~ 0
+PIN28
+Text Label 10450 10900 0    50   ~ 0
+PIN29
+Text Label 10450 11000 0    50   ~ 0
+PIN30
+Text Label 11450 11000 2    50   ~ 0
+PIN31
+Text Label 11450 10900 2    50   ~ 0
+PIN32
+Text Label 11450 10800 2    50   ~ 0
+PIN233
+Text Label 11450 10700 2    50   ~ 0
+PIN34
+Text Label 11450 10600 2    50   ~ 0
+PIN35
+Text Label 11450 10500 2    50   ~ 0
+PIN36
+Wire Wire Line
+	1100 8300 900  8300
+Wire Wire Line
+	900  8300 900  7900
+Wire Wire Line
+	900  7900 1100 7900
+Wire Wire Line
+	1100 8700 900  8700
+Wire Wire Line
+	900  8700 900  8300
+Connection ~ 900  8300
+Wire Wire Line
+	900  7900 650  7900
+Connection ~ 900  7900
+Text Label 650  7900 0    50   ~ 0
+PIN21
+Wire Wire Line
+	1400 7900 1800 7900
+Wire Wire Line
+	1400 8300 1800 8300
+Wire Wire Line
+	1400 8700 1800 8700
+Text Label 1800 8300 2    50   ~ 0
+PIN21B
+Text Label 1800 8700 2    50   ~ 0
+PIN21C
+Wire Wire Line
+	1100 9450 900  9450
+Wire Wire Line
+	900  9450 900  9050
+Wire Wire Line
+	900  9050 1100 9050
+Wire Wire Line
+	1100 9850 900  9850
+Wire Wire Line
+	900  9850 900  9450
+Connection ~ 900  9450
+Wire Wire Line
+	900  9050 650  9050
+Connection ~ 900  9050
+Text Label 650  9050 0    50   ~ 0
+PIN22
+Wire Wire Line
+	1400 9050 1800 9050
+Wire Wire Line
+	1400 9450 1800 9450
+Wire Wire Line
+	1400 9850 1800 9850
+Text Label 1800 9050 2    50   ~ 0
+PIN22A
+Text Label 1800 9450 2    50   ~ 0
+PIN22B
+Text Label 1800 9850 2    50   ~ 0
+PIN22C
+Wire Wire Line
+	1100 10600 900  10600
+Wire Wire Line
+	900  10600 900  10200
+Wire Wire Line
+	900  10200 1100 10200
+Wire Wire Line
+	1100 11000 900  11000
+Wire Wire Line
+	900  11000 900  10600
+Connection ~ 900  10600
+Wire Wire Line
+	900  10200 650  10200
+Connection ~ 900  10200
+Text Label 650  10200 0    50   ~ 0
+PIN23
+Wire Wire Line
+	1400 10200 1800 10200
+Wire Wire Line
+	1400 10600 1800 10600
+Wire Wire Line
+	1400 11000 1800 11000
+Text Label 1800 10200 2    50   ~ 0
+PIN23A
+Text Label 1800 10600 2    50   ~ 0
+PIN23B
+Text Label 1800 11000 2    50   ~ 0
+PIN23C
+Wire Wire Line
+	2400 8300 2200 8300
+Wire Wire Line
+	2200 8300 2200 7900
+Wire Wire Line
+	2200 7900 2400 7900
+Wire Wire Line
+	2400 8700 2200 8700
+Wire Wire Line
+	2200 8700 2200 8300
+Connection ~ 2200 8300
+Wire Wire Line
+	2200 7900 1950 7900
+Connection ~ 2200 7900
+Text Label 1950 7900 0    50   ~ 0
+PIN24
+Wire Wire Line
+	2700 7900 3100 7900
+Wire Wire Line
+	2700 8300 3100 8300
+Text Label 3100 7900 2    50   ~ 0
+PIN24A
+Text Label 3100 8300 2    50   ~ 0
+PIN24B
+Text Label 3100 8700 2    50   ~ 0
+PIN24C
+Wire Wire Line
+	2400 9450 2200 9450
+Wire Wire Line
+	2200 9450 2200 9050
+Wire Wire Line
+	2200 9050 2400 9050
+Wire Wire Line
+	2400 9850 2200 9850
+Wire Wire Line
+	2200 9850 2200 9450
+Connection ~ 2200 9450
+Wire Wire Line
+	2200 9050 1950 9050
+Connection ~ 2200 9050
+Text Label 1950 9050 0    50   ~ 0
+PIN25
+Wire Wire Line
+	2700 9050 3100 9050
+Wire Wire Line
+	2700 9450 3100 9450
+Wire Wire Line
+	2700 9850 3100 9850
+Text Label 3100 9050 2    50   ~ 0
+PIN25A
+Text Label 3100 9450 2    50   ~ 0
+PIN25B
+Text Label 3100 9850 2    50   ~ 0
+PIN25C
+Wire Wire Line
+	2400 10600 2200 10600
+Wire Wire Line
+	2200 10600 2200 10200
+Wire Wire Line
+	2200 10200 2400 10200
+Wire Wire Line
+	2200 11000 2200 10600
+Connection ~ 2200 10600
+Wire Wire Line
+	2200 10200 1950 10200
+Connection ~ 2200 10200
+Text Label 1950 10200 0    50   ~ 0
+PIN26
+Wire Wire Line
+	2700 10200 3100 10200
+Wire Wire Line
+	2700 10600 3100 10600
+Text Label 3100 10200 2    50   ~ 0
+PIN26A
+Text Label 3100 10600 2    50   ~ 0
+PIN26B
+Text Label 3100 11000 2    50   ~ 0
+PIN26C
+Wire Wire Line
+	3700 9450 3500 9450
+Wire Wire Line
+	3500 9450 3500 9050
+Wire Wire Line
+	3500 9050 3700 9050
+Wire Wire Line
+	3700 9850 3500 9850
+Wire Wire Line
+	3500 9850 3500 9450
+Connection ~ 3500 9450
+Wire Wire Line
+	3500 9050 3250 9050
+Connection ~ 3500 9050
+Text Label 3250 9050 0    50   ~ 0
+PIN28
+Wire Wire Line
+	4000 9050 4400 9050
+Wire Wire Line
+	4000 9450 4400 9450
+Wire Wire Line
+	4000 9850 4400 9850
+Text Label 4400 9050 2    50   ~ 0
+PIN28A
+Text Label 4400 9450 2    50   ~ 0
+PIN28B
+Text Label 4400 9850 2    50   ~ 0
+PIN28C
+Wire Wire Line
+	5050 10600 4850 10600
+Wire Wire Line
+	4850 10600 4850 10200
+Wire Wire Line
+	4850 10200 5050 10200
+Wire Wire Line
+	5050 11000 4850 11000
+Wire Wire Line
+	4850 11000 4850 10600
+Connection ~ 4850 10600
+Wire Wire Line
+	4850 10200 4600 10200
+Connection ~ 4850 10200
+Text Label 4600 10200 0    50   ~ 0
+PIN32
+Wire Wire Line
+	5350 10200 5750 10200
+Wire Wire Line
+	5350 10600 5750 10600
+Wire Wire Line
+	5350 11000 5750 11000
+Text Label 5750 10200 2    50   ~ 0
+PIN32A
+Text Label 5750 10600 2    50   ~ 0
+PIN32B
+Text Label 5750 11000 2    50   ~ 0
+PIN32C
+Wire Wire Line
+	5050 8300 4850 8300
+Wire Wire Line
+	4850 8300 4850 7900
+Wire Wire Line
+	4850 7900 5050 7900
+Wire Wire Line
+	5050 8700 4850 8700
+Wire Wire Line
+	4850 8700 4850 8300
+Connection ~ 4850 8300
+Wire Wire Line
+	4850 7900 4600 7900
+Connection ~ 4850 7900
+Text Label 4600 7900 0    50   ~ 0
+PIN30
+Wire Wire Line
+	5350 7900 5750 7900
+Wire Wire Line
+	5350 8300 5750 8300
+Wire Wire Line
+	5350 8700 5750 8700
+Text Label 5750 7900 2    50   ~ 0
+PIN30A
+Text Label 5750 8300 2    50   ~ 0
+PIN30B
+Text Label 5750 8700 2    50   ~ 0
+PIN30C
+Wire Wire Line
+	5050 9450 4850 9450
+Wire Wire Line
+	4850 9450 4850 9050
+Wire Wire Line
+	4850 9050 5050 9050
+Wire Wire Line
+	5050 9850 4850 9850
+Wire Wire Line
+	4850 9850 4850 9450
+Connection ~ 4850 9450
+Wire Wire Line
+	4850 9050 4600 9050
+Connection ~ 4850 9050
+Text Label 4600 9050 0    50   ~ 0
+PIN31
+Wire Wire Line
+	5350 9050 5750 9050
+Wire Wire Line
+	5350 9450 5750 9450
+Wire Wire Line
+	5350 9850 5750 9850
+Text Label 5750 9050 2    50   ~ 0
+PIN31A
+Text Label 5750 9450 2    50   ~ 0
+PIN31B
+Text Label 5750 9850 2    50   ~ 0
+PIN31C
+Wire Wire Line
+	6400 8300 6200 8300
+Wire Wire Line
+	6200 8300 6200 7900
+Wire Wire Line
+	6200 7900 6400 7900
+Wire Wire Line
+	6400 8700 6200 8700
+Wire Wire Line
+	6200 8700 6200 8300
+Connection ~ 6200 8300
+Wire Wire Line
+	6200 7900 5950 7900
+Connection ~ 6200 7900
+Text Label 5950 7900 0    50   ~ 0
+PIN33
+Wire Wire Line
+	6700 7900 7100 7900
+Wire Wire Line
+	6700 8300 7100 8300
+Wire Wire Line
+	6700 8700 7100 8700
+Text Label 7100 7900 2    50   ~ 0
+PIN33A
+Text Label 7100 8300 2    50   ~ 0
+PIN33B
+Text Label 7100 8700 2    50   ~ 0
+PIN33C
+Wire Wire Line
+	6400 9450 6200 9450
+Wire Wire Line
+	6200 9450 6200 9050
+Wire Wire Line
+	6200 9050 6400 9050
+Wire Wire Line
+	6400 9850 6200 9850
+Wire Wire Line
+	6200 9850 6200 9450
+Connection ~ 6200 9450
+Wire Wire Line
+	6200 9050 5950 9050
+Connection ~ 6200 9050
+Text Label 5950 9050 0    50   ~ 0
+PIN34
+Wire Wire Line
+	6700 9450 7100 9450
+Wire Wire Line
+	6700 9850 7100 9850
+Text Label 7100 9050 2    50   ~ 0
+PIN34A
+Text Label 7100 9450 2    50   ~ 0
+PIN34B
+Text Label 7100 9850 2    50   ~ 0
+PIN34C
+Wire Wire Line
+	6400 10600 6200 10600
+Wire Wire Line
+	6200 10600 6200 10200
+Wire Wire Line
+	6200 10200 6400 10200
+Wire Wire Line
+	6400 11000 6200 11000
+Wire Wire Line
+	6200 11000 6200 10600
+Connection ~ 6200 10600
+Wire Wire Line
+	6200 10200 5950 10200
+Connection ~ 6200 10200
+Text Label 5950 10200 0    50   ~ 0
+PIN35
+Wire Wire Line
+	6700 10200 7100 10200
+Wire Wire Line
+	6700 10600 7100 10600
+Wire Wire Line
+	6700 11000 7100 11000
+Text Label 7100 10200 2    50   ~ 0
+PIN35A
+Text Label 7100 10600 2    50   ~ 0
+PIN35B
+Text Label 7100 11000 2    50   ~ 0
+PIN35C
+Wire Wire Line
+	7750 8300 7550 8300
+Wire Wire Line
+	7550 8300 7550 7900
+Wire Wire Line
+	7550 7900 7750 7900
+Wire Wire Line
+	7750 8700 7550 8700
+Wire Wire Line
+	7550 8700 7550 8300
+Connection ~ 7550 8300
+Wire Wire Line
+	7550 7900 7300 7900
+Connection ~ 7550 7900
+Text Label 7300 7900 0    50   ~ 0
+PIN36
+Wire Wire Line
+	8050 8700 8450 8700
+Text Label 8450 7900 2    50   ~ 0
+PIN36A
+Text Label 8450 8300 2    50   ~ 0
+PIN36B
+Text Label 8450 8700 2    50   ~ 0
+PIN36C
+Text Label 11050 7750 0    50   ~ 0
+PIN21A
+Text Label 11050 7850 0    50   ~ 0
+PIN22A
+Text Label 11050 7950 0    50   ~ 0
+PIN23A
+Text Label 11050 8050 0    50   ~ 0
+PIN24A
+Text Label 11050 8150 0    50   ~ 0
+PIN25A
+Text Label 11050 8250 0    50   ~ 0
+PIN26A
+Text Label 11050 8350 0    50   ~ 0
+PIN27A
+Text Label 11050 8450 0    50   ~ 0
+PIN28A
+Text Label 11050 8550 0    50   ~ 0
+PIN29A
+Text Label 11050 8650 0    50   ~ 0
+PIN30A
+Text Label 11050 8750 0    50   ~ 0
+PIN31A
+Text Label 11050 8850 0    50   ~ 0
+PIN32A
+Text Label 11050 8950 0    50   ~ 0
+PIN33A
+Text Label 11050 9050 0    50   ~ 0
+PIN34A
+Text Label 11050 9150 0    50   ~ 0
+PIN35A
+Text Label 11050 9250 0    50   ~ 0
+PIN36A
+Wire Wire Line
+	11050 7750 11450 7750
+Wire Wire Line
+	11050 7850 11450 7850
+Wire Wire Line
+	11050 7950 11450 7950
+Wire Wire Line
+	11050 8050 11450 8050
+Wire Wire Line
+	11050 8150 11450 8150
+Wire Wire Line
+	11050 8250 11450 8250
+Wire Wire Line
+	11050 8350 11450 8350
+Wire Wire Line
+	11050 8450 11450 8450
+Wire Wire Line
+	11050 8550 11450 8550
+Wire Wire Line
+	11050 8650 11450 8650
+Wire Wire Line
+	11050 8750 11450 8750
+Wire Wire Line
+	11050 8850 11450 8850
+Wire Wire Line
+	11050 8950 11450 8950
+Wire Wire Line
+	11050 9050 11450 9050
+Wire Wire Line
+	11050 9150 11450 9150
+Wire Wire Line
+	11050 9250 11450 9250
+Wire Wire Line
+	11450 9250 11450 9150
+Connection ~ 11450 7850
+Wire Wire Line
+	11450 7850 11450 7750
+Connection ~ 11450 7950
+Wire Wire Line
+	11450 7950 11450 7850
+Connection ~ 11450 8050
+Wire Wire Line
+	11450 8050 11450 7950
+Connection ~ 11450 8150
+Wire Wire Line
+	11450 8150 11450 8050
+Connection ~ 11450 8250
+Wire Wire Line
+	11450 8250 11450 8150
+Connection ~ 11450 8350
+Wire Wire Line
+	11450 8350 11450 8250
+Connection ~ 11450 8450
+Wire Wire Line
+	11450 8450 11450 8350
+Connection ~ 11450 8550
+Wire Wire Line
+	11450 8550 11450 8450
+Connection ~ 11450 8650
+Wire Wire Line
+	11450 8650 11450 8550
+Connection ~ 11450 8750
+Wire Wire Line
+	11450 8750 11450 8650
+Connection ~ 11450 8850
+Wire Wire Line
+	11450 8850 11450 8750
+Connection ~ 11450 8950
+Wire Wire Line
+	11450 8950 11450 8850
+Connection ~ 11450 9050
+Wire Wire Line
+	11450 9050 11450 8950
+Connection ~ 11450 9150
+Wire Wire Line
+	11450 9150 11450 9050
+Wire Wire Line
+	11700 7750 11450 7750
+Connection ~ 11450 7750
+Text Label 14450 7750 0    50   ~ 0
+PIN21B
+Text Label 14450 7850 0    50   ~ 0
+PIN22B
+Text Label 14450 7950 0    50   ~ 0
+PIN23B
+Text Label 14450 8050 0    50   ~ 0
+PIN24B
+Text Label 14450 8150 0    50   ~ 0
+PIN25B
+Text Label 14450 8250 0    50   ~ 0
+PIN26B
+Text Label 14450 8350 0    50   ~ 0
+PIN27B
+Text Label 14450 8450 0    50   ~ 0
+PIN28B
+Text Label 14450 8550 0    50   ~ 0
+PIN29B
+Text Label 14450 8650 0    50   ~ 0
+PIN30B
+Text Label 14450 8750 0    50   ~ 0
+PIN31B
+Text Label 14450 8850 0    50   ~ 0
+PIN32B
+Text Label 14450 8950 0    50   ~ 0
+PIN33B
+Text Label 14450 9050 0    50   ~ 0
+PIN34B
+Text Label 14450 9150 0    50   ~ 0
+PIN35B
+Text Label 14450 9250 0    50   ~ 0
+PIN36B
+Wire Wire Line
+	14450 7750 14850 7750
+Wire Wire Line
+	14450 7850 14850 7850
+Wire Wire Line
+	14450 7950 14850 7950
+Wire Wire Line
+	14450 8050 14850 8050
+Wire Wire Line
+	14450 8150 14850 8150
+Wire Wire Line
+	14450 8250 14850 8250
+Wire Wire Line
+	14450 8350 14850 8350
+Wire Wire Line
+	14450 8450 14850 8450
+Wire Wire Line
+	14450 8550 14850 8550
+Wire Wire Line
+	14450 8650 14850 8650
+Wire Wire Line
+	14450 8750 14850 8750
+Wire Wire Line
+	14450 8850 14850 8850
+Wire Wire Line
+	14450 8950 14850 8950
+Wire Wire Line
+	14450 9050 14850 9050
+Wire Wire Line
+	14450 9150 14850 9150
+Wire Wire Line
+	14450 9250 14850 9250
+Wire Wire Line
+	14850 9250 14850 9150
+Connection ~ 14850 7850
+Wire Wire Line
+	14850 7850 14850 7750
+Connection ~ 14850 7950
+Wire Wire Line
+	14850 7950 14850 7850
+Connection ~ 14850 8050
+Wire Wire Line
+	14850 8050 14850 7950
+Connection ~ 14850 8150
+Wire Wire Line
+	14850 8150 14850 8050
+Connection ~ 14850 8250
+Wire Wire Line
+	14850 8250 14850 8150
+Connection ~ 14850 8350
+Wire Wire Line
+	14850 8350 14850 8250
+Connection ~ 14850 8450
+Wire Wire Line
+	14850 8450 14850 8350
+Connection ~ 14850 8550
+Wire Wire Line
+	14850 8550 14850 8450
+Connection ~ 14850 8650
+Wire Wire Line
+	14850 8650 14850 8550
+Connection ~ 14850 8750
+Wire Wire Line
+	14850 8750 14850 8650
+Connection ~ 14850 8850
+Wire Wire Line
+	14850 8850 14850 8750
+Connection ~ 14850 8950
+Wire Wire Line
+	14850 8950 14850 8850
+Connection ~ 14850 9050
+Wire Wire Line
+	14850 9050 14850 8950
+Connection ~ 14850 9150
+Wire Wire Line
+	14850 9150 14850 9050
+Wire Wire Line
+	15100 7750 14850 7750
+Connection ~ 14850 7750
+Text Label 12700 7750 0    50   ~ 0
+PIN21C
+Text Label 12700 7850 0    50   ~ 0
+PIN22C
+Text Label 12700 7950 0    50   ~ 0
+PIN23C
+Text Label 12700 8050 0    50   ~ 0
+PIN24C
+Text Label 12700 8150 0    50   ~ 0
+PIN25C
+Text Label 12700 8250 0    50   ~ 0
+PIN26C
+Text Label 12700 8350 0    50   ~ 0
+PIN27C
+Text Label 12700 8450 0    50   ~ 0
+PIN28C
+Text Label 12700 8550 0    50   ~ 0
+PIN29C
+Text Label 12700 8650 0    50   ~ 0
+PIN30C
+Text Label 12700 8750 0    50   ~ 0
+PIN31C
+Text Label 12700 8850 0    50   ~ 0
+PIN32C
+Text Label 12700 8950 0    50   ~ 0
+PIN33C
+Text Label 12700 9050 0    50   ~ 0
+PIN34C
+Text Label 12700 9150 0    50   ~ 0
+PIN35C
+Text Label 12700 9250 0    50   ~ 0
+PIN36C
+Wire Wire Line
+	12700 7750 13100 7750
+Wire Wire Line
+	12700 7850 13100 7850
+Wire Wire Line
+	12700 7950 13100 7950
+Wire Wire Line
+	12700 8050 13100 8050
+Wire Wire Line
+	12700 8150 13100 8150
+Wire Wire Line
+	12700 8250 13100 8250
+Wire Wire Line
+	12700 8350 13100 8350
+Wire Wire Line
+	12700 8450 13100 8450
+Wire Wire Line
+	12700 8550 13100 8550
+Wire Wire Line
+	12700 8650 13100 8650
+Wire Wire Line
+	12700 8750 13100 8750
+Wire Wire Line
+	12700 8850 13100 8850
+Wire Wire Line
+	12700 8950 13100 8950
+Wire Wire Line
+	12700 9050 13100 9050
+Wire Wire Line
+	12700 9150 13100 9150
+Wire Wire Line
+	12700 9250 13100 9250
+Wire Wire Line
+	13100 9250 13100 9150
+Connection ~ 13100 7850
+Wire Wire Line
+	13100 7850 13100 7750
+Connection ~ 13100 7950
+Wire Wire Line
+	13100 7950 13100 7850
+Connection ~ 13100 8050
+Wire Wire Line
+	13100 8050 13100 7950
+Connection ~ 13100 8150
+Wire Wire Line
+	13100 8150 13100 8050
+Connection ~ 13100 8250
+Wire Wire Line
+	13100 8250 13100 8150
+Connection ~ 13100 8350
+Wire Wire Line
+	13100 8350 13100 8250
+Connection ~ 13100 8450
+Wire Wire Line
+	13100 8450 13100 8350
+Connection ~ 13100 8550
+Wire Wire Line
+	13100 8550 13100 8450
+Connection ~ 13100 8650
+Wire Wire Line
+	13100 8650 13100 8550
+Connection ~ 13100 8750
+Wire Wire Line
+	13100 8750 13100 8650
+Connection ~ 13100 8850
+Wire Wire Line
+	13100 8850 13100 8750
+Connection ~ 13100 8950
+Wire Wire Line
+	13100 8950 13100 8850
+Connection ~ 13100 9050
+Wire Wire Line
+	13100 9050 13100 8950
+Connection ~ 13100 9150
+Wire Wire Line
+	13100 9150 13100 9050
+Wire Wire Line
+	13350 7750 13100 7750
+Connection ~ 13100 7750
+Wire Wire Line
+	12000 9650 12400 9650
+Wire Wire Line
+	15400 7750 15800 7750
+Wire Wire Line
+	15400 9650 15800 9650
+Wire Wire Line
+	13650 7750 14050 7750
+Wire Wire Line
+	13650 9650 14050 9650
+Text HLabel 12400 9650 2    50   BiDi ~ 0
+F
+Text HLabel 15800 7750 2    50   BiDi ~ 0
+B
+Text HLabel 15800 9650 2    50   BiDi ~ 0
+E
+Text HLabel 14050 7750 2    50   BiDi ~ 0
+C
+Text HLabel 14050 9650 2    50   BiDi ~ 0
+D
+Wire Wire Line
+	10300 800  10300 750 
+Wire Wire Line
+	11000 800  11000 750 
+Wire Wire Line
+	8200 800  8200 750 
+Wire Wire Line
+	8900 800  8900 750 
+Wire Wire Line
+	9600 800  9600 750 
+Wire Wire Line
+	7500 800  7500 750 
+Wire Wire Line
+	6800 800  6800 750 
+Wire Wire Line
+	6100 750  6100 800 
+Connection ~ 6100 750 
+Text Label 1800 7900 2    50   ~ 0
+PIN21A
+Text Label 6100 1500 1    50   ~ 0
+RELAY21A
+Text Label 6800 1500 1    50   ~ 0
+RELAY2A
+Text Label 8200 1500 1    50   ~ 0
+RELAY24A
+Text Label 8900 1500 1    50   ~ 0
+RELAY25A
+Text Label 9600 1500 1    50   ~ 0
+RELAY26A
+Text Label 10300 1500 1    50   ~ 0
+RELAY27A
+Text Label 11000 1500 1    50   ~ 0
+RELAY28A
+Wire Wire Line
+	6100 1750 6100 1700
+Wire Wire Line
+	6800 1750 6800 1700
+Wire Wire Line
+	13800 800  13800 750 
+Wire Wire Line
+	14500 800  14500 750 
+Wire Wire Line
+	15200 800  15200 750 
+Wire Wire Line
+	13100 800  13100 750 
+Wire Wire Line
+	12400 800  12400 750 
+Wire Wire Line
+	11700 750  11700 800 
+Text Label 11700 1500 1    50   ~ 0
+RELAY29A
+Text Label 12400 1500 1    50   ~ 0
+RELAY30A
+Text Label 13100 1500 1    50   ~ 0
+RELAY31A
+Text Label 13800 1500 1    50   ~ 0
+RELAY32A
+Text Label 14500 1500 1    50   ~ 0
+RELAY33A
+Text Label 15200 1500 1    50   ~ 0
+RELAY34A
+Text Label 6100 2450 1    50   ~ 0
+RELAY35A
+Text Label 6800 2450 1    50   ~ 0
+RELAY36A
+Wire Wire Line
+	11700 1750 11700 1700
+Wire Wire Line
+	12400 1750 12400 1700
+Wire Wire Line
+	9600 1750 9600 1700
+Wire Wire Line
+	10300 1750 10300 1700
+Wire Wire Line
+	11000 1750 11000 1700
+Wire Wire Line
+	8900 1750 8900 1700
+Wire Wire Line
+	8200 1750 8200 1700
+Wire Wire Line
+	7500 1700 7500 1750
+Wire Wire Line
+	7500 2700 7500 2650
+Wire Wire Line
+	8200 2700 8200 2650
+Wire Wire Line
+	15200 1750 15200 1700
+Wire Wire Line
+	6100 2700 6100 2650
+Wire Wire Line
+	6800 2700 6800 2650
+Wire Wire Line
+	14500 1750 14500 1700
+Wire Wire Line
+	13800 1750 13800 1700
+Wire Wire Line
+	13100 1700 13100 1750
+Wire Wire Line
+	13100 2700 13100 2650
+Wire Wire Line
+	13800 2700 13800 2650
+Wire Wire Line
+	11000 2700 11000 2650
+Wire Wire Line
+	11700 2700 11700 2650
+Wire Wire Line
+	12400 2700 12400 2650
+Wire Wire Line
+	10300 2700 10300 2650
+Wire Wire Line
+	9600 2700 9600 2650
+Wire Wire Line
+	8900 2650 8900 2700
+Wire Wire Line
+	8900 3650 8900 3600
+Wire Wire Line
+	9600 3650 9600 3600
+Wire Wire Line
+	6800 3650 6800 3600
+Wire Wire Line
+	7500 3650 7500 3600
+Wire Wire Line
+	8200 3650 8200 3600
+Wire Wire Line
+	6100 3650 6100 3600
+Wire Wire Line
+	15200 2700 15200 2650
+Wire Wire Line
+	14500 2650 14500 2700
+$Comp
+L power:+5V #PWR0201
+U 1 1 5E79FB15
+P 5950 750
+F 0 "#PWR0201" H 5950 600 50  0001 C CNN
+F 1 "+5V" V 5965 878 50  0000 L CNN
+F 2 "" H 5950 750 50  0001 C CNN
+F 3 "" H 5950 750 50  0001 C CNN
+	1    5950 750 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR0206
+U 1 1 63B529D4
+P 5950 1700
+F 0 "#PWR0206" H 5950 1550 50  0001 C CNN
+F 1 "+5V" V 5965 1828 50  0000 L CNN
+F 2 "" H 5950 1700 50  0001 C CNN
+F 3 "" H 5950 1700 50  0001 C CNN
+	1    5950 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR0209
+U 1 1 63BFE166
+P 5950 2650
+F 0 "#PWR0209" H 5950 2500 50  0001 C CNN
+F 1 "+5V" V 5965 2778 50  0000 L CNN
+F 2 "" H 5950 2650 50  0001 C CNN
+F 3 "" H 5950 2650 50  0001 C CNN
+	1    5950 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR0214
+U 1 1 63CACA62
+P 5950 3600
+F 0 "#PWR0214" H 5950 3450 50  0001 C CNN
+F 1 "+5V" V 5965 3728 50  0000 L CNN
+F 2 "" H 5950 3600 50  0001 C CNN
+F 3 "" H 5950 3600 50  0001 C CNN
+	1    5950 3600
+	0    -1   -1   0   
+$EndComp
+Text Label 10300 2450 1    50   ~ 0
+RELAY21B
+Text Label 11000 2450 1    50   ~ 0
+RELAY2B
+Text Label 11700 2450 1    50   ~ 0
+RELAY23B
+Text Label 12400 2450 1    50   ~ 0
+RELAY24B
+Text Label 13100 2450 1    50   ~ 0
+RELAY25B
+Text Label 13800 2450 1    50   ~ 0
+RELAY26B
+Text Label 14500 2450 1    50   ~ 0
+RELAY27B
+Text Label 15200 2450 1    50   ~ 0
+RELAY28B
+Text Label 6100 3400 1    50   ~ 0
+RELAY29B
+Text Label 6800 3400 1    50   ~ 0
+RELAY30B
+Text Label 7500 3400 1    50   ~ 0
+RELAY31B
+Text Label 8200 3400 1    50   ~ 0
+RELAY32B
+Text Label 8900 3400 1    50   ~ 0
+RELAY33B
+Text Label 9600 3400 1    50   ~ 0
+RELAY34B
+Text Label 10300 3400 1    50   ~ 0
+RELAY35B
+Text Label 11000 3400 1    50   ~ 0
+RELAY36B
+Text Label 14500 3400 1    50   ~ 0
+RELAY21C
+Text Label 15200 3400 1    50   ~ 0
+RELAY22C
+Text Label 6100 4350 1    50   ~ 0
+RELAY23C
+Text Label 6800 4350 1    50   ~ 0
+RELAY24C
+Text Label 7500 4350 1    50   ~ 0
+RELAY25C
+Text Label 8200 4350 1    50   ~ 0
+RELAY26C
+Text Label 8900 4350 1    50   ~ 0
+RELAY27C
+Text Label 9600 4350 1    50   ~ 0
+RELAY28C
+Text Label 10300 4350 1    50   ~ 0
+RELAY29C
+Text Label 11000 4350 1    50   ~ 0
+RELAY30C
+Text Label 11700 4350 1    50   ~ 0
+RELAY31C
+Text Label 12400 4350 1    50   ~ 0
+RELAY32C
+Text Label 13100 4350 1    50   ~ 0
+RELAY33C
+Text Label 13800 4350 1    50   ~ 0
+RELAY34C
+Wire Wire Line
+	12400 3650 12400 3600
+Wire Wire Line
+	13100 3650 13100 3600
+Wire Wire Line
+	13800 3650 13800 3600
+Wire Wire Line
+	11700 3650 11700 3600
+Wire Wire Line
+	11000 3650 11000 3600
+Wire Wire Line
+	10300 3600 10300 3650
+Text Label 14500 4350 1    50   ~ 0
+RELAY35C
+Wire Notes Line
+	500  7200 16000 7200
+Text Notes 13550 9900 0    100  ~ 0
+REED RELAYS AND CONNECTED
+Text Notes 14150 7400 0    100  ~ 0
+REED RELAYS CONTROL
+Text Label 8900 5300 1    50   ~ 0
+RELAYA
+Text Label 9600 5300 1    50   ~ 0
+RELAYB
+Text Label 10300 5300 1    50   ~ 0
+RELAYC
+Text Label 11000 5300 1    50   ~ 0
+RELAYD
+Text Label 11700 5300 1    50   ~ 0
+RELAYE
+Text Label 12400 5300 1    50   ~ 0
+RELAYF
+Wire Wire Line
+	2700 11000 3100 11000
+Wire Wire Line
+	2400 11000 2200 11000
+Wire Wire Line
+	8050 8300 8450 8300
+Text Label 4400 11000 2    50   ~ 0
+PIN29C
+Text Label 4400 10600 2    50   ~ 0
+PIN29B
+Text Label 4400 10200 2    50   ~ 0
+PIN29A
+Wire Wire Line
+	4000 11000 4400 11000
+Wire Wire Line
+	4000 10600 4400 10600
+Wire Wire Line
+	4000 10200 4400 10200
+Text Label 3250 10200 0    50   ~ 0
+PIN29
+Connection ~ 3500 10200
+Wire Wire Line
+	3500 10200 3250 10200
+Connection ~ 3500 10600
+Wire Wire Line
+	3500 11000 3500 10600
+Wire Wire Line
+	3700 11000 3500 11000
+Wire Wire Line
+	3500 10200 3700 10200
+Wire Wire Line
+	3500 10600 3500 10200
+Wire Wire Line
+	3700 10600 3500 10600
+Text Label 4400 8700 2    50   ~ 0
+PIN27C
+Text Label 4400 8300 2    50   ~ 0
+PIN27B
+Text Label 4400 7900 2    50   ~ 0
+PIN27A
+Wire Wire Line
+	4000 8700 4400 8700
+Wire Wire Line
+	4000 8300 4400 8300
+Wire Wire Line
+	4000 7900 4400 7900
+Text Label 3250 7900 0    50   ~ 0
+PIN27
+Connection ~ 3500 7900
+Wire Wire Line
+	3500 7900 3250 7900
+Connection ~ 3500 8300
+Wire Wire Line
+	3500 8700 3500 8300
+Wire Wire Line
+	3500 7900 3700 7900
+Wire Wire Line
+	3500 8300 3500 7900
+Wire Wire Line
+	3700 8300 3500 8300
+Wire Wire Line
+	6700 9050 7100 9050
+Wire Wire Line
+	8050 7900 8450 7900
+Wire Wire Line
+	2700 6250 3150 6250
+Wire Wire Line
+	2700 6350 3150 6350
+Wire Wire Line
+	2700 6450 3150 6450
+Wire Wire Line
+	2700 6550 3150 6550
+Wire Wire Line
+	2700 6650 3150 6650
+Wire Wire Line
+	2700 6750 3150 6750
+Text Label 3150 6250 2    50   ~ 0
+RELAYF
+Text Label 3150 6350 2    50   ~ 0
+RELAYE
+Text Label 3150 6450 2    50   ~ 0
+RELAYD
+Text Label 3150 6550 2    50   ~ 0
+RELAYC
+Text Label 3150 6650 2    50   ~ 0
+RELAYB
+Text Label 3150 6750 2    50   ~ 0
+RELAYA
+Wire Wire Line
+	5000 1250 5450 1250
+Wire Wire Line
+	2700 1450 3150 1450
+Wire Wire Line
+	2700 5850 3150 5850
+Wire Wire Line
+	5000 4300 5450 4300
+Wire Wire Line
+	2700 4300 3150 4300
+Wire Wire Line
+	2700 3500 3150 3500
+Wire Wire Line
+	5000 1550 5450 1550
+Text Label 5450 1250 2    50   ~ 0
+RELAY36C
+Text Label 3150 1450 2    50   ~ 0
+RELAY34C
+Text Label 3150 5850 2    50   ~ 0
+RELAY33C
+Text Label 5450 4300 2    50   ~ 0
+RELAY32C
+Text Label 3150 4300 2    50   ~ 0
+RELAY31C
+Text Label 3150 3500 2    50   ~ 0
+RELAY30C
+Text Label 5450 1550 2    50   ~ 0
+RELAY29C
+Wire Wire Line
+	5000 1150 5450 1150
+Wire Wire Line
+	2700 1350 3150 1350
+Wire Wire Line
+	2700 5750 3150 5750
+Wire Wire Line
+	5000 4200 5450 4200
+Wire Wire Line
+	2700 4200 3150 4200
+Wire Wire Line
+	2700 3600 3150 3600
+Wire Wire Line
+	5000 1450 5450 1450
+Wire Wire Line
+	2700 1750 3150 1750
+Wire Wire Line
+	5000 1650 5450 1650
+Wire Wire Line
+	5000 2050 5450 2050
+Wire Wire Line
+	2700 3300 3150 3300
+Wire Wire Line
+	2700 4500 3150 4500
+Wire Wire Line
+	5000 4500 5450 4500
+Wire Wire Line
+	2700 1550 3150 1550
+Wire Wire Line
+	2700 2350 3150 2350
+Text Label 5450 1150 2    50   ~ 0
+RELAY36B
+Text Label 3150 1350 2    50   ~ 0
+RELAY34B
+Text Label 3150 5750 2    50   ~ 0
+RELAY33B
+Text Label 5450 4200 2    50   ~ 0
+RELAY32B
+Text Label 3150 4200 2    50   ~ 0
+RELAY31B
+Text Label 3150 3600 2    50   ~ 0
+RELAY30B
+Text Label 5450 1450 2    50   ~ 0
+RELAY29B
+Text Label 3150 2350 2    50   ~ 0
+RELAY28B
+Text Label 3150 1550 2    50   ~ 0
+RELAY27B
+Text Label 5450 4500 2    50   ~ 0
+RELAY26B
+Text Label 3150 4500 2    50   ~ 0
+RELAY25B
+Text Label 3150 3300 2    50   ~ 0
+RELAY24B
+Text Label 5450 2050 2    50   ~ 0
+RELAY23B
+Text Label 5450 1650 2    50   ~ 0
+RELAY2B
+Text Label 3150 1750 2    50   ~ 0
+RELAY21B
+Wire Wire Line
+	2700 3200 3150 3200
+Wire Wire Line
+	2700 4400 3150 4400
+Wire Wire Line
+	5000 4600 5450 4600
+Wire Wire Line
+	2700 1650 3150 1650
+Wire Wire Line
+	2700 2450 3150 2450
+Text Label 3150 2450 2    50   ~ 0
+RELAY28C
+Text Label 3150 1650 2    50   ~ 0
+RELAY27C
+Text Label 5450 4600 2    50   ~ 0
+RELAY26C
+Text Label 3150 4400 2    50   ~ 0
+RELAY25C
+Text Label 3150 3200 2    50   ~ 0
+RELAY24C
+Wire Wire Line
+	5000 1050 5450 1050
+Wire Wire Line
+	2700 1250 3150 1250
+Wire Wire Line
+	2700 5650 3150 5650
+Wire Wire Line
+	5000 4100 5450 4100
+Wire Wire Line
+	2700 4100 3150 4100
+Wire Wire Line
+	2700 3700 3150 3700
+Wire Wire Line
+	5000 1350 5450 1350
+Wire Wire Line
+	2700 1050 3150 1050
+Wire Wire Line
+	5000 1750 5450 1750
+Wire Wire Line
+	5000 1950 5450 1950
+Wire Wire Line
+	2700 3400 3150 3400
+Wire Wire Line
+	2700 4600 3150 4600
+Wire Wire Line
+	5000 4400 5450 4400
+Wire Wire Line
+	2700 1150 3150 1150
+Wire Wire Line
+	2700 2250 3150 2250
+Text Label 5450 1050 2    50   ~ 0
+RELAY36A
+Text Label 3150 1250 2    50   ~ 0
+RELAY34A
+Text Label 3150 5650 2    50   ~ 0
+RELAY33A
+Text Label 5450 4100 2    50   ~ 0
+RELAY32A
+Text Label 3150 4100 2    50   ~ 0
+RELAY31A
+Text Label 3150 3700 2    50   ~ 0
+RELAY30A
+Text Label 5450 1350 2    50   ~ 0
+RELAY29A
+Text Label 3150 2250 2    50   ~ 0
+RELAY28A
+Text Label 3150 1150 2    50   ~ 0
+RELAY27A
+Text Label 5450 4400 2    50   ~ 0
+RELAY26A
+Text Label 3150 4600 2    50   ~ 0
+RELAY25A
+Text Label 3150 3400 2    50   ~ 0
+RELAY24A
+Text Label 5450 1950 2    50   ~ 0
+RELAY23A
+Text Label 5450 1750 2    50   ~ 0
+RELAY2A
+Text Label 3150 1050 2    50   ~ 0
+RELAY21A
+Wire Wire Line
+	12400 4950 12400 5300
+Wire Wire Line
+	11700 4950 11700 5300
+Wire Wire Line
+	11000 4950 11000 5300
+Wire Wire Line
+	10300 4950 10300 5300
+Wire Wire Line
+	9600 4950 9600 5300
+Wire Wire Line
+	8900 4950 8900 5300
+Wire Wire Line
+	6100 1100 6100 1500
+Wire Wire Line
+	6800 1100 6800 1500
+Wire Wire Line
+	6100 750  6800 750 
+Wire Wire Line
+	8200 1100 8200 1500
+Wire Wire Line
+	8900 1100 8900 1500
+Wire Wire Line
+	9600 1100 9600 1500
+Wire Wire Line
+	10300 1100 10300 1500
+Wire Wire Line
+	11000 1100 11000 1500
+Connection ~ 6800 750 
+Wire Wire Line
+	6800 750  7500 750 
+Wire Wire Line
+	7500 1100 7500 1500
+Text Label 7500 1500 1    50   ~ 0
+RELAY23A
+Connection ~ 7500 750 
+Wire Wire Line
+	7500 750  8200 750 
+Connection ~ 8200 750 
+Wire Wire Line
+	8200 750  8900 750 
+Connection ~ 8900 750 
+Wire Wire Line
+	8900 750  9600 750 
+Connection ~ 9600 750 
+Wire Wire Line
+	9600 750  10300 750 
+Connection ~ 10300 750 
+Wire Wire Line
+	10300 750  11000 750 
+Connection ~ 11000 750 
+Wire Wire Line
+	11000 750  11700 750 
+Wire Wire Line
+	11700 1100 11700 1500
+Connection ~ 11700 750 
+Wire Wire Line
+	11700 750  12400 750 
+Wire Wire Line
+	12400 1100 12400 1500
+Connection ~ 12400 750 
+Wire Wire Line
+	12400 750  13100 750 
+Wire Wire Line
+	13100 1100 13100 1500
+Connection ~ 13100 750 
+Wire Wire Line
+	13100 750  13800 750 
+Wire Wire Line
+	13800 1100 13800 1500
+Connection ~ 13800 750 
+Wire Wire Line
+	13800 750  14500 750 
+Wire Wire Line
+	14500 1100 14500 1500
+Connection ~ 14500 750 
+Wire Wire Line
+	14500 750  15200 750 
+Wire Wire Line
+	15200 1100 15200 1500
+Wire Wire Line
+	6100 2050 6100 2450
+Connection ~ 6100 1700
+Wire Wire Line
+	6800 2050 6800 2450
+Wire Wire Line
+	6100 1700 6800 1700
+Connection ~ 6800 1700
+Wire Wire Line
+	6800 1700 7500 1700
+Wire Wire Line
+	10300 2050 10300 2450
+Wire Wire Line
+	11000 2050 11000 2450
+Wire Wire Line
+	11700 2050 11700 2450
+Wire Wire Line
+	12400 2050 12400 2450
+Wire Wire Line
+	13100 2050 13100 2450
+Wire Wire Line
+	13800 2050 13800 2450
+Wire Wire Line
+	15200 2050 15200 2450
+Wire Wire Line
+	14500 2050 14500 2450
+Connection ~ 7500 1700
+Wire Wire Line
+	7500 1700 8200 1700
+Connection ~ 8200 1700
+Wire Wire Line
+	8200 1700 8900 1700
+Connection ~ 8900 1700
+Wire Wire Line
+	8900 1700 9600 1700
+Connection ~ 9600 1700
+Wire Wire Line
+	9600 1700 10300 1700
+Connection ~ 10300 1700
+Wire Wire Line
+	10300 1700 11000 1700
+Connection ~ 11000 1700
+Wire Wire Line
+	11000 1700 11700 1700
+Connection ~ 11700 1700
+Wire Wire Line
+	11700 1700 12400 1700
+Wire Wire Line
+	5950 2650 6100 2650
+Connection ~ 12400 1700
+Wire Wire Line
+	12400 1700 13100 1700
+Wire Wire Line
+	6100 3000 6100 3400
+Wire Wire Line
+	6800 3000 6800 3400
+Wire Wire Line
+	7500 3000 7500 3400
+Wire Wire Line
+	8200 3000 8200 3400
+Wire Wire Line
+	8900 3000 8900 3400
+Wire Wire Line
+	9600 3000 9600 3400
+Wire Wire Line
+	11000 3000 11000 3400
+Wire Wire Line
+	10300 3000 10300 3400
+Wire Wire Line
+	14500 3000 14500 3400
+Wire Wire Line
+	10300 3950 10300 4350
+Wire Wire Line
+	15200 3000 15200 3400
+Wire Wire Line
+	6800 3950 6800 4350
+Wire Wire Line
+	6100 3950 6100 4350
+Wire Wire Line
+	7500 3950 7500 4350
+Wire Wire Line
+	8200 3950 8200 4350
+Wire Wire Line
+	8900 3950 8900 4350
+Wire Wire Line
+	9600 3950 9600 4350
+Wire Wire Line
+	11000 3950 11000 4350
+Wire Wire Line
+	11700 3950 11700 4350
+Wire Wire Line
+	13100 3950 13100 4350
+Wire Wire Line
+	12400 3950 12400 4350
+Wire Wire Line
+	13800 3950 13800 4350
+Wire Wire Line
+	14500 3950 14500 4350
+Connection ~ 13100 1700
+Wire Wire Line
+	13100 1700 13800 1700
+Connection ~ 13800 1700
+Wire Wire Line
+	13800 1700 14500 1700
+Connection ~ 14500 1700
+Wire Wire Line
+	14500 1700 15200 1700
+Connection ~ 6100 2650
+Wire Wire Line
+	6100 2650 6800 2650
+Connection ~ 6800 2650
+Wire Wire Line
+	6800 2650 7500 2650
+Connection ~ 7500 2650
+Wire Wire Line
+	7500 2650 8200 2650
+Wire Wire Line
+	5950 3600 6100 3600
+Connection ~ 8200 2650
+Wire Wire Line
+	8200 2650 8900 2650
+Connection ~ 8900 2650
+Wire Wire Line
+	8900 2650 9600 2650
+Connection ~ 9600 2650
+Wire Wire Line
+	9600 2650 10300 2650
+Connection ~ 10300 2650
+Wire Wire Line
+	10300 2650 11000 2650
+Connection ~ 11000 2650
+Wire Wire Line
+	11000 2650 11700 2650
+Connection ~ 11700 2650
+Wire Wire Line
+	11700 2650 12400 2650
+Connection ~ 12400 2650
+Wire Wire Line
+	12400 2650 13100 2650
+Connection ~ 13100 2650
+Wire Wire Line
+	13100 2650 13800 2650
+Connection ~ 13800 2650
+Wire Wire Line
+	13800 2650 14500 2650
+Connection ~ 14500 2650
+Wire Wire Line
+	14500 2650 15200 2650
+Connection ~ 6100 3600
+Wire Wire Line
+	6100 3600 6800 3600
+Connection ~ 6800 3600
+Wire Wire Line
+	6800 3600 7500 3600
+Connection ~ 7500 3600
+Wire Wire Line
+	7500 3600 8200 3600
+Connection ~ 8200 3600
+Wire Wire Line
+	8200 3600 8900 3600
+Connection ~ 8900 3600
+Wire Wire Line
+	8900 3600 9600 3600
+Connection ~ 9600 3600
+Wire Wire Line
+	9600 3600 10300 3600
+Connection ~ 10300 3600
+Wire Wire Line
+	10300 3600 11000 3600
+Connection ~ 11000 3600
+Wire Wire Line
+	11000 3600 11700 3600
+Connection ~ 11700 3600
+Wire Wire Line
+	11700 3600 12400 3600
+Connection ~ 12400 3600
+Wire Wire Line
+	12400 3600 13100 3600
+Connection ~ 13100 3600
+Wire Wire Line
+	13100 3600 13800 3600
+Wire Wire Line
+	5950 750  6100 750 
+Wire Wire Line
+	5950 1700 6100 1700
+$Comp
+L ETH6C20MUX:MCZ33996 U201
+U 1 1 5D9B5BED
+P 2250 1700
+F 0 "U201" H 2250 2815 50  0000 C CNN
+F 1 "MCZ33996" H 2250 2724 50  0000 C CNN
+F 2 "ETH6C20MUX:HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias" H 3600 2600 50  0001 C CNN
+F 3 "" H 3600 2600 50  0001 C CNN
+	1    2250 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0203
+U 1 1 5D9C15EC
+P 2700 850
+F 0 "#PWR0203" H 2700 700 50  0001 C CNN
+F 1 "+5V" V 2700 1000 50  0000 L CNN
+F 2 "" H 2700 850 50  0001 C CNN
+F 3 "" H 2700 850 50  0001 C CNN
+	1    2700 850 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0202
+U 1 1 5D9C48DD
+P 1800 850
+F 0 "#PWR0202" H 1800 700 50  0001 C CNN
+F 1 "+3.3V" V 1800 1000 50  0000 L CNN
+F 2 "" H 1800 850 50  0001 C CNN
+F 3 "" H 1800 850 50  0001 C CNN
+	1    1800 850 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:MCZ33996 U203
+U 1 1 5DA64453
+P 2250 3850
+F 0 "U203" H 2250 4965 50  0000 C CNN
+F 1 "MCZ33996" H 2250 4874 50  0000 C CNN
+F 2 "ETH6C20MUX:HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias" H 3600 4750 50  0001 C CNN
+F 3 "" H 3600 4750 50  0001 C CNN
+	1    2250 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0211
+U 1 1 5DA64459
+P 2700 3000
+F 0 "#PWR0211" H 2700 2850 50  0001 C CNN
+F 1 "+5V" V 2700 3150 50  0000 L CNN
+F 2 "" H 2700 3000 50  0001 C CNN
+F 3 "" H 2700 3000 50  0001 C CNN
+	1    2700 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0210
+U 1 1 5DA6445F
+P 1800 3000
+F 0 "#PWR0210" H 1800 2850 50  0001 C CNN
+F 1 "+3.3V" V 1800 3150 50  0000 L CNN
+F 2 "" H 1800 3000 50  0001 C CNN
+F 3 "" H 1800 3000 50  0001 C CNN
+	1    1800 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:MCZ33996 U202
+U 1 1 5DC0A445
+P 4550 1700
+F 0 "U202" H 4550 2815 50  0000 C CNN
+F 1 "MCZ33996" H 4550 2724 50  0000 C CNN
+F 2 "ETH6C20MUX:HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias" H 5900 2600 50  0001 C CNN
+F 3 "" H 5900 2600 50  0001 C CNN
+	1    4550 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0205
+U 1 1 5DC0A44B
+P 5000 850
+F 0 "#PWR0205" H 5000 700 50  0001 C CNN
+F 1 "+5V" V 5000 1000 50  0000 L CNN
+F 2 "" H 5000 850 50  0001 C CNN
+F 3 "" H 5000 850 50  0001 C CNN
+	1    5000 850 
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0204
+U 1 1 5DC0A451
+P 4100 850
+F 0 "#PWR0204" H 4100 700 50  0001 C CNN
+F 1 "+3.3V" V 4100 1000 50  0000 L CNN
+F 2 "" H 4100 850 50  0001 C CNN
+F 3 "" H 4100 850 50  0001 C CNN
+	1    4100 850 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:MCZ33996 U204
+U 1 1 5DDF662D
+P 4550 3850
+F 0 "U204" H 4550 4965 50  0000 C CNN
+F 1 "MCZ33996" H 4550 4874 50  0000 C CNN
+F 2 "ETH6C20MUX:HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias" H 5900 4750 50  0001 C CNN
+F 3 "" H 5900 4750 50  0001 C CNN
+	1    4550 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0213
+U 1 1 5DDF6633
+P 5000 3000
+F 0 "#PWR0213" H 5000 2850 50  0001 C CNN
+F 1 "+5V" V 5000 3150 50  0000 L CNN
+F 2 "" H 5000 3000 50  0001 C CNN
+F 3 "" H 5000 3000 50  0001 C CNN
+	1    5000 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0212
+U 1 1 5DDF6639
+P 4100 3000
+F 0 "#PWR0212" H 4100 2850 50  0001 C CNN
+F 1 "+3.3V" V 4100 3150 50  0000 L CNN
+F 2 "" H 4100 3000 50  0001 C CNN
+F 3 "" H 4100 3000 50  0001 C CNN
+	1    4100 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1800 1050 1250 1050
+Text Label 1250 1050 0    50   ~ 0
+RELAY2_SCLK
+Text Label 1250 1250 0    50   ~ 0
+RELAY2_SI
+Wire Wire Line
+	1800 1350 1250 1350
+Text Label 1250 1350 0    50   ~ 0
+RELAY2_SO
+Wire Wire Line
+	1800 1450 1250 1450
+Text Label 1250 1450 0    50   ~ 0
+RELAY2_~RST
+NoConn ~ 1800 1550
+Text HLabel 1750 1150 0    50   Input ~ 0
+RELAY2_~CS0
+Wire Wire Line
+	1800 3200 1250 3200
+Text Label 1250 3200 0    50   ~ 0
+RELAY2_SCLK
+Text Label 1250 3400 0    50   ~ 0
+RELAY2_SI
+Wire Wire Line
+	1800 3500 1250 3500
+Text Label 1250 3500 0    50   ~ 0
+RELAY2_SO
+Wire Wire Line
+	1800 3600 1250 3600
+Text Label 1250 3600 0    50   ~ 0
+RELAY2_~RST
+Text HLabel 4050 1150 0    50   Input ~ 0
+RELAY2_~CS1
+Wire Wire Line
+	4100 1050 3550 1050
+Text Label 3550 1050 0    50   ~ 0
+RELAY2_SCLK
+Text Label 3550 1250 0    50   ~ 0
+RELAY2_SI
+Wire Wire Line
+	4100 1350 3550 1350
+Text Label 3550 1350 0    50   ~ 0
+RELAY2_SO
+Wire Wire Line
+	4100 1450 3550 1450
+Text Label 3550 1450 0    50   ~ 0
+RELAY2_~RST
+Text HLabel 1750 3300 0    50   Input ~ 0
+RELAY2_~CS2
+Wire Wire Line
+	4100 3200 3550 3200
+Text Label 3550 3200 0    50   ~ 0
+RELAY2_SCLK
+Text Label 3550 3400 0    50   ~ 0
+RELAY2_SI
+Wire Wire Line
+	4100 3500 3550 3500
+Text Label 3550 3500 0    50   ~ 0
+RELAY2_SO
+Wire Wire Line
+	4100 3600 3550 3600
+Text Label 3550 3600 0    50   ~ 0
+RELAY2_~RST
+Text HLabel 4050 3300 0    50   Input ~ 0
+RELAY2_~CS3
+NoConn ~ 4100 1550
+NoConn ~ 1800 3700
+NoConn ~ 4100 3700
+$Comp
+L power:GND #PWR0216
+U 1 1 5E8323BD
+P 1750 4800
+F 0 "#PWR0216" H 1750 4550 50  0001 C CNN
+F 1 "GND" H 1755 4627 50  0000 C CNN
+F 2 "" H 1750 4800 50  0001 C CNN
+F 3 "" H 1750 4800 50  0001 C CNN
+	1    1750 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 4700 1750 4700
+Wire Wire Line
+	1750 4700 1750 4600
+Wire Wire Line
+	1750 4000 1800 4000
+Wire Wire Line
+	1800 4100 1750 4100
+Connection ~ 1750 4100
+Wire Wire Line
+	1750 4100 1750 4000
+Wire Wire Line
+	1800 4200 1750 4200
+Connection ~ 1750 4200
+Wire Wire Line
+	1750 4200 1750 4100
+Wire Wire Line
+	1800 4300 1750 4300
+Connection ~ 1750 4300
+Wire Wire Line
+	1750 4300 1750 4200
+Wire Wire Line
+	1800 4400 1750 4400
+Connection ~ 1750 4400
+Wire Wire Line
+	1750 4400 1750 4300
+Wire Wire Line
+	1800 4500 1750 4500
+Connection ~ 1750 4500
+Wire Wire Line
+	1750 4500 1750 4400
+Wire Wire Line
+	1800 4600 1750 4600
+Connection ~ 1750 4600
+Wire Wire Line
+	1750 4600 1750 4500
+Wire Wire Line
+	1750 4700 1750 4800
+Connection ~ 1750 4700
+$Comp
+L power:GND #PWR0217
+U 1 1 5EA84468
+P 4050 4800
+F 0 "#PWR0217" H 4050 4550 50  0001 C CNN
+F 1 "GND" H 4055 4627 50  0000 C CNN
+F 2 "" H 4050 4800 50  0001 C CNN
+F 3 "" H 4050 4800 50  0001 C CNN
+	1    4050 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 4700 4050 4700
+Wire Wire Line
+	4050 4700 4050 4600
+Wire Wire Line
+	4050 4000 4100 4000
+Wire Wire Line
+	4100 4100 4050 4100
+Connection ~ 4050 4100
+Wire Wire Line
+	4050 4100 4050 4000
+Wire Wire Line
+	4100 4200 4050 4200
+Connection ~ 4050 4200
+Wire Wire Line
+	4050 4200 4050 4100
+Wire Wire Line
+	4100 4300 4050 4300
+Connection ~ 4050 4300
+Wire Wire Line
+	4050 4300 4050 4200
+Wire Wire Line
+	4100 4400 4050 4400
+Connection ~ 4050 4400
+Wire Wire Line
+	4050 4400 4050 4300
+Wire Wire Line
+	4100 4500 4050 4500
+Connection ~ 4050 4500
+Wire Wire Line
+	4050 4500 4050 4400
+Wire Wire Line
+	4100 4600 4050 4600
+Connection ~ 4050 4600
+Wire Wire Line
+	4050 4600 4050 4500
+Wire Wire Line
+	4050 4700 4050 4800
+Connection ~ 4050 4700
+$Comp
+L power:GND #PWR0208
+U 1 1 5EAD9FCF
+P 4050 2650
+F 0 "#PWR0208" H 4050 2400 50  0001 C CNN
+F 1 "GND" H 4055 2477 50  0000 C CNN
+F 2 "" H 4050 2650 50  0001 C CNN
+F 3 "" H 4050 2650 50  0001 C CNN
+	1    4050 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 2550 4050 2550
+Wire Wire Line
+	4050 2550 4050 2450
+Wire Wire Line
+	4050 1850 4100 1850
+Wire Wire Line
+	4100 1950 4050 1950
+Connection ~ 4050 1950
+Wire Wire Line
+	4050 1950 4050 1850
+Wire Wire Line
+	4100 2050 4050 2050
+Connection ~ 4050 2050
+Wire Wire Line
+	4050 2050 4050 1950
+Wire Wire Line
+	4100 2150 4050 2150
+Connection ~ 4050 2150
+Wire Wire Line
+	4050 2150 4050 2050
+Wire Wire Line
+	4100 2250 4050 2250
+Connection ~ 4050 2250
+Wire Wire Line
+	4050 2250 4050 2150
+Wire Wire Line
+	4100 2350 4050 2350
+Connection ~ 4050 2350
+Wire Wire Line
+	4050 2350 4050 2250
+Wire Wire Line
+	4100 2450 4050 2450
+Connection ~ 4050 2450
+Wire Wire Line
+	4050 2450 4050 2350
+Wire Wire Line
+	4050 2550 4050 2650
+Connection ~ 4050 2550
+$Comp
+L power:GND #PWR0207
+U 1 1 5EB32A1D
+P 1750 2650
+F 0 "#PWR0207" H 1750 2400 50  0001 C CNN
+F 1 "GND" H 1755 2477 50  0000 C CNN
+F 2 "" H 1750 2650 50  0001 C CNN
+F 3 "" H 1750 2650 50  0001 C CNN
+	1    1750 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 2550 1750 2550
+Wire Wire Line
+	1750 2550 1750 2450
+Wire Wire Line
+	1750 1850 1800 1850
+Wire Wire Line
+	1800 1950 1750 1950
+Connection ~ 1750 1950
+Wire Wire Line
+	1750 1950 1750 1850
+Wire Wire Line
+	1800 2050 1750 2050
+Connection ~ 1750 2050
+Wire Wire Line
+	1750 2050 1750 1950
+Wire Wire Line
+	1800 2150 1750 2150
+Connection ~ 1750 2150
+Wire Wire Line
+	1750 2150 1750 2050
+Wire Wire Line
+	1800 2250 1750 2250
+Connection ~ 1750 2250
+Wire Wire Line
+	1750 2250 1750 2150
+Wire Wire Line
+	1800 2350 1750 2350
+Connection ~ 1750 2350
+Wire Wire Line
+	1750 2350 1750 2250
+Wire Wire Line
+	1800 2450 1750 2450
+Connection ~ 1750 2450
+Wire Wire Line
+	1750 2450 1750 2350
+Wire Wire Line
+	1750 2550 1750 2650
+Connection ~ 1750 2550
+Text HLabel 1250 1050 0    50   Input ~ 0
+RELAY2_SCLK
+Wire Wire Line
+	1250 1250 1800 1250
+Wire Wire Line
+	1800 1750 1750 1750
+Wire Wire Line
+	1750 1750 1750 1850
+Connection ~ 1750 1850
+Wire Wire Line
+	1250 3400 1800 3400
+Wire Wire Line
+	1800 3900 1750 3900
+Wire Wire Line
+	1750 3900 1750 4000
+Connection ~ 1750 4000
+Wire Wire Line
+	4050 4000 4050 3900
+Wire Wire Line
+	4050 3900 4100 3900
+Connection ~ 4050 4000
+Wire Wire Line
+	3550 3400 4100 3400
+Wire Wire Line
+	3550 1250 4100 1250
+Wire Wire Line
+	4100 1750 4050 1750
+Wire Wire Line
+	4050 1750 4050 1850
+Connection ~ 4050 1850
+Text HLabel 1250 1250 0    50   Input ~ 0
+RELAY2_SI
+Text HLabel 1250 1350 0    50   Output ~ 0
+RELAY2_SO
+Text HLabel 1250 1450 0    50   Input ~ 0
+RELAY2_~RST
+Wire Wire Line
+	1750 1150 1800 1150
+Wire Wire Line
+	1750 3300 1800 3300
+Wire Wire Line
+	4050 1150 4100 1150
+Wire Wire Line
+	4050 3300 4100 3300
+Wire Wire Line
+	13800 3600 14500 3600
+Connection ~ 13800 3600
+Wire Wire Line
+	15200 3650 15200 3600
+Wire Wire Line
+	14500 3650 14500 3600
+Connection ~ 14500 3600
+Wire Wire Line
+	14500 3600 15200 3600
+$Comp
+L power:+5V #PWR0215
+U 1 1 5EC94504
+P 5950 4600
+F 0 "#PWR0215" H 5950 4450 50  0001 C CNN
+F 1 "+5V" V 5965 4728 50  0000 L CNN
+F 2 "" H 5950 4600 50  0001 C CNN
+F 3 "" H 5950 4600 50  0001 C CNN
+	1    5950 4600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5950 4600 6100 4600
+Wire Wire Line
+	6100 4650 6100 4600
+Wire Wire Line
+	6800 4650 6800 4600
+Wire Wire Line
+	6800 4600 6100 4600
+Connection ~ 6100 4600
+Wire Wire Line
+	7500 4650 7500 4600
+Wire Wire Line
+	7500 4600 6800 4600
+Connection ~ 6800 4600
+Wire Wire Line
+	8200 4650 8200 4600
+Wire Wire Line
+	8200 4600 7500 4600
+Connection ~ 7500 4600
+Wire Wire Line
+	8200 4600 8900 4600
+Wire Wire Line
+	12400 4600 12400 4650
+Connection ~ 8200 4600
+Wire Wire Line
+	11700 4650 11700 4600
+Connection ~ 11700 4600
+Wire Wire Line
+	11700 4600 12400 4600
+Wire Wire Line
+	11000 4650 11000 4600
+Connection ~ 11000 4600
+Wire Wire Line
+	11000 4600 11700 4600
+Wire Wire Line
+	10300 4650 10300 4600
+Connection ~ 10300 4600
+Wire Wire Line
+	10300 4600 11000 4600
+Wire Wire Line
+	9600 4650 9600 4600
+Connection ~ 9600 4600
+Wire Wire Line
+	9600 4600 10300 4600
+Wire Wire Line
+	8900 4650 8900 4600
+Connection ~ 8900 4600
+Wire Wire Line
+	8900 4600 9600 4600
+Text Label 6100 5350 1    50   ~ 0
+RELAY37C
+Wire Wire Line
+	6100 4950 6100 5350
+Wire Wire Line
+	15200 3950 15200 4350
+Text Label 15200 4350 1    50   ~ 0
+RELAY36C
+Text Label 7500 2450 1    50   ~ 0
+RELAY37A
+Wire Wire Line
+	7500 2050 7500 2450
+Text Label 8200 2450 1    50   ~ 0
+RELAY38A
+Wire Wire Line
+	8200 2050 8200 2450
+Text Label 8900 2450 1    50   ~ 0
+RELAY39A
+Wire Wire Line
+	8900 2050 8900 2450
+Text Label 9600 2450 1    50   ~ 0
+RELAY40A
+Wire Wire Line
+	9600 2050 9600 2450
+Text Label 11700 3400 1    50   ~ 0
+RELAY37B
+Wire Wire Line
+	11700 3000 11700 3400
+Text Label 12400 3400 1    50   ~ 0
+RELAY38B
+Wire Wire Line
+	12400 3000 12400 3400
+Text Label 13100 3400 1    50   ~ 0
+RELAY39B
+Wire Wire Line
+	13100 3000 13100 3400
+Text Label 13800 3400 1    50   ~ 0
+RELAY40B
+Wire Wire Line
+	13800 3000 13800 3400
+Text Label 6800 5350 1    50   ~ 0
+RELAY38C
+Wire Wire Line
+	6800 4950 6800 5350
+Text Label 7500 5350 1    50   ~ 0
+RELAY39C
+Wire Wire Line
+	7500 4950 7500 5350
+Text Label 8200 5350 1    50   ~ 0
+RELAY40C
+Wire Wire Line
+	8200 4950 8200 5350
+Text Label 3150 1850 2    50   ~ 0
+RELAY21C
+Text Label 5450 1850 2    50   ~ 0
+RELAY22C
+Text Label 5450 2150 2    50   ~ 0
+RELAY23C
+Wire Wire Line
+	5000 2150 5450 2150
+Wire Wire Line
+	5000 1850 5450 1850
+Wire Wire Line
+	2700 1850 3150 1850
+NoConn ~ 2700 2550
+NoConn ~ 5000 2550
+NoConn ~ 2700 4700
+Wire Wire Line
+	5000 2250 5450 2250
+Text Label 5450 2250 2    50   ~ 0
+RELAY37C
+Wire Wire Line
+	5000 2350 5450 2350
+Text Label 5450 2350 2    50   ~ 0
+RELAY37B
+Wire Wire Line
+	5000 2450 5450 2450
+Text Label 5450 2450 2    50   ~ 0
+RELAY37A
+Wire Wire Line
+	2700 4000 3150 4000
+Text Label 3150 4000 2    50   ~ 0
+RELAY38C
+Wire Wire Line
+	2700 3900 3150 3900
+Text Label 3150 3900 2    50   ~ 0
+RELAY38B
+Wire Wire Line
+	2700 3800 3150 3800
+Text Label 3150 3800 2    50   ~ 0
+RELAY38A
+Wire Wire Line
+	5000 3400 5450 3400
+Text Label 5450 3400 2    50   ~ 0
+RELAY39C
+Wire Wire Line
+	5000 3300 5450 3300
+Text Label 5450 3300 2    50   ~ 0
+RELAY39B
+Wire Wire Line
+	5000 3200 5450 3200
+Text Label 5450 3200 2    50   ~ 0
+RELAY39A
+Wire Wire Line
+	2700 5550 3150 5550
+Text Label 3150 5550 2    50   ~ 0
+RELAY40C
+Wire Wire Line
+	2700 5450 3150 5450
+Text Label 3150 5450 2    50   ~ 0
+RELAY40B
+Wire Wire Line
+	2700 5350 3150 5350
+Text Label 3150 5350 2    50   ~ 0
+RELAY40A
+Wire Wire Line
+	7750 9450 7550 9450
+Wire Wire Line
+	7550 9450 7550 9050
+Wire Wire Line
+	7550 9050 7750 9050
+Wire Wire Line
+	7750 9850 7550 9850
+Wire Wire Line
+	7550 9850 7550 9450
+Connection ~ 7550 9450
+Wire Wire Line
+	7550 9050 7300 9050
+Connection ~ 7550 9050
+Text Label 7300 9050 0    50   ~ 0
+PIN37
+Wire Wire Line
+	8050 9850 8450 9850
+Text Label 8450 9050 2    50   ~ 0
+PIN37A
+Text Label 8450 9450 2    50   ~ 0
+PIN37B
+Text Label 8450 9850 2    50   ~ 0
+PIN37C
+Wire Wire Line
+	8050 9450 8450 9450
+Wire Wire Line
+	8050 9050 8450 9050
+Wire Wire Line
+	7750 10600 7550 10600
+Wire Wire Line
+	7550 10600 7550 10200
+Wire Wire Line
+	7550 10200 7750 10200
+Wire Wire Line
+	7550 11000 7550 10600
+Connection ~ 7550 10600
+Wire Wire Line
+	7550 10200 7300 10200
+Connection ~ 7550 10200
+Text Label 7300 10200 0    50   ~ 0
+PIN38
+Wire Wire Line
+	8050 11000 8450 11000
+Text Label 8450 10200 2    50   ~ 0
+PIN38A
+Text Label 8450 10600 2    50   ~ 0
+PIN38B
+Text Label 8450 11000 2    50   ~ 0
+PIN38C
+Wire Wire Line
+	8050 10600 8450 10600
+Wire Wire Line
+	8050 10200 8450 10200
+Wire Wire Line
+	9200 8300 9000 8300
+Wire Wire Line
+	9000 8300 9000 7900
+Wire Wire Line
+	9000 7900 9200 7900
+Wire Wire Line
+	9200 8700 9000 8700
+Wire Wire Line
+	9000 8700 9000 8300
+Connection ~ 9000 8300
+Wire Wire Line
+	9000 7900 8750 7900
+Connection ~ 9000 7900
+Text Label 8750 7900 0    50   ~ 0
+PIN39
+Wire Wire Line
+	9500 8700 9900 8700
+Text Label 9900 7900 2    50   ~ 0
+PIN39A
+Text Label 9900 8300 2    50   ~ 0
+PIN39B
+Text Label 9900 8700 2    50   ~ 0
+PIN39C
+Wire Wire Line
+	9500 8300 9900 8300
+Wire Wire Line
+	9500 7900 9900 7900
+Wire Wire Line
+	9200 9450 9000 9450
+Wire Wire Line
+	9000 9450 9000 9050
+Wire Wire Line
+	9000 9050 9200 9050
+Wire Wire Line
+	9200 9850 9000 9850
+Wire Wire Line
+	9000 9850 9000 9450
+Connection ~ 9000 9450
+Wire Wire Line
+	9000 9050 8750 9050
+Connection ~ 9000 9050
+Text Label 8750 9050 0    50   ~ 0
+PIN40
+Wire Wire Line
+	9500 9850 9900 9850
+Text Label 9900 9050 2    50   ~ 0
+PIN40A
+Text Label 9900 9450 2    50   ~ 0
+PIN40B
+Text Label 9900 9850 2    50   ~ 0
+PIN40C
+Wire Wire Line
+	9500 9450 9900 9450
+Wire Wire Line
+	9500 9050 9900 9050
+Text Label 11050 9350 0    50   ~ 0
+PIN37A
+Wire Wire Line
+	11050 9350 11450 9350
+Text Label 11050 9450 0    50   ~ 0
+PIN38A
+Wire Wire Line
+	11050 9450 11450 9450
+Text Label 11050 9550 0    50   ~ 0
+PIN39A
+Wire Wire Line
+	11050 9550 11450 9550
+Text Label 11050 9650 0    50   ~ 0
+PIN40A
+Wire Wire Line
+	11050 9650 11450 9650
+Wire Wire Line
+	11450 9250 11450 9350
+Connection ~ 11450 9250
+Connection ~ 11450 9650
+Wire Wire Line
+	11450 9650 11700 9650
+Connection ~ 11450 9350
+Wire Wire Line
+	11450 9350 11450 9450
+Connection ~ 11450 9450
+Wire Wire Line
+	11450 9450 11450 9550
+Connection ~ 11450 9550
+Wire Wire Line
+	11450 9550 11450 9650
+Text Label 12700 9350 0    50   ~ 0
+PIN37C
+Wire Wire Line
+	12700 9350 13100 9350
+Text Label 12700 9450 0    50   ~ 0
+PIN38C
+Wire Wire Line
+	12700 9450 13100 9450
+Text Label 12700 9550 0    50   ~ 0
+PIN39C
+Wire Wire Line
+	12700 9550 13100 9550
+Text Label 12700 9650 0    50   ~ 0
+PIN40C
+Wire Wire Line
+	12700 9650 13100 9650
+Wire Wire Line
+	13100 9250 13100 9350
+Connection ~ 13100 9250
+Connection ~ 13100 9650
+Wire Wire Line
+	13100 9650 13350 9650
+Connection ~ 13100 9350
+Wire Wire Line
+	13100 9350 13100 9450
+Connection ~ 13100 9450
+Wire Wire Line
+	13100 9450 13100 9550
+Connection ~ 13100 9550
+Wire Wire Line
+	13100 9550 13100 9650
+Text Label 14450 9350 0    50   ~ 0
+PIN37B
+Wire Wire Line
+	14450 9350 14850 9350
+Text Label 14450 9450 0    50   ~ 0
+PIN38B
+Wire Wire Line
+	14450 9450 14850 9450
+Text Label 14450 9550 0    50   ~ 0
+PIN39B
+Wire Wire Line
+	14450 9550 14850 9550
+Text Label 14450 9650 0    50   ~ 0
+PIN40B
+Wire Wire Line
+	14450 9650 14850 9650
+Wire Wire Line
+	14850 9250 14850 9350
+Connection ~ 14850 9250
+Connection ~ 14850 9650
+Wire Wire Line
+	14850 9650 15100 9650
+Connection ~ 14850 9350
+Wire Wire Line
+	14850 9350 14850 9450
+Connection ~ 14850 9450
+Wire Wire Line
+	14850 9450 14850 9550
+Connection ~ 14850 9550
+Wire Wire Line
+	14850 9550 14850 9650
+Wire Wire Line
+	12000 7750 12400 7750
+Text HLabel 12400 7750 2    50   BiDi ~ 0
+A
+$Comp
+L ETH6C20MUX:MCZ33996 U205
+U 1 1 625C0409
+P 2250 6000
+F 0 "U205" H 2250 7115 50  0000 C CNN
+F 1 "MCZ33996" H 2250 7024 50  0000 C CNN
+F 2 "ETH6C20MUX:HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias" H 3600 6900 50  0001 C CNN
+F 3 "" H 3600 6900 50  0001 C CNN
+	1    2250 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0219
+U 1 1 625C040F
+P 2700 5150
+F 0 "#PWR0219" H 2700 5000 50  0001 C CNN
+F 1 "+5V" V 2700 5300 50  0000 L CNN
+F 2 "" H 2700 5150 50  0001 C CNN
+F 3 "" H 2700 5150 50  0001 C CNN
+	1    2700 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0218
+U 1 1 625C0415
+P 1800 5150
+F 0 "#PWR0218" H 1800 5000 50  0001 C CNN
+F 1 "+3.3V" V 1800 5300 50  0000 L CNN
+F 2 "" H 1800 5150 50  0001 C CNN
+F 3 "" H 1800 5150 50  0001 C CNN
+	1    1800 5150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1800 5350 1250 5350
+Text Label 1250 5350 0    50   ~ 0
+RELAY2_SCLK
+Text Label 1250 5550 0    50   ~ 0
+RELAY2_SI
+Wire Wire Line
+	1800 5650 1250 5650
+Text Label 1250 5650 0    50   ~ 0
+RELAY2_SO
+Wire Wire Line
+	1800 5750 1250 5750
+Text Label 1250 5750 0    50   ~ 0
+RELAY2_~RST
+Text HLabel 1750 5450 0    50   Input ~ 0
+RELAY2_~CS4
+NoConn ~ 1800 5850
+$Comp
+L power:GND #PWR0224
+U 1 1 625C0424
+P 1750 6950
+F 0 "#PWR0224" H 1750 6700 50  0001 C CNN
+F 1 "GND" H 1755 6777 50  0000 C CNN
+F 2 "" H 1750 6950 50  0001 C CNN
+F 3 "" H 1750 6950 50  0001 C CNN
+	1    1750 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 6850 1750 6850
+Wire Wire Line
+	1750 6850 1750 6750
+Wire Wire Line
+	1750 6150 1800 6150
+Wire Wire Line
+	1800 6250 1750 6250
+Connection ~ 1750 6250
+Wire Wire Line
+	1750 6250 1750 6150
+Wire Wire Line
+	1800 6350 1750 6350
+Connection ~ 1750 6350
+Wire Wire Line
+	1750 6350 1750 6250
+Wire Wire Line
+	1800 6450 1750 6450
+Connection ~ 1750 6450
+Wire Wire Line
+	1750 6450 1750 6350
+Wire Wire Line
+	1800 6550 1750 6550
+Connection ~ 1750 6550
+Wire Wire Line
+	1750 6550 1750 6450
+Wire Wire Line
+	1800 6650 1750 6650
+Connection ~ 1750 6650
+Wire Wire Line
+	1750 6650 1750 6550
+Wire Wire Line
+	1800 6750 1750 6750
+Connection ~ 1750 6750
+Wire Wire Line
+	1750 6750 1750 6650
+Wire Wire Line
+	1750 6850 1750 6950
+Connection ~ 1750 6850
+Wire Wire Line
+	1250 5550 1800 5550
+Wire Wire Line
+	1800 6050 1750 6050
+Wire Wire Line
+	1750 6050 1750 6150
+Connection ~ 1750 6150
+Wire Wire Line
+	1750 5450 1800 5450
+NoConn ~ 2700 6850
+Wire Wire Line
+	3700 8700 3500 8700
+$Comp
+L Connector_Generic:Conn_02x10_Counter_Clockwise J201
+U 1 1 6554E0B3
+P 10900 10500
+F 0 "J201" H 10950 11117 50  0000 C CNN
+F 1 "5499141-4" H 10950 11026 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Horizontal_Lock" H 10900 10500 50  0001 C CNN
+F 3 "~" H 10900 10500 50  0001 C CNN
+	1    10900 10500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11200 10400 11450 10400
+Text Label 11450 10400 2    50   ~ 0
+PIN37
+Wire Wire Line
+	11200 10300 11450 10300
+Text Label 11450 10300 2    50   ~ 0
+PIN38
+Wire Wire Line
+	11200 10200 11450 10200
+Text Label 11450 10200 2    50   ~ 0
+PIN39
+Wire Wire Line
+	11200 10100 11450 10100
+Text Label 11450 10100 2    50   ~ 0
+PIN40
+Text Label 3150 1950 2    50   ~ 0
+RELAY35A
+Wire Wire Line
+	2700 1950 3150 1950
+Text Label 3150 2050 2    50   ~ 0
+RELAY35B
+Wire Wire Line
+	2700 2050 3150 2050
+Text Label 3150 2150 2    50   ~ 0
+RELAY35C
+Wire Wire Line
+	2700 2150 3150 2150
+NoConn ~ 5000 3500
+NoConn ~ 5000 3600
+NoConn ~ 5000 3700
+NoConn ~ 5000 3800
+NoConn ~ 5000 3900
+NoConn ~ 5000 4000
+NoConn ~ 2700 6150
+NoConn ~ 2700 6050
+NoConn ~ 2700 5950
+$Comp
+L Device:C C201
+U 1 1 5D929B09
+P 4300 6450
+F 0 "C201" H 4415 6496 50  0000 L CNN
+F 1 "100n" H 4415 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4338 6300 50  0001 C CNN
+F 3 "~" H 4300 6450 50  0001 C CNN
+	1    4300 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C202
+U 1 1 5D94B2B0
+P 4750 6450
+F 0 "C202" H 4865 6496 50  0000 L CNN
+F 1 "100n" H 4865 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4788 6300 50  0001 C CNN
+F 3 "~" H 4750 6450 50  0001 C CNN
+	1    4750 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C203
+U 1 1 5D94B9B5
+P 5200 6450
+F 0 "C203" H 5315 6496 50  0000 L CNN
+F 1 "100n" H 5315 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5238 6300 50  0001 C CNN
+F 3 "~" H 5200 6450 50  0001 C CNN
+	1    5200 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C204
+U 1 1 5D94E683
+P 5650 6450
+F 0 "C204" H 5765 6496 50  0000 L CNN
+F 1 "100n" H 5765 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5688 6300 50  0001 C CNN
+F 3 "~" H 5650 6450 50  0001 C CNN
+	1    5650 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C205
+U 1 1 5D94EF35
+P 6100 6450
+F 0 "C205" H 6215 6496 50  0000 L CNN
+F 1 "100n" H 6215 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6138 6300 50  0001 C CNN
+F 3 "~" H 6100 6450 50  0001 C CNN
+	1    6100 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C206
+U 1 1 5D9E96D0
+P 6550 6450
+F 0 "C206" H 6665 6496 50  0000 L CNN
+F 1 "100n" H 6665 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6588 6300 50  0001 C CNN
+F 3 "~" H 6550 6450 50  0001 C CNN
+	1    6550 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C207
+U 1 1 5D9E96D6
+P 7000 6450
+F 0 "C207" H 7115 6496 50  0000 L CNN
+F 1 "100n" H 7115 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7038 6300 50  0001 C CNN
+F 3 "~" H 7000 6450 50  0001 C CNN
+	1    7000 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C208
+U 1 1 5D9E96DC
+P 7450 6450
+F 0 "C208" H 7565 6496 50  0000 L CNN
+F 1 "100n" H 7565 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7488 6300 50  0001 C CNN
+F 3 "~" H 7450 6450 50  0001 C CNN
+	1    7450 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C209
+U 1 1 5D9E96E2
+P 7900 6450
+F 0 "C209" H 8015 6496 50  0000 L CNN
+F 1 "100n" H 8015 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7938 6300 50  0001 C CNN
+F 3 "~" H 7900 6450 50  0001 C CNN
+	1    7900 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C210
+U 1 1 5D9E96E8
+P 8350 6450
+F 0 "C210" H 8465 6496 50  0000 L CNN
+F 1 "100n" H 8465 6405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8388 6300 50  0001 C CNN
+F 3 "~" H 8350 6450 50  0001 C CNN
+	1    8350 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 6600 4300 6650
+Wire Wire Line
+	4300 6650 4750 6650
+Wire Wire Line
+	6100 6650 6100 6600
+Wire Wire Line
+	5650 6600 5650 6650
+Connection ~ 5650 6650
+Wire Wire Line
+	5650 6650 6100 6650
+Wire Wire Line
+	5200 6600 5200 6650
+Connection ~ 5200 6650
+Wire Wire Line
+	5200 6650 5650 6650
+Wire Wire Line
+	4750 6600 4750 6650
+Connection ~ 4750 6650
+Wire Wire Line
+	4750 6650 5200 6650
+Wire Wire Line
+	4300 6300 4300 6250
+Wire Wire Line
+	4300 6250 4750 6250
+Wire Wire Line
+	6100 6250 6100 6300
+Wire Wire Line
+	5650 6300 5650 6250
+Connection ~ 5650 6250
+Wire Wire Line
+	5650 6250 6100 6250
+Wire Wire Line
+	5200 6300 5200 6250
+Connection ~ 5200 6250
+Wire Wire Line
+	5200 6250 5650 6250
+Wire Wire Line
+	4750 6300 4750 6250
+Connection ~ 4750 6250
+Wire Wire Line
+	4750 6250 5200 6250
+Wire Wire Line
+	6550 6300 6550 6250
+Wire Wire Line
+	6550 6250 7000 6250
+Wire Wire Line
+	7900 6300 7900 6250
+Connection ~ 7900 6250
+Wire Wire Line
+	7900 6250 8350 6250
+Wire Wire Line
+	7450 6300 7450 6250
+Connection ~ 7450 6250
+Wire Wire Line
+	7450 6250 7900 6250
+Wire Wire Line
+	7000 6300 7000 6250
+Connection ~ 7000 6250
+Wire Wire Line
+	7000 6250 7450 6250
+Wire Wire Line
+	8350 6300 8350 6250
+Wire Wire Line
+	6550 6600 6550 6650
+Wire Wire Line
+	6550 6650 7000 6650
+Wire Wire Line
+	8350 6650 8350 6600
+Wire Wire Line
+	7900 6600 7900 6650
+Connection ~ 7900 6650
+Wire Wire Line
+	7900 6650 8350 6650
+Wire Wire Line
+	7450 6600 7450 6650
+Connection ~ 7450 6650
+Wire Wire Line
+	7450 6650 7900 6650
+Wire Wire Line
+	7000 6600 7000 6650
+Connection ~ 7000 6650
+Wire Wire Line
+	7000 6650 7450 6650
+$Comp
+L power:GND #PWR0222
+U 1 1 5E0F81BD
+P 5200 6700
+F 0 "#PWR0222" H 5200 6450 50  0001 C CNN
+F 1 "GND" H 5205 6527 50  0000 C CNN
+F 2 "" H 5200 6700 50  0001 C CNN
+F 3 "" H 5200 6700 50  0001 C CNN
+	1    5200 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 6700 5200 6650
+$Comp
+L power:GND #PWR0223
+U 1 1 5E19C0F2
+P 7450 6700
+F 0 "#PWR0223" H 7450 6450 50  0001 C CNN
+F 1 "GND" H 7455 6527 50  0000 C CNN
+F 2 "" H 7450 6700 50  0001 C CNN
+F 3 "" H 7450 6700 50  0001 C CNN
+	1    7450 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 6700 7450 6650
+$Comp
+L power:+3.3V #PWR0220
+U 1 1 5E23ED74
+P 5200 6200
+F 0 "#PWR0220" H 5200 6050 50  0001 C CNN
+F 1 "+3.3V" H 5215 6373 50  0000 C CNN
+F 2 "" H 5200 6200 50  0001 C CNN
+F 3 "" H 5200 6200 50  0001 C CNN
+	1    5200 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 6200 5200 6250
+Wire Wire Line
+	7450 6250 7450 6200
+$Comp
+L power:+5V #PWR0221
+U 1 1 5E380FEB
+P 7450 6200
+F 0 "#PWR0221" H 7450 6050 50  0001 C CNN
+F 1 "+5V" H 7465 6373 50  0000 C CNN
+F 2 "" H 7450 6200 50  0001 C CNN
+F 3 "" H 7450 6200 50  0001 C CNN
+	1    7450 6200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5000 4700
+$Comp
+L ETH6C20MUX:HE3621A0510 K201
+U 1 1 5E8DB507
+P 1250 7900
+F 0 "K201" V 1465 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 7850 50  0001 C CNN
+F 3 "" H 1500 7850 50  0001 C CNN
+	1    1250 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K201
+U 2 1 5EABA7B3
+P 6100 950
+F 0 "K201" H 6178 996 50  0000 L CNN
+F 1 "HE3621A0510" H 6178 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6350 900 50  0001 C CNN
+F 3 "" H 6350 900 50  0001 C CNN
+	2    6100 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K202
+U 1 1 5EDDE3FA
+P 1250 9050
+F 0 "K202" V 1465 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 9000 50  0001 C CNN
+F 3 "" H 1500 9000 50  0001 C CNN
+	1    1250 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K202
+U 2 1 5EDDE400
+P 6800 950
+F 0 "K202" H 6878 996 50  0000 L CNN
+F 1 "HE3621A0510" H 6878 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7050 900 50  0001 C CNN
+F 3 "" H 7050 900 50  0001 C CNN
+	2    6800 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K203
+U 1 1 5EF2666E
+P 1250 10200
+F 0 "K203" V 1465 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 10150 50  0001 C CNN
+F 3 "" H 1500 10150 50  0001 C CNN
+	1    1250 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K203
+U 2 1 5EF26674
+P 7500 950
+F 0 "K203" H 7578 996 50  0000 L CNN
+F 1 "HE3621A0510" H 7578 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7750 900 50  0001 C CNN
+F 3 "" H 7750 900 50  0001 C CNN
+	2    7500 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K204
+U 1 1 5EF2667A
+P 2550 7900
+F 0 "K204" V 2765 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 7850 50  0001 C CNN
+F 3 "" H 2800 7850 50  0001 C CNN
+	1    2550 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K204
+U 2 1 5EF26680
+P 8200 950
+F 0 "K204" H 8278 996 50  0000 L CNN
+F 1 "HE3621A0510" H 8278 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8450 900 50  0001 C CNN
+F 3 "" H 8450 900 50  0001 C CNN
+	2    8200 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K205
+U 1 1 5EFC9B28
+P 2550 9050
+F 0 "K205" V 2765 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 9000 50  0001 C CNN
+F 3 "" H 2800 9000 50  0001 C CNN
+	1    2550 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K205
+U 2 1 5EFC9B2E
+P 8900 950
+F 0 "K205" H 8978 996 50  0000 L CNN
+F 1 "HE3621A0510" H 8978 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9150 900 50  0001 C CNN
+F 3 "" H 9150 900 50  0001 C CNN
+	2    8900 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K206
+U 1 1 5EFC9B34
+P 2550 10200
+F 0 "K206" V 2765 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 10150 50  0001 C CNN
+F 3 "" H 2800 10150 50  0001 C CNN
+	1    2550 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K206
+U 2 1 5EFC9B3A
+P 9600 950
+F 0 "K206" H 9678 996 50  0000 L CNN
+F 1 "HE3621A0510" H 9678 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9850 900 50  0001 C CNN
+F 3 "" H 9850 900 50  0001 C CNN
+	2    9600 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K207
+U 1 1 5EFC9B40
+P 3850 7900
+F 0 "K207" V 4065 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 7850 50  0001 C CNN
+F 3 "" H 4100 7850 50  0001 C CNN
+	1    3850 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K207
+U 2 1 5EFC9B46
+P 10300 950
+F 0 "K207" H 10378 996 50  0000 L CNN
+F 1 "HE3621A0510" H 10378 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 10550 900 50  0001 C CNN
+F 3 "" H 10550 900 50  0001 C CNN
+	2    10300 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K208
+U 1 1 5EFC9B4C
+P 3850 9050
+F 0 "K208" V 4065 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 9000 50  0001 C CNN
+F 3 "" H 4100 9000 50  0001 C CNN
+	1    3850 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K208
+U 2 1 5EFC9B52
+P 11000 950
+F 0 "K208" H 11078 996 50  0000 L CNN
+F 1 "HE3621A0510" H 11078 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11250 900 50  0001 C CNN
+F 3 "" H 11250 900 50  0001 C CNN
+	2    11000 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K209
+U 1 1 5F0730D6
+P 3850 10200
+F 0 "K209" V 4065 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 10150 50  0001 C CNN
+F 3 "" H 4100 10150 50  0001 C CNN
+	1    3850 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K209
+U 2 1 5F0730DC
+P 11700 950
+F 0 "K209" H 11778 996 50  0000 L CNN
+F 1 "HE3621A0510" H 11778 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11950 900 50  0001 C CNN
+F 3 "" H 11950 900 50  0001 C CNN
+	2    11700 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K210
+U 1 1 5F0730E2
+P 5200 7900
+F 0 "K210" V 5415 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 7850 50  0001 C CNN
+F 3 "" H 5450 7850 50  0001 C CNN
+	1    5200 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K210
+U 2 1 5F0730E8
+P 12400 950
+F 0 "K210" H 12478 996 50  0000 L CNN
+F 1 "HE3621A0510" H 12478 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12650 900 50  0001 C CNN
+F 3 "" H 12650 900 50  0001 C CNN
+	2    12400 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K211
+U 1 1 5F0730EE
+P 5200 9050
+F 0 "K211" V 5415 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 9000 50  0001 C CNN
+F 3 "" H 5450 9000 50  0001 C CNN
+	1    5200 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K211
+U 2 1 5F0730F4
+P 13100 950
+F 0 "K211" H 13178 996 50  0000 L CNN
+F 1 "HE3621A0510" H 13178 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13350 900 50  0001 C CNN
+F 3 "" H 13350 900 50  0001 C CNN
+	2    13100 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K212
+U 1 1 5F0730FA
+P 5200 10200
+F 0 "K212" V 5415 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 10150 50  0001 C CNN
+F 3 "" H 5450 10150 50  0001 C CNN
+	1    5200 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K212
+U 2 1 5F073100
+P 13800 950
+F 0 "K212" H 13878 996 50  0000 L CNN
+F 1 "HE3621A0510" H 13878 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14050 900 50  0001 C CNN
+F 3 "" H 14050 900 50  0001 C CNN
+	2    13800 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K213
+U 1 1 5F073106
+P 6550 7900
+F 0 "K213" V 6765 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 7850 50  0001 C CNN
+F 3 "" H 6800 7850 50  0001 C CNN
+	1    6550 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K213
+U 2 1 5F07310C
+P 14500 950
+F 0 "K213" H 14578 996 50  0000 L CNN
+F 1 "HE3621A0510" H 14578 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14750 900 50  0001 C CNN
+F 3 "" H 14750 900 50  0001 C CNN
+	2    14500 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K214
+U 1 1 5F073112
+P 6550 9050
+F 0 "K214" V 6765 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 9000 50  0001 C CNN
+F 3 "" H 6800 9000 50  0001 C CNN
+	1    6550 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K214
+U 2 1 5F073118
+P 15200 950
+F 0 "K214" H 15278 996 50  0000 L CNN
+F 1 "HE3621A0510" H 15278 905 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15450 900 50  0001 C CNN
+F 3 "" H 15450 900 50  0001 C CNN
+	2    15200 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K215
+U 1 1 5F07311E
+P 6550 10200
+F 0 "K215" V 6765 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 10150 50  0001 C CNN
+F 3 "" H 6800 10150 50  0001 C CNN
+	1    6550 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K215
+U 2 1 5F073124
+P 6100 1900
+F 0 "K215" H 6178 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 6178 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6350 1850 50  0001 C CNN
+F 3 "" H 6350 1850 50  0001 C CNN
+	2    6100 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K216
+U 1 1 5F07312A
+P 7900 7900
+F 0 "K216" V 8115 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 7850 50  0001 C CNN
+F 3 "" H 8150 7850 50  0001 C CNN
+	1    7900 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K216
+U 2 1 5F073130
+P 6800 1900
+F 0 "K216" H 6878 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 6878 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7050 1850 50  0001 C CNN
+F 3 "" H 7050 1850 50  0001 C CNN
+	2    6800 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K217
+U 1 1 5F1262EE
+P 7900 9050
+F 0 "K217" V 8115 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 9000 50  0001 C CNN
+F 3 "" H 8150 9000 50  0001 C CNN
+	1    7900 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K217
+U 2 1 5F1262F4
+P 7500 1900
+F 0 "K217" H 7578 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 7578 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7750 1850 50  0001 C CNN
+F 3 "" H 7750 1850 50  0001 C CNN
+	2    7500 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K218
+U 1 1 5F1262FA
+P 7900 10200
+F 0 "K218" V 8115 10200 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 10200 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 10150 50  0001 C CNN
+F 3 "" H 8150 10150 50  0001 C CNN
+	1    7900 10200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K218
+U 2 1 5F126300
+P 8200 1900
+F 0 "K218" H 8278 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 8278 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8450 1850 50  0001 C CNN
+F 3 "" H 8450 1850 50  0001 C CNN
+	2    8200 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K219
+U 1 1 5F126306
+P 9350 7900
+F 0 "K219" V 9565 7900 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 7900 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 7850 50  0001 C CNN
+F 3 "" H 9600 7850 50  0001 C CNN
+	1    9350 7900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K219
+U 2 1 5F12630C
+P 8900 1900
+F 0 "K219" H 8978 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 8978 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9150 1850 50  0001 C CNN
+F 3 "" H 9150 1850 50  0001 C CNN
+	2    8900 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K220
+U 1 1 5F126312
+P 9350 9050
+F 0 "K220" V 9565 9050 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 9050 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 9000 50  0001 C CNN
+F 3 "" H 9600 9000 50  0001 C CNN
+	1    9350 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K220
+U 2 1 5F126318
+P 9600 1900
+F 0 "K220" H 9678 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 9678 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9850 1850 50  0001 C CNN
+F 3 "" H 9850 1850 50  0001 C CNN
+	2    9600 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K221
+U 1 1 5F12631E
+P 1250 8300
+F 0 "K221" V 1465 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 8250 50  0001 C CNN
+F 3 "" H 1500 8250 50  0001 C CNN
+	1    1250 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K221
+U 2 1 5F126324
+P 10300 1900
+F 0 "K221" H 10378 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 10378 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 10550 1850 50  0001 C CNN
+F 3 "" H 10550 1850 50  0001 C CNN
+	2    10300 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K222
+U 1 1 5F12632A
+P 1250 9450
+F 0 "K222" V 1465 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 9400 50  0001 C CNN
+F 3 "" H 1500 9400 50  0001 C CNN
+	1    1250 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K222
+U 2 1 5F126330
+P 11000 1900
+F 0 "K222" H 11078 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 11078 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11250 1850 50  0001 C CNN
+F 3 "" H 11250 1850 50  0001 C CNN
+	2    11000 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K223
+U 1 1 5F126336
+P 1250 10600
+F 0 "K223" V 1465 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 10550 50  0001 C CNN
+F 3 "" H 1500 10550 50  0001 C CNN
+	1    1250 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K223
+U 2 1 5F12633C
+P 11700 1900
+F 0 "K223" H 11778 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 11778 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11950 1850 50  0001 C CNN
+F 3 "" H 11950 1850 50  0001 C CNN
+	2    11700 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K224
+U 1 1 5F126342
+P 2550 8300
+F 0 "K224" V 2765 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 8250 50  0001 C CNN
+F 3 "" H 2800 8250 50  0001 C CNN
+	1    2550 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K224
+U 2 1 5F126348
+P 12400 1900
+F 0 "K224" H 12478 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 12478 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12650 1850 50  0001 C CNN
+F 3 "" H 12650 1850 50  0001 C CNN
+	2    12400 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K225
+U 1 1 5F12634E
+P 2550 9450
+F 0 "K225" V 2765 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 9400 50  0001 C CNN
+F 3 "" H 2800 9400 50  0001 C CNN
+	1    2550 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K225
+U 2 1 5F126354
+P 13100 1900
+F 0 "K225" H 13178 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 13178 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13350 1850 50  0001 C CNN
+F 3 "" H 13350 1850 50  0001 C CNN
+	2    13100 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K226
+U 1 1 5F12635A
+P 2550 10600
+F 0 "K226" V 2765 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 10550 50  0001 C CNN
+F 3 "" H 2800 10550 50  0001 C CNN
+	1    2550 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K226
+U 2 1 5F126360
+P 13800 1900
+F 0 "K226" H 13878 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 13878 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14050 1850 50  0001 C CNN
+F 3 "" H 14050 1850 50  0001 C CNN
+	2    13800 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K227
+U 1 1 5F126366
+P 3850 8300
+F 0 "K227" V 4065 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 8250 50  0001 C CNN
+F 3 "" H 4100 8250 50  0001 C CNN
+	1    3850 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K227
+U 2 1 5F12636C
+P 14500 1900
+F 0 "K227" H 14578 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 14578 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14750 1850 50  0001 C CNN
+F 3 "" H 14750 1850 50  0001 C CNN
+	2    14500 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K228
+U 1 1 5F126372
+P 3850 9450
+F 0 "K228" V 4065 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 9400 50  0001 C CNN
+F 3 "" H 4100 9400 50  0001 C CNN
+	1    3850 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K228
+U 2 1 5F126378
+P 15200 1900
+F 0 "K228" H 15278 1946 50  0000 L CNN
+F 1 "HE3621A0510" H 15278 1855 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15450 1850 50  0001 C CNN
+F 3 "" H 15450 1850 50  0001 C CNN
+	2    15200 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K229
+U 1 1 5F12637E
+P 3850 10600
+F 0 "K229" V 4065 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 10550 50  0001 C CNN
+F 3 "" H 4100 10550 50  0001 C CNN
+	1    3850 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K229
+U 2 1 5F126384
+P 6100 2850
+F 0 "K229" H 6178 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 6178 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6350 2800 50  0001 C CNN
+F 3 "" H 6350 2800 50  0001 C CNN
+	2    6100 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K230
+U 1 1 5F12638A
+P 5200 8300
+F 0 "K230" V 5415 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 8250 50  0001 C CNN
+F 3 "" H 5450 8250 50  0001 C CNN
+	1    5200 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K230
+U 2 1 5F126390
+P 6800 2850
+F 0 "K230" H 6878 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 6878 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7050 2800 50  0001 C CNN
+F 3 "" H 7050 2800 50  0001 C CNN
+	2    6800 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K231
+U 1 1 5F126396
+P 5200 9450
+F 0 "K231" V 5415 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 9400 50  0001 C CNN
+F 3 "" H 5450 9400 50  0001 C CNN
+	1    5200 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K231
+U 2 1 5F12639C
+P 7500 2850
+F 0 "K231" H 7578 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 7578 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7750 2800 50  0001 C CNN
+F 3 "" H 7750 2800 50  0001 C CNN
+	2    7500 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K232
+U 1 1 5F1263A2
+P 5200 10600
+F 0 "K232" V 5415 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 10550 50  0001 C CNN
+F 3 "" H 5450 10550 50  0001 C CNN
+	1    5200 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K232
+U 2 1 5F1263A8
+P 8200 2850
+F 0 "K232" H 8278 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 8278 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8450 2800 50  0001 C CNN
+F 3 "" H 8450 2800 50  0001 C CNN
+	2    8200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K233
+U 1 1 5F29C350
+P 6550 8300
+F 0 "K233" V 6765 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 8250 50  0001 C CNN
+F 3 "" H 6800 8250 50  0001 C CNN
+	1    6550 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K233
+U 2 1 5F29C356
+P 8900 2850
+F 0 "K233" H 8978 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 8978 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9150 2800 50  0001 C CNN
+F 3 "" H 9150 2800 50  0001 C CNN
+	2    8900 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K234
+U 1 1 5F29C35C
+P 6550 9450
+F 0 "K234" V 6765 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 9400 50  0001 C CNN
+F 3 "" H 6800 9400 50  0001 C CNN
+	1    6550 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K234
+U 2 1 5F29C362
+P 9600 2850
+F 0 "K234" H 9678 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 9678 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9850 2800 50  0001 C CNN
+F 3 "" H 9850 2800 50  0001 C CNN
+	2    9600 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K235
+U 1 1 5F29C368
+P 6550 10600
+F 0 "K235" V 6765 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 10550 50  0001 C CNN
+F 3 "" H 6800 10550 50  0001 C CNN
+	1    6550 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K235
+U 2 1 5F29C36E
+P 10300 2850
+F 0 "K235" H 10378 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 10378 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 10550 2800 50  0001 C CNN
+F 3 "" H 10550 2800 50  0001 C CNN
+	2    10300 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K236
+U 1 1 5F29C374
+P 7900 8300
+F 0 "K236" V 8115 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 8250 50  0001 C CNN
+F 3 "" H 8150 8250 50  0001 C CNN
+	1    7900 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K236
+U 2 1 5F29C37A
+P 11000 2850
+F 0 "K236" H 11078 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 11078 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11250 2800 50  0001 C CNN
+F 3 "" H 11250 2800 50  0001 C CNN
+	2    11000 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K237
+U 1 1 5F29C380
+P 7900 9450
+F 0 "K237" V 8115 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 9400 50  0001 C CNN
+F 3 "" H 8150 9400 50  0001 C CNN
+	1    7900 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K237
+U 2 1 5F29C386
+P 11700 2850
+F 0 "K237" H 11778 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 11778 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11950 2800 50  0001 C CNN
+F 3 "" H 11950 2800 50  0001 C CNN
+	2    11700 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K238
+U 1 1 5F29C38C
+P 7900 10600
+F 0 "K238" V 8115 10600 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 10600 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 10550 50  0001 C CNN
+F 3 "" H 8150 10550 50  0001 C CNN
+	1    7900 10600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K238
+U 2 1 5F29C392
+P 12400 2850
+F 0 "K238" H 12478 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 12478 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12650 2800 50  0001 C CNN
+F 3 "" H 12650 2800 50  0001 C CNN
+	2    12400 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K239
+U 1 1 5F29C398
+P 9350 8300
+F 0 "K239" V 9565 8300 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 8300 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 8250 50  0001 C CNN
+F 3 "" H 9600 8250 50  0001 C CNN
+	1    9350 8300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K239
+U 2 1 5F29C39E
+P 13100 2850
+F 0 "K239" H 13178 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 13178 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13350 2800 50  0001 C CNN
+F 3 "" H 13350 2800 50  0001 C CNN
+	2    13100 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K240
+U 1 1 5F29C3A4
+P 9350 9450
+F 0 "K240" V 9565 9450 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 9450 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 9400 50  0001 C CNN
+F 3 "" H 9600 9400 50  0001 C CNN
+	1    9350 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K240
+U 2 1 5F29C3AA
+P 13800 2850
+F 0 "K240" H 13878 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 13878 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14050 2800 50  0001 C CNN
+F 3 "" H 14050 2800 50  0001 C CNN
+	2    13800 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K241
+U 1 1 5F29C3B0
+P 1250 8700
+F 0 "K241" V 1465 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 8650 50  0001 C CNN
+F 3 "" H 1500 8650 50  0001 C CNN
+	1    1250 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K241
+U 2 1 5F29C3B6
+P 14500 2850
+F 0 "K241" H 14578 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 14578 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14750 2800 50  0001 C CNN
+F 3 "" H 14750 2800 50  0001 C CNN
+	2    14500 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K242
+U 1 1 5F29C3BC
+P 1250 9850
+F 0 "K242" V 1465 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 9800 50  0001 C CNN
+F 3 "" H 1500 9800 50  0001 C CNN
+	1    1250 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K242
+U 2 1 5F29C3C2
+P 15200 2850
+F 0 "K242" H 15278 2896 50  0000 L CNN
+F 1 "HE3621A0510" H 15278 2805 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15450 2800 50  0001 C CNN
+F 3 "" H 15450 2800 50  0001 C CNN
+	2    15200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K243
+U 1 1 5F29C3C8
+P 1250 11000
+F 0 "K243" V 1465 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 1374 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 1500 10950 50  0001 C CNN
+F 3 "" H 1500 10950 50  0001 C CNN
+	1    1250 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K243
+U 2 1 5F29C3CE
+P 6100 3800
+F 0 "K243" H 6178 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 6178 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6350 3750 50  0001 C CNN
+F 3 "" H 6350 3750 50  0001 C CNN
+	2    6100 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K244
+U 2 1 5F29C3DA
+P 6800 3800
+F 0 "K244" H 6878 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 6878 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7050 3750 50  0001 C CNN
+F 3 "" H 7050 3750 50  0001 C CNN
+	2    6800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K245
+U 1 1 5F29C3E0
+P 2550 9850
+F 0 "K245" V 2765 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 9800 50  0001 C CNN
+F 3 "" H 2800 9800 50  0001 C CNN
+	1    2550 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K245
+U 2 1 5F29C3E6
+P 7500 3800
+F 0 "K245" H 7578 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 7578 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7750 3750 50  0001 C CNN
+F 3 "" H 7750 3750 50  0001 C CNN
+	2    7500 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K246
+U 1 1 5F29C3EC
+P 2550 11000
+F 0 "K246" V 2765 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 10950 50  0001 C CNN
+F 3 "" H 2800 10950 50  0001 C CNN
+	1    2550 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K246
+U 2 1 5F29C3F2
+P 8200 3800
+F 0 "K246" H 8278 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 8278 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8450 3750 50  0001 C CNN
+F 3 "" H 8450 3750 50  0001 C CNN
+	2    8200 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K247
+U 1 1 5F29C3F8
+P 3850 8700
+F 0 "K247" V 4065 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 8650 50  0001 C CNN
+F 3 "" H 4100 8650 50  0001 C CNN
+	1    3850 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K247
+U 2 1 5F29C3FE
+P 8900 3800
+F 0 "K247" H 8978 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 8978 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9150 3750 50  0001 C CNN
+F 3 "" H 9150 3750 50  0001 C CNN
+	2    8900 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K248
+U 1 1 5F29C404
+P 3850 9850
+F 0 "K248" V 4065 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 9800 50  0001 C CNN
+F 3 "" H 4100 9800 50  0001 C CNN
+	1    3850 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K248
+U 2 1 5F29C40A
+P 9600 3800
+F 0 "K248" H 9678 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 9678 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9850 3750 50  0001 C CNN
+F 3 "" H 9850 3750 50  0001 C CNN
+	2    9600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K249
+U 1 1 5F29C410
+P 3850 11000
+F 0 "K249" V 4065 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 3974 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 4100 10950 50  0001 C CNN
+F 3 "" H 4100 10950 50  0001 C CNN
+	1    3850 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K249
+U 2 1 5F29C416
+P 10300 3800
+F 0 "K249" H 10378 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 10378 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 10550 3750 50  0001 C CNN
+F 3 "" H 10550 3750 50  0001 C CNN
+	2    10300 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K250
+U 1 1 5F29C41C
+P 5200 8700
+F 0 "K250" V 5415 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 8650 50  0001 C CNN
+F 3 "" H 5450 8650 50  0001 C CNN
+	1    5200 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K250
+U 2 1 5F29C422
+P 11000 3800
+F 0 "K250" H 11078 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 11078 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11250 3750 50  0001 C CNN
+F 3 "" H 11250 3750 50  0001 C CNN
+	2    11000 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K251
+U 1 1 5F29C428
+P 5200 9850
+F 0 "K251" V 5415 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 9800 50  0001 C CNN
+F 3 "" H 5450 9800 50  0001 C CNN
+	1    5200 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K251
+U 2 1 5F29C42E
+P 11700 3800
+F 0 "K251" H 11778 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 11778 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11950 3750 50  0001 C CNN
+F 3 "" H 11950 3750 50  0001 C CNN
+	2    11700 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K252
+U 1 1 5F29C434
+P 5200 11000
+F 0 "K252" V 5415 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 5324 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 5450 10950 50  0001 C CNN
+F 3 "" H 5450 10950 50  0001 C CNN
+	1    5200 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K252
+U 2 1 5F29C43A
+P 12400 3800
+F 0 "K252" H 12478 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 12478 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12650 3750 50  0001 C CNN
+F 3 "" H 12650 3750 50  0001 C CNN
+	2    12400 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K253
+U 1 1 5F29C440
+P 6550 8700
+F 0 "K253" V 6765 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 8650 50  0001 C CNN
+F 3 "" H 6800 8650 50  0001 C CNN
+	1    6550 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K253
+U 2 1 5F29C446
+P 13100 3800
+F 0 "K253" H 13178 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 13178 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13350 3750 50  0001 C CNN
+F 3 "" H 13350 3750 50  0001 C CNN
+	2    13100 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K254
+U 1 1 5F29C44C
+P 6550 9850
+F 0 "K254" V 6765 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 9800 50  0001 C CNN
+F 3 "" H 6800 9800 50  0001 C CNN
+	1    6550 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K254
+U 2 1 5F29C452
+P 13800 3800
+F 0 "K254" H 13878 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 13878 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14050 3750 50  0001 C CNN
+F 3 "" H 14050 3750 50  0001 C CNN
+	2    13800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K255
+U 1 1 5F29C458
+P 6550 11000
+F 0 "K255" V 6765 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 6674 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6800 10950 50  0001 C CNN
+F 3 "" H 6800 10950 50  0001 C CNN
+	1    6550 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K255
+U 2 1 5F29C45E
+P 14500 3800
+F 0 "K255" H 14578 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 14578 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 14750 3750 50  0001 C CNN
+F 3 "" H 14750 3750 50  0001 C CNN
+	2    14500 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K256
+U 1 1 5F29C464
+P 7900 8700
+F 0 "K256" V 8115 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 8650 50  0001 C CNN
+F 3 "" H 8150 8650 50  0001 C CNN
+	1    7900 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K256
+U 2 1 5F29C46A
+P 15200 3800
+F 0 "K256" H 15278 3846 50  0000 L CNN
+F 1 "HE3621A0510" H 15278 3755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15450 3750 50  0001 C CNN
+F 3 "" H 15450 3750 50  0001 C CNN
+	2    15200 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K257
+U 1 1 5F29C470
+P 7900 9850
+F 0 "K257" V 8115 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 9800 50  0001 C CNN
+F 3 "" H 8150 9800 50  0001 C CNN
+	1    7900 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K257
+U 2 1 5F29C476
+P 6100 4800
+F 0 "K257" H 6178 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 6178 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 6350 4750 50  0001 C CNN
+F 3 "" H 6350 4750 50  0001 C CNN
+	2    6100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K258
+U 2 1 5F29C482
+P 6800 4800
+F 0 "K258" H 6878 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 6878 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7050 4750 50  0001 C CNN
+F 3 "" H 7050 4750 50  0001 C CNN
+	2    6800 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K259
+U 1 1 5F29C488
+P 9350 8700
+F 0 "K259" V 9565 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 8650 50  0001 C CNN
+F 3 "" H 9600 8650 50  0001 C CNN
+	1    9350 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K259
+U 2 1 5F29C48E
+P 7500 4800
+F 0 "K259" H 7578 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 7578 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 7750 4750 50  0001 C CNN
+F 3 "" H 7750 4750 50  0001 C CNN
+	2    7500 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K260
+U 1 1 5F29C494
+P 9350 9850
+F 0 "K260" V 9565 9850 50  0000 C CNN
+F 1 "HE3621A0510" V 9474 9850 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9600 9800 50  0001 C CNN
+F 3 "" H 9600 9800 50  0001 C CNN
+	1    9350 9850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K260
+U 2 1 5F29C49A
+P 8200 4800
+F 0 "K260" H 8278 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 8278 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8450 4750 50  0001 C CNN
+F 3 "" H 8450 4750 50  0001 C CNN
+	2    8200 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K261
+U 1 1 5F29C4A0
+P 11850 7750
+F 0 "K261" V 12065 7750 50  0000 C CNN
+F 1 "HE3621A0510" V 11974 7750 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12100 7700 50  0001 C CNN
+F 3 "" H 12100 7700 50  0001 C CNN
+	1    11850 7750
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K261
+U 2 1 5F29C4A6
+P 8900 4800
+F 0 "K261" H 8978 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 8978 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9150 4750 50  0001 C CNN
+F 3 "" H 9150 4750 50  0001 C CNN
+	2    8900 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K262
+U 1 1 5F29C4AC
+P 15250 7750
+F 0 "K262" V 15465 7750 50  0000 C CNN
+F 1 "HE3621A0510" V 15374 7750 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15500 7700 50  0001 C CNN
+F 3 "" H 15500 7700 50  0001 C CNN
+	1    15250 7750
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K262
+U 2 1 5F29C4B2
+P 9600 4800
+F 0 "K262" H 9678 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 9678 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 9850 4750 50  0001 C CNN
+F 3 "" H 9850 4750 50  0001 C CNN
+	2    9600 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K263
+U 1 1 5F29C4B8
+P 13500 7750
+F 0 "K263" V 13715 7750 50  0000 C CNN
+F 1 "HE3621A0510" V 13624 7750 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13750 7700 50  0001 C CNN
+F 3 "" H 13750 7700 50  0001 C CNN
+	1    13500 7750
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K263
+U 2 1 5F29C4BE
+P 10300 4800
+F 0 "K263" H 10378 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 10378 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 10550 4750 50  0001 C CNN
+F 3 "" H 10550 4750 50  0001 C CNN
+	2    10300 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K264
+U 1 1 5F29C4C4
+P 13500 9650
+F 0 "K264" V 13715 9650 50  0000 C CNN
+F 1 "HE3621A0510" V 13624 9650 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 13750 9600 50  0001 C CNN
+F 3 "" H 13750 9600 50  0001 C CNN
+	1    13500 9650
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K264
+U 2 1 5F29C4CA
+P 11000 4800
+F 0 "K264" H 11078 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 11078 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11250 4750 50  0001 C CNN
+F 3 "" H 11250 4750 50  0001 C CNN
+	2    11000 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K265
+U 1 1 5F34C8FC
+P 15250 9650
+F 0 "K265" V 15465 9650 50  0000 C CNN
+F 1 "HE3621A0510" V 15374 9650 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 15500 9600 50  0001 C CNN
+F 3 "" H 15500 9600 50  0001 C CNN
+	1    15250 9650
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K265
+U 2 1 5F34C902
+P 11700 4800
+F 0 "K265" H 11778 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 11778 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 11950 4750 50  0001 C CNN
+F 3 "" H 11950 4750 50  0001 C CNN
+	2    11700 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K266
+U 1 1 5F34C908
+P 11850 9650
+F 0 "K266" V 12065 9650 50  0000 C CNN
+F 1 "HE3621A0510" V 11974 9650 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12100 9600 50  0001 C CNN
+F 3 "" H 12100 9600 50  0001 C CNN
+	1    11850 9650
+	0    1    -1   0   
+$EndComp
+$Comp
+L ETH6C20MUX:HE3621A0510 K266
+U 2 1 5F34C90E
+P 12400 4800
+F 0 "K266" H 12478 4846 50  0000 L CNN
+F 1 "HE3621A0510" H 12478 4755 50  0000 L CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 12650 4750 50  0001 C CNN
+F 3 "" H 12650 4750 50  0001 C CNN
+	2    12400 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 8700 3100 8700
+$Comp
+L ETH6C20MUX:HE3621A0510 K244
+U 1 1 5F29C3D4
+P 2550 8700
+F 0 "K244" V 2765 8700 50  0000 C CNN
+F 1 "HE3621A0510" V 2674 8700 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 2800 8650 50  0001 C CNN
+F 3 "" H 2800 8650 50  0001 C CNN
+	1    2550 8700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7750 11000 7550 11000
+$Comp
+L ETH6C20MUX:HE3621A0510 K258
+U 1 1 5F29C47C
+P 7900 11000
+F 0 "K258" V 8115 11000 50  0000 C CNN
+F 1 "HE3621A0510" V 8024 11000 50  0000 C CNN
+F 2 "ETH6C20MUX:HE360_x-5331272-5" H 8150 10950 50  0001 C CNN
+F 3 "" H 8150 10950 50  0001 C CNN
+	1    7900 11000
+	0    -1   -1   0   
+$EndComp
+$EndSCHEMATC
