@@ -831,7 +831,7 @@ PIN21A
 Text Label 6100 1500 1    50   ~ 0
 RELAY21A
 Text Label 6800 1500 1    50   ~ 0
-RELAY2A
+RELAY22A
 Text Label 8200 1500 1    50   ~ 0
 RELAY24A
 Text Label 8900 1500 1    50   ~ 0
@@ -985,7 +985,7 @@ $EndComp
 Text Label 10300 2450 1    50   ~ 0
 RELAY21B
 Text Label 11000 2450 1    50   ~ 0
-RELAY2B
+RELAY22B
 Text Label 11700 2450 1    50   ~ 0
 RELAY23B
 Text Label 12400 2450 1    50   ~ 0
@@ -1247,7 +1247,7 @@ RELAY24B
 Text Label 5450 2050 2    50   ~ 0
 RELAY23B
 Text Label 5450 1650 2    50   ~ 0
-RELAY2B
+RELAY22B
 Text Label 3150 1750 2    50   ~ 0
 RELAY21B
 Wire Wire Line
@@ -1327,7 +1327,7 @@ RELAY24A
 Text Label 5450 1950 2    50   ~ 0
 RELAY23A
 Text Label 5450 1750 2    50   ~ 0
-RELAY2A
+RELAY22A
 Text Label 3150 1050 2    50   ~ 0
 RELAY21A
 Wire Wire Line

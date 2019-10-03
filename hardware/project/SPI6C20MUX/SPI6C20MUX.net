@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/grzegorz/git/ETH6C20MUX/hardware/project/SPI6C20MUX/SPI6C20MUX.sch)
-    (date "Thu Oct  3 00:50:37 2019")
+    (date "Thu Oct  3 10:20:41 2019")
     (tool "Eeschema 5.1.4")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -1227,7 +1227,7 @@
     (net (code 75) (name /Relays/RELAY23B)
       (node (ref U202) (pin 20))
       (node (ref K223) (pin 3)))
-    (net (code 76) (name /Relays/RELAY2B)
+    (net (code 76) (name /Relays/RELAY22B)
       (node (ref U202) (pin 15))
       (node (ref K222) (pin 3)))
     (net (code 77) (name /Relays/RELAY21B)
@@ -1341,7 +1341,7 @@
     (net (code 105) (name /Relays/RELAY24A)
       (node (ref K204) (pin 3))
       (node (ref U203) (pin 4)))
-    (net (code 106) (name /Relays/RELAY2A)
+    (net (code 106) (name /Relays/RELAY22A)
       (node (ref K202) (pin 3))
       (node (ref U202) (pin 16)))
     (net (code 107) (name /Relays/RELAY21A)
