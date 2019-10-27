@@ -1,0 +1,8 @@
+sample:
+  description: SCPI commands test with BSD Sockets API TCP
+  name: scpi
+tests:
+  sample.net.sockets.echo:
+    harness: net
+    depends_on: netif
+    tags: net socket
