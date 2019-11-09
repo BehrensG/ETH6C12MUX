@@ -40,19 +40,43 @@
 #include "scpi/scpi.h"
 #include "scpi-def.h"
 
+#include <misc/reboot.h>
 
-/**
- * Reimplement IEEE488.2 *TST?
- *
- * Result should be 0 if everything is ok
- * Result should be 1 if something goes wrong
- *
- * Return SCPI_RES_OK
- */
-static scpi_result_t My_CoreTstQ(scpi_t * context) {
+scpi_result_t My_CoreTstQ(scpi_t * context) {
 
     SCPI_ResultInt32(context, 0);
 
+    return SCPI_RES_OK;
+}
+
+scpi_result_t SCPI_Flush(scpi_t * context) {
+    (void) context;
+
+    return SCPI_RES_OK;
+}
+
+int SCPI_Error(scpi_t * context, int_fast16_t err) {
+    (void) context;
+    /* BEEP */
+   // fprintf(stderr, "**ERROR: %d, \"%s\"\r\n", (int16_t) err, SCPI_ErrorTranslate(err));
+    return 0;
+}
+
+scpi_result_t SCPI_Control(scpi_t * context, scpi_ctrl_name_t ctrl, scpi_reg_val_t val) {
+    (void) context;
+
+    if (SCPI_CTRL_SRQ == ctrl) {
+     //   fprintf(stderr, "**SRQ: 0x%X (%d)\r\n", val, val);
+    } else {
+     //   fprintf(stderr, "**CTRL %02x: 0x%X (%d)\r\n", ctrl, val, val);
+    }
+    return SCPI_RES_OK;
+}
+
+scpi_result_t SCPI_Reset(scpi_t * context) {
+    (void) context;
+
+    sys_reboot();
     return SCPI_RES_OK;
 }
 
