@@ -1,3 +1,0 @@
-.. _ETH6C20MUX:
-
-TBD

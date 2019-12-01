@@ -1,4 +1,0 @@
-# This makefile builds socket_echo sample for POSIX system, like Linux
-
-scpi: src/main.c src/scpi-def.c
-	$(CC) $^ -o $@

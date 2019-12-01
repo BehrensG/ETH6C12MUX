@@ -1,4 +1,4 @@
-(kicad_pcb (version 20171130) (host pcbnew 5.1.4)
+(kicad_pcb (version 20171130) (host pcbnew 5.1.5)
 
   (general
     (thickness 1.6)
@@ -13,7 +13,7 @@
   (layers
     (0 Top signal)
     (1 GND power)
-    (2 Power power hide)
+    (2 Power power)
     (31 Bottom signal)
     (32 B.Adhes user)
     (33 F.Adhes user hide)
@@ -8200,7 +8200,7 @@
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
   (gr_text 3 (at 207.772 45.72) (layer Power)
-    (effects (font (size 1.5 1.5) (thickness 0.3)))
+    (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
   (gr_text 2 (at 204.724 45.72) (layer GND)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
