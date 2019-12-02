@@ -19,9 +19,14 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
+#include <scpi_def.h>
+#include <tcp_raw.h>
 #include "main.h"
 #include "lwip.h"
-#include "echo.h"
+
+#include "scpi/scpi.h"
+#include "scpi_def.h"
+#include "stm32f7xx_hal_spi.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -100,13 +105,21 @@ int main(void)
   MX_LWIP_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-  echo_init();
+  tcp_raw_init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  SCPI_Init(&scpi_context,
+           scpi_commands,
+           &scpi_interface,
+           scpi_units_def,
+           SCPI_IDN1, SCPI_IDN2, SCPI_IDN3, SCPI_IDN4,
+           scpi_input_buffer, SCPI_INPUT_BUFFER_LENGTH,
+           scpi_error_queue_data, SCPI_ERROR_QUEUE_SIZE);
+
   while (1)
   {
     /* USER CODE END WHILE */
@@ -184,7 +197,7 @@ static void MX_SPI3_Init(void)
   hspi3.Instance = SPI3;
   hspi3.Init.Mode = SPI_MODE_MASTER;
   hspi3.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi3.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi3.Init.NSS = SPI_NSS_SOFT;
@@ -194,7 +207,7 @@ static void MX_SPI3_Init(void)
   hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi3.Init.CRCPolynomial = 7;
   hspi3.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi3.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi3.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi3) != HAL_OK)
   {
     Error_Handler();
@@ -304,17 +317,17 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin|RELAY1_nCS4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin|RELAY1_nCS4_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin 
-                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_RESET);
+                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : RELAY1_nRST_Pin */
   GPIO_InitStruct.Pin = RELAY1_nRST_Pin;
