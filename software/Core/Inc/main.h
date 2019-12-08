@@ -92,6 +92,14 @@ void Error_Handler(void);
 #define MODULE_DETECT0_GPIO_Port GPIOB
 #define MCU_DEFAULT_Pin GPIO_PIN_12
 #define MCU_DEFAULT_GPIO_Port GPIOB
+
+
+
+typedef struct _ip4_lan ip4_lan_t;
+typedef struct _spi_module spi_module_t;
+typedef struct _scpi_info scpi_info_t;
+typedef struct _security security_t;
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

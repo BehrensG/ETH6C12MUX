@@ -14,7 +14,7 @@
 // SCPI library code
 #include "scpi/scpi.h"
 #include "scpi_def.h"
-
+#include "main.h"
 #include "lwip/tcpip.h"
 
 #include "spi_flash.h"
@@ -24,7 +24,7 @@ extern struct echo_state *es_scpi;
 extern struct tcp_pcb *tcp_echoserver_pcb;
 
 
-size_t SCPI_Write(scpi_t * context, const char * data, size_t len)
+size_t SCPI_Write(scpi_t* context, const char * data, size_t len)
 {
     (void) context;
     //err_t wr_err = ERR_OK;
@@ -35,14 +35,14 @@ size_t SCPI_Write(scpi_t * context, const char * data, size_t len)
     return es_scpi->p->len;
 }
 
-scpi_result_t SCPI_Flush(scpi_t * context)
+scpi_result_t SCPI_Flush(scpi_t* context)
 {
     (void) context;
 
     return SCPI_RES_OK;
 }
 
-int SCPI_Error(scpi_t * context, int_fast16_t err)
+int SCPI_Error(scpi_t* context, int_fast16_t err)
 {
     (void) context;
 
@@ -50,7 +50,7 @@ int SCPI_Error(scpi_t * context, int_fast16_t err)
     return 0;
 }
 
-scpi_result_t SCPI_Control(scpi_t * context, scpi_ctrl_name_t ctrl, scpi_reg_val_t val)
+scpi_result_t SCPI_Control(scpi_t* context, scpi_ctrl_name_t ctrl, scpi_reg_val_t val)
 {
     (void) context;
 
@@ -62,7 +62,7 @@ scpi_result_t SCPI_Control(scpi_t * context, scpi_ctrl_name_t ctrl, scpi_reg_val
     return SCPI_RES_OK;
 }
 
-scpi_result_t SCPI_Reset(scpi_t * context)
+scpi_result_t SCPI_Reset(scpi_t* context)
 {
     (void) context;
 
@@ -70,7 +70,7 @@ scpi_result_t SCPI_Reset(scpi_t * context)
     return SCPI_RES_OK;
 }
 
-static scpi_result_t My_CoreTstQ(scpi_t * context)
+static scpi_result_t My_CoreTstQ(scpi_t* context)
 {
 
     SCPI_ResultInt32(context, 0);
@@ -79,144 +79,156 @@ static scpi_result_t My_CoreTstQ(scpi_t * context)
 }
 
 
-static scpi_result_t SCPI_RouteClose(scpi_t * context)
+static scpi_result_t SCPI_RouteClose(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_RouteCloseQ(scpi_t * context)
+static scpi_result_t SCPI_RouteCloseQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_RouteOpen(scpi_t * context)
+static scpi_result_t SCPI_RouteOpen(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_RouteOpenQ(scpi_t * context)
+static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_RouteScan(scpi_t * context)
+static scpi_result_t SCPI_RouteScan(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanDHCP(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanDHCP(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanDHCPQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanDHCPQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanGateway(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanGateway(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanHostname(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanHostname(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanHostnameQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanHostnameQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanIPAddress(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanIPAddress(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanIPAddressQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanIPAddressQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanMACQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanMACQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanSmask(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanSmask(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanSmaskQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanSmaskQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanUpdate(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanUpdate(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanPort(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanPort(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanPortQ(scpi_t * context)
+static scpi_result_t SCPI_SystemCommunicationLanPortQ(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemServiceLanMAC(scpi_t * context)
+static scpi_result_t SCPI_SystemServiceLanMAC(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemSecureState(scpi_t * context)
+static scpi_result_t SCPI_SystemServiceDefault(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemSecureStateQ(scpi_t * context)
+static scpi_result_t SCPI_SystemSecureState(scpi_t* context)
 {
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_TSQ(scpi_t * context)
+static scpi_result_t SCPI_SystemSecureStateQ(scpi_t* context)
 {
-	uint8_t *man_id;
-	man_id = SPI_FLASH_GetManufacturerID(0);
 
-SCPI_ResultArrayUInt8(context, man_id, 3, SCPI_FORMAT_ASCII);
+    return SCPI_RES_OK;
+}
+
+static scpi_result_t SCPI_TSQ(scpi_t* context)
+{
+	uint8_t* rx_data;
+	uint8_t tx_data = 0x01;
+	rx_data = (uint8_t)malloc(3*sizeof(uint8_t));
+
+	SPI_FLASH_EraseAll(0);
+	SPI_FLASH_Read(0x00000000, rx_data, 15, 0);
+	//rx_data = SPI_FLASH_GetManufacturerID(0);
+
+	SCPI_ResultArrayUInt8(context, rx_data, 15, SCPI_FORMAT_ASCII);
+	//SCPI_ResultBool(context, SPI_FLASH_IsProtected(0));
     return SCPI_RES_OK;
 }
 
@@ -278,8 +290,10 @@ const scpi_command_t scpi_commands[] = {
 
 	// Relay card  service commands
 	{.pattern = "SYSTem:SERVice:LAN:MAC", .callback = SCPI_SystemServiceLanMAC,}, // "<MAC address, IP4>"
+	{.pattern = "SYSTem:SERVice:DEFAult", .callback = SCPI_SystemServiceDefault,},
 	{.pattern = "SYSTem:SECure:STATe", .callback = SCPI_SystemSecureState,}, // {ON|1|OFF|0}[,<code>]
 	{.pattern = "SYSTem:SECure:STATe?", .callback = SCPI_SystemSecureStateQ,},
+
 
 	{.pattern = "TS?", .callback = SCPI_TSQ,},
 
