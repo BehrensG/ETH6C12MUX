@@ -29,6 +29,8 @@
 #include "ethernetif.h"
 #include <string.h>
 
+#include "defines.h"
+
 /* Within 'USER CODE' section, code will be kept by default at each generation */
 /* USER CODE BEGIN 0 */
 

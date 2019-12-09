@@ -9,13 +9,7 @@
 #define INC_SCPI_DEF_H_
 
 #include "scpi/scpi.h"
-
-#define SCPI_INPUT_BUFFER_LENGTH 512
-#define SCPI_ERROR_QUEUE_SIZE 24
-#define SCPI_IDN1 "MANUFACTURE"
-#define SCPI_IDN2 "ETH6C20MUX"
-#define SCPI_IDN3 "00000000000000"
-#define SCPI_IDN4 "00.00.00.01"
+#include "defines.h"
 
 extern const scpi_command_t scpi_commands[];
 extern scpi_interface_t scpi_interface;

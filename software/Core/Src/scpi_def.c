@@ -13,12 +13,12 @@
 
 // SCPI library code
 #include "scpi/scpi.h"
-#include "scpi_def.h"
-#include "main.h"
 #include "lwip/tcpip.h"
 
 #include "spi_flash.h"
-
+#include "scpi_def.h"
+#include "main.h"
+#include "defines.h"
 
 extern struct echo_state *es_scpi;
 extern struct tcp_pcb *tcp_echoserver_pcb;
@@ -189,7 +189,7 @@ static scpi_result_t SCPI_SystemCommunicationLanPort(scpi_t* context)
 
 static scpi_result_t SCPI_SystemCommunicationLanPortQ(scpi_t* context)
 {
-
+	SCPI_ResultUInt16(context, board.ip4_current.port);
     return SCPI_RES_OK;
 }
 
@@ -201,35 +201,64 @@ static scpi_result_t SCPI_SystemServiceLanMAC(scpi_t* context)
 
 static scpi_result_t SCPI_SystemServiceDefault(scpi_t* context)
 {
+	if(board.security.on)
+	{
+		SCPI_ErrorPush(context, SCPI_ERROR_SERVICE_MODE_SECURE);
+		return SCPI_RES_ERR;
+	}
 
+	SPI_FLASH_BoardDefault(TRUE, 0);
     return SCPI_RES_OK;
 }
 
+scpi_choice_def_t security_state_select[] =
+{
+    {"OFF", 0},
+    {"ON", 1},
+    SCPI_CHOICE_LIST_END
+};
+
 static scpi_result_t SCPI_SystemSecureState(scpi_t* context)
 {
+	int32_t state;
+	int8_t password_read[PASSWORD_LENGTH];
+	size_t password_length = 0;
+	int8_t* password_reference = board.security.password;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ParamChoice(context, security_state_select, &state, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	if(!SCPI_ParamCopyText(context, (char*)password_read, PASSWORD_LENGTH, (size_t*)password_length, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	if(!strcmp((const char*)password_read, (const char*)password_reference))
+	{
+		board.security.on = SECURITY_OFF;
+		return SCPI_RES_ERR;
+	}
+	else
+	{
+		SCPI_ErrorPush(context, SCPI_ERROR_SERVICE_INVALID_PASSWORD);
+		return SCPI_RES_ERR;
+	}
+
+	return SCPI_RES_ERR;
 }
 
 static scpi_result_t SCPI_SystemSecureStateQ(scpi_t* context)
 {
-
+	SCPI_ResultBool(context, board.security.on);
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_TSQ(scpi_t* context)
 {
-	uint8_t* rx_data;
-	uint8_t tx_data = 0x01;
-	rx_data = (uint8_t)malloc(3*sizeof(uint8_t));
-
-	SPI_FLASH_EraseAll(0);
-	SPI_FLASH_Read(0x00000000, rx_data, 15, 0);
-	//rx_data = SPI_FLASH_GetManufacturerID(0);
-
-	SCPI_ResultArrayUInt8(context, rx_data, 15, SCPI_FORMAT_ASCII);
-	//SCPI_ResultBool(context, SPI_FLASH_IsProtected(0));
-    return SCPI_RES_OK;
+	SCPI_ResultBool(context, HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin));
+	return SCPI_RES_OK;
 }
 
 const scpi_command_t scpi_commands[] = {

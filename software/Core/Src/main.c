@@ -31,46 +31,6 @@
 #include "spi_flash.h"
 
 
-struct _scpi_info
-{
-	int8_t* manufacturer;
-	int8_t* device;
-	int8_t* serial_number;
-	int8_t* software_version;
-
-};
-
-struct _spi_module
-{
-	uint8_t detected;
-};
-
-struct _ip4_lan
-{
-	uint8_t ip_address[4];
-	uint8_t netmask[4];
-	uint8_t gateway[4];
-	uint8_t MAC[6];
-	uint16_t port;
-};
-
-struct _security
-{
-	uint8_t on;
-	int8_t* password;
-};
-
-struct _board
-{
-	ip4_lan_t ip4_current;
-	ip4_lan_t ip4_static;
-	scpi_info_t scpi_info;
-	spi_module_t module;
-	security_t security;
-
-}board, default_board;
-
-
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -121,7 +81,7 @@ static void MX_SPI4_Init(void);
   * @retval int
   */
 
-void BRD_CreateDefault()
+void BOARD_CreateDefaultData()
 {
 	default_board.scpi_info.manufacturer = (int8_t)malloc(SCPI_MANUFACTURER_STRING_LENGTH*sizeof(int8_t));
 	default_board.scpi_info.device = (int8_t)malloc(SCPI_DEVICE_STRING_LENGTH*sizeof(int8_t));
@@ -134,61 +94,43 @@ void BRD_CreateDefault()
 	default_board.scpi_info.serial_number = SCPI_IDN3;
 	default_board.scpi_info.software_version = SCPI_IDN4;
 
-	default_board.security.on = TRUE;
+	default_board.security.on = SECURITY_ON;
 	default_board.security.password = PASSWORD;
 
 	default_board.module.detected = FALSE;
 
-	default_board.ip4_static.ip_address[0] = 192;
-	default_board.ip4_static.ip_address[1] = 168;
-	default_board.ip4_static.ip_address[2] = 1;
-	default_board.ip4_static.ip_address[3] = 123;
+	default_board.ip4_static.ip_address[0] = default_board.ip4_current.ip_address[0] = IP_ADDRESS0;
+	default_board.ip4_static.ip_address[1] = default_board.ip4_current.ip_address[1] = IP_ADDRESS1;
+	default_board.ip4_static.ip_address[2] = default_board.ip4_current.ip_address[2] = IP_ADDRESS2;
+	default_board.ip4_static.ip_address[3] = default_board.ip4_current.ip_address[3] = IP_ADDRESS3;
 
-	default_board.ip4_static.netmask[0] = 255;
-	default_board.ip4_static.netmask[1] = 255;
-	default_board.ip4_static.netmask[2] = 255;
-	default_board.ip4_static.netmask[3] = 0;
+	default_board.ip4_static.netmask[0] = default_board.ip4_current.netmask[0] = NETMASK_ADDRESS0;
+	default_board.ip4_static.netmask[1] = default_board.ip4_current.netmask[1] = NETMASK_ADDRESS1;
+	default_board.ip4_static.netmask[2] = default_board.ip4_current.netmask[2] = NETMASK_ADDRESS2;
+	default_board.ip4_static.netmask[3] = default_board.ip4_current.netmask[3] = NETMASK_ADDRESS3;
 
-	default_board.ip4_static.gateway[0] = 192;
-	default_board.ip4_static.gateway[1] = 168;
-	default_board.ip4_static.gateway[2] = 1;
-	default_board.ip4_static.gateway[3] = 1;
+	default_board.ip4_static.gateway[0] = default_board.ip4_current.gateway[0] = GATEWAY_ADDRESS0;
+	default_board.ip4_static.gateway[1] = default_board.ip4_current.gateway[1] = GATEWAY_ADDRESS1;
+	default_board.ip4_static.gateway[2] = default_board.ip4_current.gateway[2] = GATEWAY_ADDRESS2;
+	default_board.ip4_static.gateway[3] = default_board.ip4_current.gateway[3] = GATEWAY_ADDRESS3;
 
-	default_board.ip4_static.port = 2000;
+	default_board.ip4_static.port = default_board.ip4_current.port = TCPIP_PORT;
 
-	default_board.ip4_static.MAC[0] = 0x00;
-	default_board.ip4_static.MAC[1] = 0x80;
-	default_board.ip4_static.MAC[2] = 0xE1;
-	default_board.ip4_static.MAC[3] = 0x00;
-	default_board.ip4_static.MAC[4] = 0x00;
-	default_board.ip4_static.MAC[5] = 0x00;
+	default_board.ip4_static.MAC[0] = default_board.ip4_current.MAC[0] = MAC0;
+	default_board.ip4_static.MAC[1] = default_board.ip4_current.MAC[1] = MAC1;
+	default_board.ip4_static.MAC[2] = default_board.ip4_current.MAC[2] = MAC2;
+	default_board.ip4_static.MAC[3] = default_board.ip4_current.MAC[3] = MAC3;
+	default_board.ip4_static.MAC[4] = default_board.ip4_current.MAC[4] = MAC4;
+	default_board.ip4_static.MAC[5] = default_board.ip4_current.MAC[5] = MAC5;
+	default_board.default_config = DEFAULT_OFF;
 
 	board = default_board;
 
 }
 
-void BRD_SPIFlashInit() // Wrong need to rewrite it, sizeof will not show the whole struct size block
+void BOARD_DetectDefaultConfig()
 {
-	uint8_t tx_data = 0xFF;
-	uint32_t index = 0x00000000;
-
-	uint8_t* spi_flash_data = (uint8_t)malloc(sizeof(default_board));
-	memcpy(spi_flash_data, &default_board, sizeof(default_board));
-	tx_data = SPI_FLASH_DEFAULT_STATUS;
-
-	if(SPI_FLASH_DEFAULT_STATUS != SPI_FLASH_DefaultStatus(0))
-	{
-
-	}
-	else
-	{
-		SPI_FLASH_WriteByte(0x00000000, tx_data, 0);
-		for(index = 0; index < sizeof(default_board); index++)
-		{
-			SPI_FLASH_WriteByte((index+1), spi_flash_data[index], 0);
-		}
-	}
-
+	board.default_config = HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin);
 }
 
 int main(void)
@@ -216,14 +158,17 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  BRD_CreateDefault();
+
   MX_GPIO_Init();
   MX_SPI5_Init();
   MX_LWIP_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-  BRD_SPIFlashInit();
   tcp_raw_init();
+
+  BOARD_CreateDefaultData();
+  BOARD_DetectDefaultConfig();
+
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
