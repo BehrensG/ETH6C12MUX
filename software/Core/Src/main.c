@@ -88,6 +88,8 @@ void BOARD_CreateDefaultData()
 	default_board.scpi_info.serial_number = (int8_t)malloc(SCPI_SERIALNUMBER_STRING_LENGTH*sizeof(int8_t));
 	default_board.scpi_info.software_version = (int8_t)malloc(SCPI_SOFTWAREVERSION_STRING_LENGTH*sizeof(int8_t));
 	default_board.security.password = (int8_t)malloc(PASSWORD_LENGTH*sizeof(int8_t));
+	default_board.ip4_current.hostname = (int8_t)malloc(NET_HOSTNAME*sizeof(int8_t));
+	default_board.ip4_static.hostname = (int8_t)malloc(NET_HOSTNAME*sizeof(int8_t));
 
 	default_board.scpi_info.manufacturer = SCPI_IDN1;
 	default_board.scpi_info.device = SCPI_IDN2;
@@ -99,10 +101,11 @@ void BOARD_CreateDefaultData()
 
 	default_board.module.detected = FALSE;
 
-	default_board.ip4_static.ip_address[0] = default_board.ip4_current.ip_address[0] = IP_ADDRESS0;
-	default_board.ip4_static.ip_address[1] = default_board.ip4_current.ip_address[1] = IP_ADDRESS1;
-	default_board.ip4_static.ip_address[2] = default_board.ip4_current.ip_address[2] = IP_ADDRESS2;
-	default_board.ip4_static.ip_address[3] = default_board.ip4_current.ip_address[3] = IP_ADDRESS3;
+	default_board.ip4_static.hostname = default_board.ip4_current.hostname = SCPI_IDN2;
+	default_board.ip4_static.ip[0] = default_board.ip4_current.ip[0] = IP_ADDRESS0;
+	default_board.ip4_static.ip[1] = default_board.ip4_current.ip[1] = IP_ADDRESS1;
+	default_board.ip4_static.ip[2] = default_board.ip4_current.ip[2] = IP_ADDRESS2;
+	default_board.ip4_static.ip[3] = default_board.ip4_current.ip[3] = IP_ADDRESS3;
 
 	default_board.ip4_static.netmask[0] = default_board.ip4_current.netmask[0] = NETMASK_ADDRESS0;
 	default_board.ip4_static.netmask[1] = default_board.ip4_current.netmask[1] = NETMASK_ADDRESS1;
@@ -122,7 +125,9 @@ void BOARD_CreateDefaultData()
 	default_board.ip4_static.MAC[3] = default_board.ip4_current.MAC[3] = MAC3;
 	default_board.ip4_static.MAC[4] = default_board.ip4_current.MAC[4] = MAC4;
 	default_board.ip4_static.MAC[5] = default_board.ip4_current.MAC[5] = MAC5;
+
 	default_board.default_config = DEFAULT_OFF;
+	default_board.dhcp = OFF;
 
 	board = default_board;
 

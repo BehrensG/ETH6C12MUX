@@ -109,10 +109,11 @@ struct _spi_module
 
 struct _ip4_lan
 {
-	uint8_t ip_address[4];
+	uint8_t ip[4];
 	uint8_t netmask[4];
 	uint8_t gateway[4];
 	uint8_t MAC[6];
+	int8_t* hostname;
 	uint16_t port;
 };
 
@@ -135,6 +136,7 @@ struct _board
 	spi_module_t module;
 	security_t security;
 	uint8_t default_config;
+	uint8_t dhcp;
 
 }board, default_board;
 

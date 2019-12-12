@@ -24,11 +24,79 @@ extern struct echo_state *es_scpi;
 extern struct tcp_pcb *tcp_echoserver_pcb;
 
 
+uint8_t SCPI_StringToIP4Array (const int8_t* ip_string, uint8_t* ip_array)
+{
+
+    /* A pointer to the next digit to process. */
+    const int8_t* start;
+
+    start = ip_string;
+    for (uint8_t i = 0; i < 4; i++)
+    {
+        /* The digit being processed. */
+        uint8_t c;
+        /* The value of this byte. */
+        uint16_t n = 0;
+        while (1)
+        {
+            c = * start;
+            start++;
+            if (c >= '0' && c <= '9')
+            {
+                n *= 10;
+                n += c - '0';
+            }
+            /* We insist on stopping at "." if we are still parsing
+               the first, second, or third numbers. If we have reached
+               the end of the numbers, we will allow any character. */
+            else if ((i < 3 && c == '.') || i == 3)
+            {
+                break;
+            }
+            else
+            {
+                return NET_STR_WRONG_FORMAT;
+            }
+        }
+        if (n >= 256)
+        {
+            return NET_STR_WRONG_NUMBER;
+        }
+        ip_array[i] = n;
+    }
+
+    return NET_STR_OK;
+}
+
+uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_array)
+{
+    int32_t values[6];
+
+    if(6 == sscanf(MAC_string, "%x:%x:%x:%x:%x:%x%*c",
+    &values[0], &values[1], &values[2],
+    &values[3], &values[4], &values[5]))
+    {
+        for (uint8_t i = 0; i < 6; i++)
+        MAC_array[i] = (uint8_t)values[i];
+    }
+    else if (6 == sscanf(MAC_string, "%x-%x-%x-%x-%x-%x%*c",
+    &values[0], &values[1], &values[2],
+    &values[3], &values[4], &values[5]))
+    {
+        for (uint8_t i = 0; i < 6; i++)
+        MAC_array[i] = (uint8_t)values[i];
+    }
+    else
+    {}
+
+    return NET_STR_OK;
+}
+
 size_t SCPI_Write(scpi_t* context, const char * data, size_t len)
 {
     (void) context;
     //err_t wr_err = ERR_OK;
-    uint16_t size =0;
+
     strcat(es_scpi->p->payload, data);
 
     es_scpi->p->len += len;
@@ -66,7 +134,7 @@ scpi_result_t SCPI_Reset(scpi_t* context)
 {
     (void) context;
 
-    fprintf(stderr, "**Reset\r\n");
+    NVIC_SystemReset();
     return SCPI_RES_OK;
 }
 
@@ -109,80 +177,274 @@ static scpi_result_t SCPI_RouteScan(scpi_t* context)
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanDHCP(scpi_t* context)
+scpi_choice_def_t DHCP_state_select[] =
 {
+    {"OFF", 0},
+    {"ON", 1},
+	{"0", 0},
+	{"1", 1},
+    SCPI_CHOICE_LIST_END
+};
+
+
+static scpi_result_t SCPI_SystemCommunicationLanDHCP(scpi_t* context) //done
+{
+	int32_t state;
+	if(!SCPI_ParamChoice(context, DHCP_state_select, &state, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	board.dhcp = (uint8_t)state;
 
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanDHCPQ(scpi_t* context)
+static scpi_result_t SCPI_SystemCommunicationLanDHCPQ(scpi_t* context) //done
 {
-
+	SCPI_ResultBool(context, board.dhcp);
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanGateway(scpi_t* context)
+scpi_choice_def_t LAN_state_select[] =
 {
+    {"CURRent", 0},
+    {"STATic", 1},
+    SCPI_CHOICE_LIST_END
+};
 
-    return SCPI_RES_OK;
+static scpi_result_t SCPI_SystemCommunicationLanGateway(scpi_t* context) //done
+{
+	uint8_t gateway_str[16] = {0};
+	uint8_t gateway_numb[4] = {0};
+	size_t len = 0;
+	uint8_t conv_result = 0;
+
+	if(!SCPI_ParamCopyText(context,gateway_str, 16, &len, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	conv_result = SCPI_StringToIP4Array(gateway_str, gateway_numb);
+
+	switch(conv_result)
+	{
+	case NET_STR_OK:
+	{
+		board.ip4_current.gateway[0] = gateway_numb[0];
+		board.ip4_current.gateway[1] = gateway_numb[1];
+		board.ip4_current.gateway[2] = gateway_numb[2];
+		board.ip4_current.gateway[3] = gateway_numb[3];
+	}break;
+	case NET_STR_WRONG_FORMAT: SCPI_ErrorPush(context, SCPI_ERROR_DATA_TYPE_ERROR); break;
+	case NET_STR_WRONG_NUMBER: SCPI_ErrorPush(context, SCPI_ERROR_NUMERIC_DATA_NOT_ALLOWED); break;
+	default: return SCPI_RES_ERR; break;
+	}
+
+	return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t* context)
+static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t* context) //done
 {
+	int32_t value;
+	uint8_t str[16] = {0};
 
+	if(!SCPI_ParamChoice(context, LAN_state_select, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+	if(CURRENT == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_current.gateway[0],board.ip4_current.gateway[1], board.ip4_current.gateway[2], board.ip4_current.gateway[3]);
+	}
+	else if(STATIC == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_static.gateway[0],board.ip4_static.gateway[1], board.ip4_static.gateway[2], board.ip4_static.gateway[3]);
+	}
+	SCPI_ResultMnemonic(context, str);
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanHostname(scpi_t* context)
 {
+	int8_t hostname[NET_HOSTNAME] = {0};
+	size_t length = 0;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ParamCopyText(context, hostname, NET_HOSTNAME, &length, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanHostnameQ(scpi_t* context)
 {
+	int32_t value;
+	uint8_t str[255] = {0};
 
+	if(!SCPI_ParamChoice(context, LAN_state_select, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+	if(CURRENT == value)
+	{
+		SCPI_ResultMnemonic(context, board.ip4_current.hostname);
+	}
+	else if(STATIC == value)
+	{
+		SCPI_ResultMnemonic(context, board.ip4_static.hostname);
+	}
     return SCPI_RES_OK;
 }
 
-static scpi_result_t SCPI_SystemCommunicationLanIPAddress(scpi_t* context)
+static scpi_result_t SCPI_SystemCommunicationLanIPAddress(scpi_t* context) //done
 {
+	uint8_t str[16] = {0};
+	uint8_t numb[4] = {0};
+	size_t len = 0;
+	uint8_t conv_result = 0;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ParamCopyText(context,str, 16, &len, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	conv_result = SCPI_StringToIP4Array(str, numb);
+
+	switch(conv_result)
+	{
+	case NET_STR_OK:
+	{
+		board.ip4_current.ip[0] = numb[0];
+		board.ip4_current.ip[1] = numb[1];
+		board.ip4_current.ip[2] = numb[2];
+		board.ip4_current.ip[3] = numb[3];
+	}break;
+	case NET_STR_WRONG_FORMAT: SCPI_ErrorPush(context, SCPI_ERROR_DATA_TYPE_ERROR); break;
+	case NET_STR_WRONG_NUMBER: SCPI_ErrorPush(context, SCPI_ERROR_NUMERIC_DATA_NOT_ALLOWED); break;
+	default: return SCPI_RES_ERR; break;
+	}
+
+	return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanIPAddressQ(scpi_t* context)
 {
+	int32_t value;
+	uint8_t str[16] = {0};
 
+	if(!SCPI_ParamChoice(context, LAN_state_select, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+	if(CURRENT == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_current.ip[0],board.ip4_current.ip[1], board.ip4_current.ip[2], board.ip4_current.ip[3]);
+	}
+	else if(STATIC == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_static.ip[0],board.ip4_static.ip[1], board.ip4_static.ip[2], board.ip4_static.ip[3]);
+	}
+	SCPI_ResultMnemonic(context, str);
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanMACQ(scpi_t* context)
 {
+	uint8_t str[18] = {0};
+	if(!board.default_config)
+	{
+		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_current.MAC[0],board.ip4_current.MAC[1], board.ip4_current.MAC[2], board.ip4_current.MAC[3],
+														board.ip4_current.MAC[4], board.ip4_current.MAC[5]);
+	}
+	else
+	{
+		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_static.MAC[0],board.ip4_static.MAC[1], board.ip4_static.MAC[2], board.ip4_static.MAC[3],
+														board.ip4_static.MAC[4], board.ip4_static.MAC[5]);
+	}
 
+	SCPI_ResultMnemonic(context, str);
     return SCPI_RES_OK;
 }
+
+
 
 static scpi_result_t SCPI_SystemCommunicationLanSmask(scpi_t* context)
 {
+	uint8_t str[16] = {0};
+	uint8_t numb[4] = {0};
+	size_t len = 0;
+	uint8_t conv_result = 0;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ParamCopyText(context,str, 16, &len, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	conv_result = SCPI_StringToIP4Array(str, numb);
+
+	switch(conv_result)
+	{
+	case NET_STR_OK:
+	{
+		board.ip4_current.netmask[0] = numb[0];
+		board.ip4_current.netmask[1] = numb[1];
+		board.ip4_current.netmask[2] = numb[2];
+		board.ip4_current.netmask[3] = numb[3];
+	}break;
+	case NET_STR_WRONG_FORMAT: SCPI_ErrorPush(context, SCPI_ERROR_DATA_TYPE_ERROR); break;
+	case NET_STR_WRONG_NUMBER: SCPI_ErrorPush(context, SCPI_ERROR_NUMERIC_DATA_NOT_ALLOWED); break;
+	default: return SCPI_RES_ERR; break;
+	}
+
+	return SCPI_RES_OK;
 }
+
 
 static scpi_result_t SCPI_SystemCommunicationLanSmaskQ(scpi_t* context)
 {
+	int32_t value;
+	uint8_t str[16] = {0};
 
+	if(!SCPI_ParamChoice(context, LAN_state_select, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+	if(CURRENT == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_current.netmask[0],board.ip4_current.netmask[1], board.ip4_current.netmask[2], board.ip4_current.netmask[3]);
+	}
+	else if(STATIC == value)
+	{
+		sprintf(str, "%d.%d.%d.%d", board.ip4_static.netmask[0],board.ip4_static.netmask[1], board.ip4_static.netmask[2], board.ip4_static.netmask[3]);
+	}
+	SCPI_ResultMnemonic(context, str);
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanUpdate(scpi_t* context)
 {
-
+	SPI_FLASH_BoardUpdate();
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemCommunicationLanPort(scpi_t* context)
 {
+	uint32_t port = 0;
+
+	if(!SCPI_ParamUInt32(context, &port, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	if(port > ETH_PORT_VAL)
+	{
+		SCPI_ErrorPush(context, SCPI_ERROR_TOO_MANY_DIGITS);
+		return SCPI_RES_ERR;
+	}
+
+	board.ip4_current.port = (uint16_t)port;
 
     return SCPI_RES_OK;
 }
@@ -195,8 +457,41 @@ static scpi_result_t SCPI_SystemCommunicationLanPortQ(scpi_t* context)
 
 static scpi_result_t SCPI_SystemServiceLanMAC(scpi_t* context)
 {
+	uint8_t str[18] = {0};
+	uint8_t numb[6] = {0};
+	size_t len = 0;
+	uint8_t conv_result = 0;
 
-    return SCPI_RES_OK;
+	if(board.security.on)
+	{
+		SCPI_ErrorPush(context, SCPI_ERROR_SERVICE_MODE_SECURE);
+		return SCPI_RES_ERR;
+	}
+
+	if(!SCPI_ParamCopyText(context,str, 18, &len, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	conv_result = SCPI_StringToMACArray(str, numb);
+
+	switch(conv_result)
+	{
+	case NET_STR_OK:
+	{
+		board.ip4_current.netmask[0] = numb[0];
+		board.ip4_current.netmask[1] = numb[1];
+		board.ip4_current.netmask[2] = numb[2];
+		board.ip4_current.netmask[3] = numb[3];
+		board.ip4_current.netmask[4] = numb[4];
+		board.ip4_current.netmask[5] = numb[5];
+	}break;
+	case NET_STR_WRONG_FORMAT: SCPI_ErrorPush(context, SCPI_ERROR_DATA_TYPE_ERROR); break;
+	case NET_STR_WRONG_NUMBER: SCPI_ErrorPush(context, SCPI_ERROR_NUMERIC_DATA_NOT_ALLOWED); break;
+	default: return SCPI_RES_ERR; break;
+	}
+
+	return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_SystemServiceDefault(scpi_t* context)
@@ -222,7 +517,7 @@ static scpi_result_t SCPI_SystemSecureState(scpi_t* context)
 {
 	int32_t state;
 	int8_t password_read[PASSWORD_LENGTH];
-	size_t password_length = 0;
+	size_t length = 0;
 	int8_t* password_reference = board.security.password;
 
 	if(!SCPI_ParamChoice(context, security_state_select, &state, TRUE))
@@ -230,7 +525,7 @@ static scpi_result_t SCPI_SystemSecureState(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	if(!SCPI_ParamCopyText(context, (char*)password_read, PASSWORD_LENGTH, (size_t*)password_length, TRUE))
+	if(!SCPI_ParamCopyText(context, (char*)password_read, PASSWORD_LENGTH, &length, TRUE))
 	{
 		return SCPI_RES_ERR;
 	}

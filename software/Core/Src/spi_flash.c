@@ -284,19 +284,19 @@ void SPI_FLASH_BoardDefault(uint8_t force, uint8_t id)
 
 		for(uint16_t i = 0; i < 4; i++)
 		{
-			SPI_FLASH_WriteByte(index, default_board.ip4_static.ip_address[0], 0);
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.ip[i], 0);
 			index++;
 		}
 
 		for(uint16_t i = 0; i < 4; i++)
 		{
-			SPI_FLASH_WriteByte(index, default_board.ip4_static.netmask[0], 0);
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.netmask[i], 0);
 			index++;
 		}
 
 		for(uint16_t i = 0; i < 4; i++)
 		{
-			SPI_FLASH_WriteByte(index, default_board.ip4_static.gateway[0], 0);
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.gateway[i], 0);
 			index++;
 		}
 
@@ -359,19 +359,19 @@ void SPI_FLASH_BoardUpdate()
 
 	for(uint16_t i = 0; i < 4; i++)
 	{
-		SPI_FLASH_WriteByte(index, board.ip4_current.ip_address[0], 0);
+		SPI_FLASH_WriteByte(index, board.ip4_current.ip[i], 0);
 		index++;
 	}
 
 	for(uint16_t i = 0; i < 4; i++)
 	{
-		SPI_FLASH_WriteByte(index, board.ip4_current.netmask[0], 0);
+		SPI_FLASH_WriteByte(index, board.ip4_current.netmask[i], 0);
 		index++;
 	}
 
 	for(uint16_t i = 0; i < 4; i++)
 	{
-		SPI_FLASH_WriteByte(index, board.ip4_current.gateway[0], 0);
+		SPI_FLASH_WriteByte(index, board.ip4_current.gateway[i], 0);
 		index++;
 	}
 
@@ -394,7 +394,7 @@ void SPI_FLASH_BoardUpdate()
 
 		for(uint16_t i = 0; i < 6; i++)
 		{
-			SPI_FLASH_WriteByte(index, board.ip4_static.MAC[i], 0);
+			SPI_FLASH_WriteByte(index, board.ip4_current.MAC[i], 0);
 			index++;
 		}
 
