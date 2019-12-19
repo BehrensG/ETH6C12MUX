@@ -1,2 +1,0 @@
-matrix.c:12:6:MATRIX_DetectModule	8	static
-matrix.c:17:6:MATRIX_InitMain	4	static
