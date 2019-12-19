@@ -1,0 +1,9 @@
+main.c:84:6:BOARD_CreateDefaultData	8	static
+main.c:136:6:BOARD_DetectDefaultConfig	8	static
+main.c:141:5:main	40	static
+main.c:205:6:SystemClock_Config	88	static
+main.c:254:13:MX_SPI3_Init	8	static
+main.c:294:13:MX_SPI4_Init	8	static
+main.c:334:13:MX_SPI5_Init	8	static
+main.c:374:13:MX_GPIO_Init	56	static
+main.c:459:6:Error_Handler	4	static

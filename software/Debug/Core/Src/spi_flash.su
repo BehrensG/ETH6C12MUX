@@ -1,0 +1,13 @@
+spi_flash.c:50:13:SPI_FLASH_Select	16	static
+spi_flash.c:61:13:SPI_FLASH_Deselect	16	static
+spi_flash.c:73:11:SPI_FLASH_GetManufacturerID	24	static
+spi_flash.c:92:16:SPI_FLASH_IsBusy	24	static
+spi_flash.c:112:13:SPI_FLASH_Wait	16	static
+spi_flash.c:118:6:SPI_FLASH_Read	32	static
+spi_flash.c:142:6:SPI_FLASH_WriteByte	24	static
+spi_flash.c:170:6:SPI_FLASH_EraseAll	24	static
+spi_flash.c:185:9:SPI_FLASH_IsProtected	24	static
+spi_flash.c:206:9:SPI_FLASH_DefaultStatus	32	static
+spi_flash.c:234:13:SPI_FLASH_Erase4k	24	static
+spi_flash.c:253:6:SPI_FLASH_BoardDefault	40	static
+spi_flash.c:332:6:SPI_FLASH_BoardUpdate	40	static

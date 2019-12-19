@@ -1,0 +1,8 @@
+tcp_raw.c:35:6:tcp_raw_init	16	static
+tcp_raw.c:73:14:tcp_raw_accept	32	static
+tcp_raw.c:123:14:tcp_raw_recv	296	static
+tcp_raw.c:234:13:tcp_raw_error	24	static
+tcp_raw.c:254:14:tcp_raw_poll	24	static
+tcp_raw.c:293:7:tcp_raw_sent	32	static
+tcp_raw.c:321:6:tcp_raw_send	32	static
+tcp_raw.c:379:13:tcp_raw_connection_close	16	static
