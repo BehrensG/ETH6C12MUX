@@ -4274,7 +4274,7 @@
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
   (gr_text 3 (at 217.7455 45.714) (layer Power) (tstamp 5D95C652)
-    (effects (font (size 1.5 1.5) (thickness 0.3)))
+    (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
   (gr_text 4 (at 220.7935 45.714) (layer Bottom) (tstamp 5D95C651)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
