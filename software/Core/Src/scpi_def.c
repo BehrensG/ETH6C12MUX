@@ -19,10 +19,13 @@
 #include "scpi_def.h"
 #include "main.h"
 #include "defines.h"
+#include "matrix.h"
 
 extern struct echo_state *es_scpi;
 extern struct tcp_pcb *tcp_echoserver_pcb;
 
+extern SPI_HandleTypeDef hspi4;
+extern SPI_HandleTypeDef hspi5;
 
 struct _scpi_channel_value_t {
     int32_t row;
@@ -31,23 +34,75 @@ struct _scpi_channel_value_t {
 
 typedef struct _scpi_channel_value_t scpi_channel_value_t;
 
-static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* array)
+
+static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, uint8_t state)
+{
+	uint32_t spi_cmd_idx = 0;
+
+	for(uint16_t x = 0; x < index; x++)
+	{
+		spi_cmd_idx = matrix.relays[x].index;
+		if(CLOSE == state)
+		{
+			matrix.spi_commands[spi_cmd_idx].tx_tmp |= (uint16_t)(1U << matrix.relays[array[x].row].MCZ33996.out);
+
+		}
+		else if (OPEN == state)
+		{
+			matrix.spi_commands[spi_cmd_idx].tx_tmp &= ~(uint16_t)(1U << matrix.relays[array[x].row].MCZ33996.out);
+		}
+
+		matrix.spi_commands[spi_cmd_idx].enabled = TRUE;
+
+	}
+
+	for(uint8_t i = 0; i < SPI_CMD_SIZE; i++)
+	{
+		matrix.spi_commands[i].tx_data[0] = 0x00;
+		matrix.spi_commands[i].tx_data[1] = (uint8_t)(matrix.spi_commands[i].tx_tmp >> 8);
+		matrix.spi_commands[i].tx_data[2] = (uint8_t)(matrix.spi_commands[i].tx_tmp);
+
+	}
+}
+
+static void SCPI_MatrixStatusUpdate(scpi_channel_value_t* array, size_t index, uint8_t state)
+{
+    uint8_t spi_cmd_idx = 0;
+
+	for(uint16_t x = 0; x < index; x++)
+	{
+		spi_cmd_idx = matrix.relays[x].index;
+
+		if(CLOSE == state)
+		{
+			matrix.relays[array[x].row].state = CLOSE;
+
+		}
+		else if(OPEN == state)
+		{
+			matrix.relays[array[x].row].state = OPEN;
+		}
+	}
+}
+
+static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* array, size_t* index, size_t max_row, size_t max_col, size_t max_dim)
 {
     scpi_parameter_t channel_list_param;
-	#define MAXROW 1    /* maximum number of rows */
-	#define MAXCOL 132    /* maximum number of columns */
-	#define MAXDIM 1    /* maximum number of dimensions */
-    //scpi_channel_value_t array[MAXROW * MAXCOL]; /* array which holds values in order (2D) */
     size_t chanlst_idx; /* index for channel list */
     size_t arr_idx = 0; /* index for array */
     size_t n, m = 1; /* counters for row (n) and columns (m) */
 
     /* get channel list */
-    if (SCPI_Parameter(context, &channel_list_param, TRUE)) {
+    if (!SCPI_Parameter(context, &channel_list_param, TRUE))
+    {
+        return FALSE;
+    }
+    else
+    {
         scpi_expr_result_t res;
         scpi_bool_t is_range;
-        int32_t values_from[MAXDIM];
-        int32_t values_to[MAXDIM];
+        int32_t values_from[max_dim];
+        int32_t values_to[max_dim];
         size_t dimensions;
 
         bool for_stop_row = FALSE; /* true if iteration for rows has to stop */
@@ -56,35 +111,47 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
         int32_t dir_col = 1; /* direction of counter for columns, +/-1 */
 
         /* the next statement is valid usage and it gets only real number of dimensions for the first item (index 0) */
-        if (!SCPI_ExprChannelListEntry(context, &channel_list_param, 0, &is_range, NULL, NULL, 0, &dimensions)) {
+        if (!SCPI_ExprChannelListEntry(context, &channel_list_param, 0, &is_range, NULL, NULL, 0, &dimensions))
+         {
             chanlst_idx = 0; /* call first index */
             arr_idx = 0; /* set arr_idx to 0 */
-            do { /* if valid, iterate over channel_list_param index while res == valid (do-while cause we have to do it once) */
+            do
+            { /* if valid, iterate over channel_list_param index while res == valid (do-while cause we have to do it once) */
                 res = SCPI_ExprChannelListEntry(context, &channel_list_param, chanlst_idx, &is_range, values_from, values_to, 4, &dimensions);
-                if (is_range == FALSE) { /* still can have multiple dimensions */
-                    if (dimensions == 1) {
+                if (is_range == FALSE)
+                { /* still can have multiple dimensions */
+                    if (dimensions == 1)
+                    {
                         /* here we have our values
                          * row == values_from[0]
                          * col == 0 (fixed number)
                          * call a function or something */
                         array[arr_idx].row = values_from[0];
                         array[arr_idx].col = 0;
-                    } else if (dimensions == 2) {
+                    }
+                    else if (dimensions == 2)
+                    {
                         /* here we have our values
                          * row == values_fom[0]
                          * col == values_from[1]
                          * call a function or something */
                         array[arr_idx].row = values_from[0];
                         array[arr_idx].col = values_from[1];
-                    } else {
-                        return SCPI_RES_ERR;
+                    }
+                    else
+                    {
+                        return FALSE;
                     }
                     arr_idx++; /* inkrement array where we want to save our values to, not neccessary otherwise */
-                    if (arr_idx >= MAXROW * MAXCOL) {
-                        return SCPI_RES_ERR;
+                    if (arr_idx >= max_row * max_col)
+                    {
+                        return FALSE;
                     }
-                } else if (is_range == TRUE) {
-                    if (values_from[0] > values_to[0]) {
+                }
+                else if (is_range == TRUE)
+                {
+                    if (values_from[0] > values_to[0])
+                    {
                         dir_row = -1; /* we have to decrement from values_from */
                     } else { /* if (values_from[0] < values_to[0]) */
                         dir_row = +1; /* default, we increment from values_from */
@@ -96,10 +163,8 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
                     for (n = values_from[0]; for_stop_row == FALSE; n += dir_row)
                     {
                         /* usual case for ranges, 2 dimensions */
-                        if (dimensions == 2)
-                        {
-                            if (values_from[1] > values_to[1])
-                            {
+                        if (dimensions == 2) {
+                            if (values_from[1] > values_to[1]) {
                                 dir_col = -1;
                             }
                             else if (values_from[1] < values_to[1])
@@ -118,10 +183,12 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
                                 array[arr_idx].row = n;
                                 array[arr_idx].col = m;
                                 arr_idx++;
-                                if (arr_idx >= MAXROW * MAXCOL) {
-                                    return SCPI_RES_ERR;
+                                if (arr_idx >= max_row * max_col)
+                                {
+                                    return FALSE;
                                 }
-                                if (m == (size_t)values_to[1]) {
+                                if (m == (size_t)values_to[1])
+                                {
                                     /* endpoint reached, stop column for-loop */
                                     for_stop_col = TRUE;
                                 }
@@ -137,11 +204,13 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
                             array[arr_idx].row = n;
                             array[arr_idx].col = 0;
                             arr_idx++;
-                            if (arr_idx >= MAXROW * MAXCOL) {
-                                return SCPI_RES_ERR;
+                            if (arr_idx >= max_row * max_col)
+                            {
+                                return FALSE;
                             }
                         }
-                        if (n == (size_t)values_to[0]) {
+                        if (n == (size_t)values_to[0])
+                        {
                             /* endpoint reached, stop row for-loop */
                             for_stop_row = TRUE;
                         }
@@ -151,17 +220,17 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
                 }
                 else
                 {
-                    return SCPI_RES_ERR;
+                    return FALSE;
                 }
                 /* increase index */
                 chanlst_idx++;
             } while (SCPI_EXPR_OK == SCPI_ExprChannelListEntry(context, &channel_list_param, chanlst_idx, &is_range, values_from, values_to, 4, &dimensions));
             /* while checks, whether incremented index is valid */
         }
+            *index = arr_idx;
+     }
 
-    }
-
-        return SCPI_RES_OK;
+    return TRUE;
 }
 
 
@@ -233,6 +302,59 @@ uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_array)
     return NET_STR_OK;
 }
 
+void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t index)
+{
+	uint32_t timeout = 1000;
+	switch(matrix.spi_commands[index].cs)
+	{
+	case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, OFF); break;
+	case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, OFF); break;
+	case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, OFF); break;
+	case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, OFF); break;
+	case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, OFF); break;
+	case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, OFF); break;
+	case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, OFF); break;
+	case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, OFF); break;
+	case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, OFF); break;
+	case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, OFF); break;
+	}
+
+	if(SPI4_ID == matrix.spi_commands[index].spi)
+	{
+		HAL_SPI_Transmit(&hspi4, matrix.spi_commands[index].tx_data, 3, timeout);
+	}
+	else if(SPI5_ID == matrix.spi_commands[index].spi)
+	{
+		HAL_SPI_Transmit(&hspi5, matrix.spi_commands[index].tx_data, 3, timeout);
+	}
+
+	switch(matrix.spi_commands[index].cs)
+	{
+	case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON); break;
+	case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, ON); break;
+	case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, ON); break;
+	case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, ON); break;
+	case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, ON); break;
+	case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, ON); break;
+	case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, ON); break;
+	case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, ON); break;
+	case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, ON); break;
+	case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, ON); break;
+	}
+
+}
+
+void SCPI_SendSPICommand()
+{
+	for(uint8_t i = 0; i < SPI_CMD_SIZE; i++)
+	{
+		if(matrix.spi_commands[i].enabled)
+		{
+			SCPI_SPITransmit(matrix.spi_commands[i].cs, matrix.spi_commands[i].spi, i);
+		}
+	}
+}
+
 size_t SCPI_Write(scpi_t* context, const char * data, size_t len)
 {
     (void) context;
@@ -290,25 +412,125 @@ static scpi_result_t My_CoreTstQ(scpi_t* context)
 
 static scpi_result_t SCPI_RouteClose(scpi_t* context)
 {
+    scpi_channel_value_t array[MAXROW * MAXCOL];
+    size_t arr_index = 0;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ChannelList(context, array, &arr_index, MAXROW, MAXCOL, MAXDIM))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	if(arr_index >= MODULE_RELAY_INDEX)
+	{
+		if(board.module.detected)
+		{
+
+		}
+		else
+		{
+			SCPI_ErrorPush(context, SCPI_ERROR_MODULE_NOT_MOUNTED);
+			return SCPI_RES_ERR;
+		}
+	}
+
+	SCPI_CreateSPICommands(array, arr_index, CLOSE);
+	SCPI_MatrixStatusUpdate(array, arr_index, CLOSE);
+	SCPI_SendSPICommand();
+
+	return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_RouteCloseQ(scpi_t* context)
 {
+	scpi_channel_value_t array[MAXROW * MAXCOL];
+    size_t arr_index = 0;
+    uint8_t state = 0;
 
+    if(!SCPI_ChannelList(context, array, &arr_index, MAXROW, MAXCOL, MAXDIM))
+    {
+		return SCPI_RES_ERR;
+	}
+
+	if(arr_index >= MODULE_RELAY_INDEX)
+	{
+		if(board.module.detected)
+		{
+
+		}
+		else
+		{
+			SCPI_ErrorPush(context, SCPI_ERROR_MODULE_NOT_MOUNTED);
+			return SCPI_RES_ERR;
+		}
+	}
+
+    for(uint16_t i; i < arr_index; i++)
+    {
+    	(CLOSE == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
+    	SCPI_ResultBool(context, state);
+    }
     return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_RouteOpen(scpi_t* context)
 {
+    scpi_channel_value_t array[MAXROW * MAXCOL];
+    size_t arr_index = 0;
 
-    return SCPI_RES_OK;
+	if(!SCPI_ChannelList(context, array, &arr_index, MAXROW, MAXCOL, MAXDIM))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	if(arr_index >= MODULE_RELAY_INDEX)
+	{
+		if(board.module.detected)
+		{
+
+		}
+		else
+		{
+			SCPI_ErrorPush(context, SCPI_ERROR_MODULE_NOT_MOUNTED);
+			return SCPI_RES_ERR;
+		}
+	}
+
+	SCPI_CreateSPICommands(array, arr_index, OPEN);
+	SCPI_MatrixStatusUpdate(array, arr_index, OPEN);
+	SCPI_SendSPICommand();
+
+	return SCPI_RES_OK;
 }
 
 static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 {
+	scpi_channel_value_t array[MAXROW * MAXCOL];
+    size_t arr_index = 0;
+    uint8_t state = 0;
 
+    if(!SCPI_ChannelList(context, array, &arr_index, MAXROW, MAXCOL, MAXDIM))
+    {
+		return SCPI_RES_ERR;
+	}
+
+	if(arr_index >= MODULE_RELAY_INDEX)
+	{
+		if(board.module.detected)
+		{
+
+		}
+		else
+		{
+			SCPI_ErrorPush(context, SCPI_ERROR_MODULE_NOT_MOUNTED);
+			return SCPI_RES_ERR;
+		}
+	}
+
+    for(uint16_t i; i < arr_index; i++)
+    {
+    	(OPEN == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
+    	SCPI_ResultBool(context, state);
+    }
     return SCPI_RES_OK;
 }
 

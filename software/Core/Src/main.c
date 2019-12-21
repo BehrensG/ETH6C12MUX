@@ -29,6 +29,7 @@
 #include "stm32f7xx_hal_spi.h"
 #include "defines.h"
 #include "spi_flash.h"
+#include "matrix.h"
 
 
 
@@ -171,8 +172,10 @@ int main(void)
   MX_SPI4_Init();
   tcp_raw_init();
 
+
   BOARD_CreateDefaultData();
   BOARD_DetectDefaultConfig();
+  MATRIX_InitMain();
 
   /* USER CODE BEGIN 2 */
 
