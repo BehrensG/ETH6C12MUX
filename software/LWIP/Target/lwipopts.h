@@ -79,6 +79,16 @@
 #define LWIP_SOCKET 0
 /*----- Value in opt.h for RECV_BUFSIZE_DEFAULT: INT_MAX -----*/
 #define RECV_BUFSIZE_DEFAULT 2000000000
+/*----- Default Value for LWIP_HTTPD: 0 ---*/
+#define LWIP_HTTPD 1
+/*----- Default Value for LWIP_HTTPD_CGI_SSI: 0 ---*/
+#define LWIP_HTTPD_CGI_SSI 1
+/*----- Default Value for LWIP_HTTPD_SUPPORT_POST: 0 ---*/
+#define LWIP_HTTPD_SUPPORT_POST 1
+/*----- Default Value for LWIP_HTTPD_CUSTOM_FILES: 0 ---*/
+#define LWIP_HTTPD_CUSTOM_FILES 1
+/*----- Value in opt.h for HTTPD_USE_CUSTOM_FSDATA: 0 -----*/
+#define HTTPD_USE_CUSTOM_FSDATA 1
 /*----- Value in opt.h for LWIP_STATS: 1 -----*/
 #define LWIP_STATS 0
 /*----- Value in opt.h for CHECKSUM_GEN_IP: 1 -----*/

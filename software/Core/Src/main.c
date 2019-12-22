@@ -16,6 +16,14 @@
   *
   ******************************************************************************
   */
+
+#include "defines.h"
+#include "spi_flash.h"
+#include "matrix.h"
+#include "scpi/scpi.h"
+#include "scpi_def.h"
+#include "stm32f7xx_hal_spi.h"
+
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -24,12 +32,9 @@
 #include "main.h"
 #include "lwip.h"
 
-#include "scpi/scpi.h"
-#include "scpi_def.h"
-#include "stm32f7xx_hal_spi.h"
-#include "defines.h"
-#include "spi_flash.h"
-#include "matrix.h"
+
+
+
 
 
 
@@ -74,13 +79,6 @@ static void MX_SPI4_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 
 void BOARD_CreateDefaultData()
 {
@@ -139,6 +137,14 @@ void BOARD_DetectDefaultConfig()
 	board.default_config = HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin);
 }
 
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -170,19 +176,12 @@ int main(void)
   MX_LWIP_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-  tcp_raw_init();
 
-
+  /* USER CODE BEGIN 2 */
   BOARD_CreateDefaultData();
   BOARD_DetectDefaultConfig();
   MATRIX_InitMain();
-
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+  tcp_raw_init();
   SCPI_Init(&scpi_context,
            scpi_commands,
            &scpi_interface,
@@ -191,13 +190,18 @@ int main(void)
            scpi_input_buffer, SCPI_INPUT_BUFFER_LENGTH,
            scpi_error_queue_data, SCPI_ERROR_QUEUE_SIZE);
 
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+
+
   while (1)
   {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+	  /* USER CODE BEGIN WHILE */
 	  MX_LWIP_Process();
+	  /* USER CODE END WHILE */
   }
+  /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 
