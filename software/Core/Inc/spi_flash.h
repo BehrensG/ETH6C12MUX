@@ -8,6 +8,8 @@
 #ifndef INC_SPI_FLASH_H_
 #define INC_SPI_FLASH_H_
 
+#include "types.h"
+
 #define SPI_FLASH_DEFAULT_STATUS 0x10
 
 uint8_t * SPI_FLASH_GetManufacturerID(uint8_t id);

@@ -1128,7 +1128,7 @@ void MATRIX_ResetSPICommands()
 {
 	for(uint8_t i = 0; i < SPI_CMD_SIZE; i++)
 	{
-		matrix.spi_commands[i].enabled = FALSE;
+		matrix.spi_commands[i].enabled = TRUE;
 		matrix.spi_commands[i].tx_tmp = 0;
 		matrix.spi_commands[i].tx_data[0] = 0x00;
 		matrix.spi_commands[i].tx_data[1] = 0x00;

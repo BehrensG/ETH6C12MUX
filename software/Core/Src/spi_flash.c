@@ -375,11 +375,11 @@ void SPI_FLASH_BoardUpdate()
 		index++;
 	}
 
-	tx_data = board.ip4_current.port >> 8;
+	tx_data = (uint8_t)(board.ip4_current.port >> 8);
 	SPI_FLASH_WriteByte(index, tx_data, 0);
 	index++;
 
-	tx_data = board.ip4_current.port;
+	tx_data = (uint8_t)(board.ip4_current.port);
 	SPI_FLASH_WriteByte(index, tx_data, 0);
 	index++;
 
@@ -426,6 +426,111 @@ void SPI_FLASH_BoardUpdate()
 			index++;
 		}
 
+	}
+
+}
+
+void SPI_FLASH_ReadData()
+{
+	uint32_t index = 0x00000001;
+	uint8_t rx_data[2] = {0xFF, 0xFF};
+
+	for(uint16_t i = 0; i < SCPI_MANUFACTURER_STRING_LENGTH; i++)
+	{
+		SPI_FLASH_Read(index, board.scpi_info.manufacturer[i], 1, 0);
+		index++;
+	}
+
+	for(uint16_t i = 0; i < SCPI_DEVICE_STRING_LENGTH; i++)
+	{
+		SPI_FLASH_Read(index, board.scpi_info.device[i], 1, 0);
+		index++;
+	}
+
+	for(uint16_t i = 0; i < SCPI_SOFTWAREVERSION_STRING_LENGTH; i++)
+	{
+		SPI_FLASH_Read(index, board.scpi_info.software_version[i], 1, 0);
+		index++;
+	}
+
+	if(board.default_config)
+	{
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_Read(index, board.ip4_static.ip[i], 1, 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_Read(index, board.ip4_static.netmask[i], 1, 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_Read(index, board.ip4_static.gateway[i], 1, 0);
+			index++;
+		}
+
+		SPI_FLASH_Read(index, rx_data[0], 1, 0);
+		board.ip4_static.port = (uint16_t)(rx_data[0] << 8);
+		index++;
+
+		SPI_FLASH_Read(index, rx_data[1], 1,  0);
+		board.ip4_static.port += (uint16_t)(rx_data[1]);
+		index++;
+	}
+	else
+	{
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, board.ip4_static.ip[i], 0);
+			board.ip4_current.ip[i] = board.ip4_static.ip[i];
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, board.ip4_static.netmask[i], 0);
+			board.ip4_current.netmask[i] = board.ip4_static.netmask[i];
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, board.ip4_static.gateway[i], 0);
+			board.ip4_current.gateway[i] = board.ip4_static.gateway[i];
+			index++;
+		}
+
+		SPI_FLASH_Read(index, rx_data[0], 1, 0);
+		board.ip4_static.port = (uint16_t)(rx_data[0] << 8);
+		index++;
+
+		SPI_FLASH_Read(index, rx_data[1], 1,  0);
+		board.ip4_static.port += (uint16_t)(rx_data[1]);
+		index++;
+
+		board.ip4_current.port = board.ip4_static.port;
+	}
+
+	for(uint16_t i = 0; i < SCPI_SERIALNUMBER_STRING_LENGTH; i++)
+	{
+		SPI_FLASH_Read(index, board.scpi_info.serial_number[i], 1, 0);
+		index++;
+	}
+
+	for(uint16_t i = 0; i < 6; i++)
+	{
+		SPI_FLASH_Read(index, board.ip4_current.MAC[i], 1, 0);
+		index++;
+	}
+
+	for(uint16_t i = 0; i < PASSWORD_LENGTH; i++)
+	{
+		SPI_FLASH_Read(index, board.security.password[i], 1, 0);
+		index++;
 	}
 
 }
