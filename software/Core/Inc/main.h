@@ -29,6 +29,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
+#include "matrix.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,7 +93,55 @@ void Error_Handler(void);
 #define MODULE_DETECT0_GPIO_Port GPIOB
 #define MCU_DEFAULT_Pin GPIO_PIN_12
 #define MCU_DEFAULT_GPIO_Port GPIOB
+
+
 /* USER CODE BEGIN Private defines */
+
+struct _scpi_info
+{
+	int8_t* manufacturer;
+	int8_t* device;
+	int8_t* serial_number;
+	int8_t* software_version;
+
+};
+
+struct _spi_module
+{
+	uint8_t detected;
+};
+
+struct _ip4_lan
+{
+	uint8_t ip[4];
+	uint8_t netmask[4];
+	uint8_t gateway[4];
+	uint8_t MAC[6];
+	int8_t* hostname;
+	uint16_t port;
+};
+
+struct _security
+{
+	uint8_t on;
+	int8_t* password;
+};
+
+typedef struct _ip4_lan ip4_lan_t;
+typedef struct _spi_module spi_module_t;
+typedef struct _scpi_info scpi_info_t;
+typedef struct _security security_t;
+
+struct _board
+{
+	ip4_lan_t ip4_current;
+	ip4_lan_t ip4_static;
+	scpi_info_t scpi_info;
+	spi_module_t module;
+	security_t security;
+	uint8_t default_config;
+
+}board, default_board;
 
 /* USER CODE END Private defines */
 

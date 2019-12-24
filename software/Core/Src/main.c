@@ -27,16 +27,8 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include <scpi_def.h>
-#include <tcp_raw.h>
 #include "main.h"
 #include "lwip.h"
-
-
-
-
-
-
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -126,7 +118,6 @@ void BOARD_CreateDefaultData()
 	default_board.ip4_static.MAC[5] = default_board.ip4_current.MAC[5] = MAC5;
 
 	default_board.default_config = DEFAULT_OFF;
-	default_board.dhcp = OFF;
 
 	board = default_board;
 
@@ -143,8 +134,6 @@ void BOARD_DetectDefaultConfig()
   * @brief  The application entry point.
   * @retval int
   */
-
-
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -155,8 +144,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-
-	HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -170,17 +158,19 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-
   MX_GPIO_Init();
   MX_SPI5_Init();
   MX_LWIP_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-
   /* USER CODE BEGIN 2 */
+
   BOARD_CreateDefaultData();
   BOARD_DetectDefaultConfig();
+  SPI_FLASH_ReadData();
+
   MATRIX_InitMain();
+
   tcp_raw_init();
   SCPI_Init(&scpi_context,
            scpi_commands,
@@ -193,15 +183,15 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Infinite loop */
-
-
-  while (1)
+  /* USER CODE BEGIN WHILE */
+  while(1)
   {
-	  /* USER CODE BEGIN WHILE */
 	  MX_LWIP_Process();
-	  /* USER CODE END WHILE */
   }
-  /* USER CODE BEGIN 3 */
+
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 
@@ -272,7 +262,7 @@ static void MX_SPI3_Init(void)
   hspi3.Instance = SPI3;
   hspi3.Init.Mode = SPI_MODE_MASTER;
   hspi3.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi3.Init.DataSize = SPI_DATASIZE_4BIT;
   hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi3.Init.NSS = SPI_NSS_SOFT;
@@ -282,7 +272,7 @@ static void MX_SPI3_Init(void)
   hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi3.Init.CRCPolynomial = 7;
   hspi3.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi3.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
+  hspi3.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
   if (HAL_SPI_Init(&hspi3) != HAL_OK)
   {
     Error_Handler();
@@ -392,17 +382,17 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin|RELAY1_nCS4_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin|RELAY1_nCS4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin 
-                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_SET);
+                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : RELAY1_nRST_Pin */
   GPIO_InitStruct.Pin = RELAY1_nRST_Pin;

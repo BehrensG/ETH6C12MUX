@@ -502,6 +502,33 @@ static scpi_result_t SCPI_RouteOpen(scpi_t* context)
 	return SCPI_RES_OK;
 }
 
+static scpi_result_t SCPI_RouteOpenAll(scpi_t* context)
+{
+    scpi_channel_value_t array[MAXROW * MAXCOL];
+    size_t arr_index = 0;
+
+	for (uint8_t i = 0; i < MAXROW; i++)
+	{
+		array[i].col = 0;
+		array[i].row = i;
+	}
+
+	if(board.module.detected)
+	{
+		arr_index = MAXROW - 1;
+	}
+	else
+	{
+		arr_index = MAXROW/2 - 1;
+	}
+
+	SCPI_CreateSPICommands(array, arr_index, OPEN);
+	SCPI_MatrixStatusUpdate(array, arr_index, OPEN);
+	SCPI_SendSPICommand();
+
+	return SCPI_RES_OK;
+}
+
 static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 {
 	scpi_channel_value_t array[MAXROW * MAXCOL];
@@ -549,25 +576,6 @@ scpi_choice_def_t DHCP_state_select[] =
     SCPI_CHOICE_LIST_END
 };
 
-
-static scpi_result_t SCPI_SystemCommunicationLanDHCP(scpi_t* context) //done
-{
-	int32_t state;
-	if(!SCPI_ParamChoice(context, DHCP_state_select, &state, TRUE))
-	{
-		return SCPI_RES_ERR;
-	}
-
-	board.dhcp = (uint8_t)state;
-
-    return SCPI_RES_OK;
-}
-
-static scpi_result_t SCPI_SystemCommunicationLanDHCPQ(scpi_t* context) //done
-{
-	SCPI_ResultBool(context, board.dhcp);
-    return SCPI_RES_OK;
-}
 
 scpi_choice_def_t LAN_state_select[] =
 {
@@ -618,11 +626,13 @@ static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t* context) //done
 	}
 	if(CURRENT == value)
 	{
-		sprintf(str, "%d.%d.%d.%d", board.ip4_current.gateway[0],board.ip4_current.gateway[1], board.ip4_current.gateway[2], board.ip4_current.gateway[3]);
+		sprintf(str, "%d.%d.%d.%d", board.ip4_current.gateway[0], board.ip4_current.gateway[1],
+									board.ip4_current.gateway[2], board.ip4_current.gateway[3]);
 	}
 	else if(STATIC == value)
 	{
-		sprintf(str, "%d.%d.%d.%d", board.ip4_static.gateway[0],board.ip4_static.gateway[1], board.ip4_static.gateway[2], board.ip4_static.gateway[3]);
+		sprintf(str, "%d.%d.%d.%d", board.ip4_static.gateway[0], board.ip4_static.gateway[1],
+									board.ip4_static.gateway[2], board.ip4_static.gateway[3]);
 	}
 	SCPI_ResultMnemonic(context, str);
     return SCPI_RES_OK;
@@ -718,12 +728,14 @@ static scpi_result_t SCPI_SystemCommunicationLanMACQ(scpi_t* context)
 	uint8_t str[18] = {0};
 	if(!board.default_config)
 	{
-		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_current.MAC[0],board.ip4_current.MAC[1], board.ip4_current.MAC[2], board.ip4_current.MAC[3],
+		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_current.MAC[0], board.ip4_current.MAC[1],
+														board.ip4_current.MAC[2], board.ip4_current.MAC[3],
 														board.ip4_current.MAC[4], board.ip4_current.MAC[5]);
 	}
 	else
 	{
-		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_static.MAC[0],board.ip4_static.MAC[1], board.ip4_static.MAC[2], board.ip4_static.MAC[3],
+		sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x", board.ip4_static.MAC[0], board.ip4_static.MAC[1],
+														board.ip4_static.MAC[2], board.ip4_static.MAC[3],
 														board.ip4_static.MAC[4], board.ip4_static.MAC[5]);
 	}
 
@@ -776,11 +788,13 @@ static scpi_result_t SCPI_SystemCommunicationLanSmaskQ(scpi_t* context)
 	}
 	if(CURRENT == value)
 	{
-		sprintf(str, "%d.%d.%d.%d", board.ip4_current.netmask[0],board.ip4_current.netmask[1], board.ip4_current.netmask[2], board.ip4_current.netmask[3]);
+		sprintf(str, "%d.%d.%d.%d", board.ip4_current.netmask[0], board.ip4_current.netmask[1],
+									board.ip4_current.netmask[2], board.ip4_current.netmask[3]);
 	}
 	else if(STATIC == value)
 	{
-		sprintf(str, "%d.%d.%d.%d", board.ip4_static.netmask[0],board.ip4_static.netmask[1], board.ip4_static.netmask[2], board.ip4_static.netmask[3]);
+		sprintf(str, "%d.%d.%d.%d", board.ip4_static.netmask[0], board.ip4_static.netmask[1],
+									board.ip4_static.netmask[2], board.ip4_static.netmask[3]);
 	}
 	SCPI_ResultMnemonic(context, (char*)str);
     return SCPI_RES_OK;
@@ -958,12 +972,11 @@ const scpi_command_t scpi_commands[] = {
 	{.pattern = "[ROUTe]:CLOSe", .callback = SCPI_RouteClose,}, // <channel_list>
 	{.pattern = "[ROUTe]:CLOSe?", .callback = SCPI_RouteCloseQ,}, // <channel_list>
 	{.pattern = "[ROUTe]:OPEN", .callback = SCPI_RouteOpen,}, // <channel_list>
+	{.pattern = "[ROUTe]:OPEN:ALL", .callback = SCPI_RouteOpenAll,},
 	{.pattern = "[ROUTe]:OPEN?", .callback = SCPI_RouteOpenQ,}, // <channel_list>
 	{.pattern = "[ROUTe]:SCAN", .callback = SCPI_RouteScan,}, // <channel_list>
 
 	// Relay card system commands
-	{.pattern = "SYSTem:COMMunication:LAN:DHCP", .callback = SCPI_SystemCommunicationLanDHCP,}, // {ON|1|OFF|0}
-	{.pattern = "SYSTem:COMMunication:LAN:DHCP?", .callback = SCPI_SystemCommunicationLanDHCPQ,},
 	{.pattern = "SYSTem:COMMunication:LAN:GATeway", .callback = SCPI_SystemCommunicationLanGateway,}, // "<address>"
 	{.pattern = "SYSTem:COMMunication:LAN:GATeway?", .callback = SCPI_SystemCommunicationLanGatewayQ,}, // [{CURRent|STATic}]
 	{.pattern = "SYSTem:COMMunication:LAN:HOSTname", .callback = SCPI_SystemCommunicationLanHostname,}, // "<name>"
