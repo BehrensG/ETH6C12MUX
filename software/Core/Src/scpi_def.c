@@ -61,17 +61,14 @@ static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, ui
 		matrix.spi_commands[i].tx_data[0] = 0x00;
 		matrix.spi_commands[i].tx_data[1] = (uint8_t)(matrix.spi_commands[i].tx_tmp >> 8);
 		matrix.spi_commands[i].tx_data[2] = (uint8_t)(matrix.spi_commands[i].tx_tmp);
-
 	}
 }
 
 static void SCPI_MatrixStatusUpdate(scpi_channel_value_t* array, size_t index, uint8_t state)
 {
-    uint8_t spi_cmd_idx = 0;
 
 	for(uint16_t x = 0; x < index; x++)
 	{
-		spi_cmd_idx = matrix.relays[x].index;
 
 		if(CLOSE == state)
 		{
@@ -84,6 +81,7 @@ static void SCPI_MatrixStatusUpdate(scpi_channel_value_t* array, size_t index, u
 		}
 	}
 }
+
 
 static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* array, size_t* index, size_t max_row, size_t max_col, size_t max_dim)
 {
@@ -234,7 +232,7 @@ static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* arr
 }
 
 
-uint8_t SCPI_StringToIP4Array (const int8_t* ip_string, uint8_t* ip_array)
+static uint8_t SCPI_StringToIP4Array(const int8_t* ip_string, uint8_t* ip_array)
 {
 
     /* A pointer to the next digit to process. */
@@ -278,7 +276,7 @@ uint8_t SCPI_StringToIP4Array (const int8_t* ip_string, uint8_t* ip_array)
     return NET_STR_OK;
 }
 
-uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_array)
+static uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_array)
 {
     int32_t values[6];
 
@@ -302,7 +300,7 @@ uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_array)
     return NET_STR_OK;
 }
 
-void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t index)
+static void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t index)
 {
 	uint32_t timeout = 1000;
 	switch(matrix.spi_commands[index].cs)
@@ -558,12 +556,6 @@ static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
     	(OPEN == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
     	SCPI_ResultBool(context, state);
     }
-    return SCPI_RES_OK;
-}
-
-static scpi_result_t SCPI_RouteScan(scpi_t* context)
-{
-
     return SCPI_RES_OK;
 }
 
@@ -974,7 +966,6 @@ const scpi_command_t scpi_commands[] = {
 	{.pattern = "[ROUTe]:OPEN", .callback = SCPI_RouteOpen,}, // <channel_list>
 	{.pattern = "[ROUTe]:OPEN:ALL", .callback = SCPI_RouteOpenAll,},
 	{.pattern = "[ROUTe]:OPEN?", .callback = SCPI_RouteOpenQ,}, // <channel_list>
-	{.pattern = "[ROUTe]:SCAN", .callback = SCPI_RouteScan,}, // <channel_list>
 
 	// Relay card system commands
 	{.pattern = "SYSTem:COMMunication:LAN:GATeway", .callback = SCPI_SystemCommunicationLanGateway,}, // "<address>"

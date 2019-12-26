@@ -309,6 +309,12 @@ void SPI_FLASH_BoardDefault(uint8_t force, uint8_t id)
 		SPI_FLASH_WriteByte(index, tx_data, 0);
 		index++;
 
+		for(uint16_t i = 0; i < NET_HOSTNAME; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.hostname[i], 0);
+			index++;
+		}
+
 		for(uint16_t i = 0; i < SCPI_SERIALNUMBER_STRING_LENGTH; i++)
 		{
 			SPI_FLASH_WriteByte(index, default_board.scpi_info.serial_number[i], 0);
@@ -382,6 +388,12 @@ void SPI_FLASH_BoardUpdate()
 	tx_data = (uint8_t)(board.ip4_current.port);
 	SPI_FLASH_WriteByte(index, tx_data, 0);
 	index++;
+
+	for(uint16_t i = 0; i < NET_HOSTNAME; i++)
+	{
+		SPI_FLASH_WriteByte(index, default_board.ip4_current.hostname[i], 0);
+		index++;
+	}
 
 	if(SECURITY_OFF == board.security.on)
 	{
@@ -480,6 +492,12 @@ void SPI_FLASH_ReadData()
 		SPI_FLASH_Read(index, rx_data[1], 1,  0);
 		board.ip4_static.port += (uint16_t)(rx_data[1]);
 		index++;
+
+		for(uint16_t i = 0; i < NET_HOSTNAME; i++)
+		{
+			SPI_FLASH_Read(index, board.ip4_static.hostname[i], 1, 0);
+			index++;
+		}
 	}
 	else
 	{
@@ -513,6 +531,13 @@ void SPI_FLASH_ReadData()
 		index++;
 
 		board.ip4_current.port = board.ip4_static.port;
+
+		for(uint16_t i = 0; i < NET_HOSTNAME; i++)
+		{
+			SPI_FLASH_Read(index, board.ip4_static.hostname[i], 1, 0);
+			board.ip4_current.hostname[i] = board.ip4_static.hostname[i];
+			index++;
+		}
 	}
 
 	for(uint16_t i = 0; i < SCPI_SERIALNUMBER_STRING_LENGTH; i++)
