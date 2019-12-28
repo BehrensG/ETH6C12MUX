@@ -39,6 +39,11 @@ static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, ui
 {
 	uint32_t spi_cmd_idx = 0;
 
+	for(uint8_t i = 0; i < SPI_CMD_SIZE; i++)
+	{
+		matrix.spi_commands[i].enabled = FALSE;
+	}
+
 	for(uint16_t x = 0; x < index; x++)
 	{
 		spi_cmd_idx = matrix.relays[x].index;
