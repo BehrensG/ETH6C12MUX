@@ -21,6 +21,7 @@
 #include "lwip.h"
 #include "lwip/init.h"
 #include "lwip/netif.h"
+#include "main.h"
 #if defined ( __CC_ARM )  /* MDK ARM Compiler */
 #include "lwip/sio.h"
 #endif /* MDK ARM Compiler */
@@ -55,18 +56,18 @@ uint8_t GATEWAY_ADDRESS[4];
 void MX_LWIP_Init(void)
 {
   /* IP addresses initialization */
-  IP_ADDRESS[0] = 192;
-  IP_ADDRESS[1] = 0;
-  IP_ADDRESS[2] = 2;
-  IP_ADDRESS[3] = 2;
-  NETMASK_ADDRESS[0] = 255;
-  NETMASK_ADDRESS[1] = 255;
-  NETMASK_ADDRESS[2] = 255;
-  NETMASK_ADDRESS[3] = 0;
-  GATEWAY_ADDRESS[0] = 192;
-  GATEWAY_ADDRESS[1] = 0;
-  GATEWAY_ADDRESS[2] = 2;
-  GATEWAY_ADDRESS[3] = 1;
+  IP_ADDRESS[0] = board.ip4_static.ip[0];
+  IP_ADDRESS[1] = board.ip4_static.ip[1];
+  IP_ADDRESS[2] = board.ip4_static.ip[2];
+  IP_ADDRESS[3] = board.ip4_static.ip[3];
+  NETMASK_ADDRESS[0] = board.ip4_static.netmask[0];
+  NETMASK_ADDRESS[1] = board.ip4_static.netmask[1];
+  NETMASK_ADDRESS[2] = board.ip4_static.netmask[2];
+  NETMASK_ADDRESS[3] = board.ip4_static.netmask[3];
+  GATEWAY_ADDRESS[0] = board.ip4_static.gateway[0];
+  GATEWAY_ADDRESS[1] = board.ip4_static.gateway[1];
+  GATEWAY_ADDRESS[2] = board.ip4_static.gateway[2];
+  GATEWAY_ADDRESS[3] = board.ip4_static.gateway[3];
   
   /* Initilialize the LwIP stack without RTOS */
   lwip_init();

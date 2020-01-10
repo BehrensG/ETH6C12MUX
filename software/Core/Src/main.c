@@ -125,9 +125,26 @@ void BOARD_CreateDefaultData()
 
 void BOARD_DetectDefaultConfig()
 {
-	board.default_config = HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin);
+	board.default_config = !HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin);
 }
 
+void BOARD_PinInit()
+{
+	HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, ON);
+	HAL_GPIO_WritePin(RELAY2_nRST_GPIO_Port, RELAY2_nRST_Pin, ON);
+
+	HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON);
+	HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, ON);
+	HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, ON);
+	HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, ON);
+	HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, ON);
+
+	HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, ON);
+	HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, ON);
+	HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, ON);
+	HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, ON);
+	HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, ON);
+}
 /* USER CODE END 0 */
 
 /**
@@ -159,24 +176,29 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_SPI5_Init();
-  MX_LWIP_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
+  MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
 
   BOARD_CreateDefaultData();
   BOARD_DetectDefaultConfig();
+  BOARD_PinInit();
+
+  MX_LWIP_Init();
+
+  SPI_FLASH_BoardDefault(FALSE);
   SPI_FLASH_ReadData();
 
   MATRIX_InitMain();
+  MATRIX_ResetSPICommands();
 
   tcp_raw_init();
   SCPI_Init(&scpi_context,
            scpi_commands,
            &scpi_interface,
            scpi_units_def,
-           SCPI_IDN1, SCPI_IDN2, SCPI_IDN3, SCPI_IDN4,
+           board.scpi_info.manufacturer, board.scpi_info.device, board.scpi_info.serial_number, board.scpi_info.software_version,
            scpi_input_buffer, SCPI_INPUT_BUFFER_LENGTH,
            scpi_error_queue_data, SCPI_ERROR_QUEUE_SIZE);
 
@@ -262,7 +284,7 @@ static void MX_SPI3_Init(void)
   hspi3.Instance = SPI3;
   hspi3.Init.Mode = SPI_MODE_MASTER;
   hspi3.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi3.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi3.Init.NSS = SPI_NSS_SOFT;
@@ -302,7 +324,7 @@ static void MX_SPI4_Init(void)
   hspi4.Instance = SPI4;
   hspi4.Init.Mode = SPI_MODE_MASTER;
   hspi4.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi4.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
@@ -342,7 +364,7 @@ static void MX_SPI5_Init(void)
   hspi5.Instance = SPI5;
   hspi5.Init.Mode = SPI_MODE_MASTER;
   hspi5.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi5.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi5.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi5.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi5.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi5.Init.NSS = SPI_NSS_SOFT;
