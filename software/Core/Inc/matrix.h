@@ -78,7 +78,6 @@ struct _matrix_t
     spi_command_t spi_commands[SPI_CMD_SIZE];
 }matrix;
 
-
 void MATRIX_InitMain();
 void MATRIX_ResetSPICommands();
 

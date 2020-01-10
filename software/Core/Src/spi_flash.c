@@ -250,20 +250,98 @@ static void SPI_FLASH_Erase4k(uint32_t address, uint8_t id)
 	SPI_FLASH_Deselect(id);
 }
 
-void SPI_FLASH_BoardDefault(uint8_t force, uint8_t id)
+void SPI_FLASH_BoardDefault(uint8_t force)
 {
 	uint32_t index = 0x00000000;
 	uint8_t tx_data = 0xFF;
+	uint8_t id = 0;
 
 	if(FALSE == force)
 	{
+
 		if (SPI_FLASH_DEFAULT_STATUS == SPI_FLASH_DefaultStatus(id))
 		{
 			return;
 		}
+		SPI_FLASH_Erase4k(index, 0);
+
+		SPI_FLASH_WriteByte(index, SPI_FLASH_DEFAULT_STATUS, 0);
+		index++;
+
+		for(uint16_t i = 0; i < SCPI_MANUFACTURER_STRING_LENGTH; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.scpi_info.manufacturer[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < SCPI_DEVICE_STRING_LENGTH; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.scpi_info.device[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < SCPI_SOFTWAREVERSION_STRING_LENGTH; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.scpi_info.software_version[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.ip[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.netmask[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 4; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.gateway[i], 0);
+			index++;
+		}
+
+
+		tx_data = board.ip4_static.port >> 8;
+		SPI_FLASH_WriteByte(index, tx_data, 0);
+		index++;
+
+		tx_data = board.ip4_static.port;
+		SPI_FLASH_WriteByte(index, tx_data, 0);
+		index++;
+
+		for(uint16_t i = 0; i < NET_HOSTNAME; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.hostname[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < SCPI_SERIALNUMBER_STRING_LENGTH; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.scpi_info.serial_number[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < 6; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.ip4_static.MAC[i], 0);
+			index++;
+		}
+
+		for(uint16_t i = 0; i < PASSWORD_LENGTH; i++)
+		{
+			SPI_FLASH_WriteByte(index, default_board.security.password[i], 0);
+			index++;
+		}
+
 	}
-	else
+	else if (TRUE == force)
 	{
+		SPI_FLASH_Erase4k(index, 0);
+
 		for(uint16_t i = 0; i < SCPI_MANUFACTURER_STRING_LENGTH; i++)
 		{
 			SPI_FLASH_WriteByte(index, default_board.scpi_info.manufacturer[i], 0);

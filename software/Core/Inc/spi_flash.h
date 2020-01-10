@@ -18,7 +18,7 @@ void SPI_FLASH_Read(uint32_t address, uint8_t* buffer, uint16_t len, uint8_t id)
 void SPI_FLASH_EraseAll(uint8_t id);
 uint8_t SPI_FLASH_IsProtected(uint8_t id);
 uint8_t SPI_FLASH_DefaultStatus(uint8_t id);
-void SPI_FLASH_BoardDefault(uint8_t force, uint8_t id);
+void SPI_FLASH_BoardDefault(uint8_t force);
 void SPI_FLASH_BoardUpdate();
 
 #endif /* INC_SPI_FLASH_H_ */

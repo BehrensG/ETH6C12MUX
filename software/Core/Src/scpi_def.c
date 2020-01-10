@@ -47,6 +47,7 @@ static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, ui
 	for(uint16_t x = 0; x < index; x++)
 	{
 		spi_cmd_idx = matrix.relays[x].index;
+
 		if(CLOSE == state)
 		{
 			matrix.spi_commands[spi_cmd_idx].tx_tmp |= (uint16_t)(1U << matrix.relays[array[x].row].MCZ33996.out);
@@ -86,7 +87,6 @@ static void SCPI_MatrixStatusUpdate(scpi_channel_value_t* array, size_t index, u
 		}
 	}
 }
-
 
 static scpi_result_t SCPI_ChannelList(scpi_t *context, scpi_channel_value_t* array, size_t* index, size_t max_row, size_t max_col, size_t max_dim)
 {
@@ -308,6 +308,7 @@ static uint8_t SCPI_StringToMACArray(const uint8_t* MAC_string, uint8_t* MAC_arr
 static void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t index)
 {
 	uint32_t timeout = 1000;
+
 	switch(matrix.spi_commands[index].cs)
 	{
 	case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, OFF); break;
@@ -423,7 +424,8 @@ static scpi_result_t SCPI_RouteClose(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	if(arr_index >= MODULE_RELAY_INDEX)
+
+	if(array[arr_index -1].row >= MODULE_RELAY_INDEX)
 	{
 		if(board.module.detected)
 		{
@@ -454,7 +456,7 @@ static scpi_result_t SCPI_RouteCloseQ(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	if(arr_index >= MODULE_RELAY_INDEX)
+	if(array[arr_index - 1].row >= MODULE_RELAY_INDEX)
 	{
 		if(board.module.detected)
 		{
@@ -467,7 +469,7 @@ static scpi_result_t SCPI_RouteCloseQ(scpi_t* context)
 		}
 	}
 
-    for(uint16_t i; i < arr_index; i++)
+    for(uint16_t i = 0; i < arr_index; i++)
     {
     	(CLOSE == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
     	SCPI_ResultBool(context, state);
@@ -485,7 +487,7 @@ static scpi_result_t SCPI_RouteOpen(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	if(arr_index >= MODULE_RELAY_INDEX)
+	if(array[arr_index - 1].row >= MODULE_RELAY_INDEX)
 	{
 		if(board.module.detected)
 		{
@@ -543,7 +545,7 @@ static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	if(arr_index >= MODULE_RELAY_INDEX)
+	if(array[arr_index - 1].row >= MODULE_RELAY_INDEX)
 	{
 		if(board.module.detected)
 		{
@@ -556,7 +558,7 @@ static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 		}
 	}
 
-    for(uint16_t i; i < arr_index; i++)
+    for(uint16_t i = 0; i < arr_index; i++)
     {
     	(OPEN == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
     	SCPI_ResultBool(context, state);
@@ -876,7 +878,7 @@ static scpi_result_t SCPI_SystemServiceDefault(scpi_t* context)
 		return SCPI_RES_ERR;
 	}
 
-	SPI_FLASH_BoardDefault(TRUE, 0);
+	SPI_FLASH_BoardDefault(TRUE);
     return SCPI_RES_OK;
 }
 
@@ -926,7 +928,11 @@ static scpi_result_t SCPI_SystemSecureStateQ(scpi_t* context)
 
 static scpi_result_t SCPI_TSQ(scpi_t* context)
 {
-	SCPI_ResultBool(context, HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin));
+	uint32_t timeout = 1000;
+	uint8_t tx[3] = { 0x00, 0xFF, 0xFF};
+	HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, OFF);
+	HAL_SPI_Transmit(&hspi5, &tx, 3, timeout);
+	HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON);
 	return SCPI_RES_OK;
 }
 
