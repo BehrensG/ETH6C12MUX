@@ -40,6 +40,10 @@ $CMP OKI-T3-W40P-C
 D Adjustable Output 3-Amp DOSA-SMT DC/DC Converter
 $ENDCMP
 #
+$CMP RCP-89
+D Circuit Board Hardware - PCB CB Ejector,White,.093 in Hold
+$ENDCMP
+#
 $CMP S25FL064L_SOIC
 D 64-Mbit (8-Mbyte)3.0 V FL-L SPI Flash Memory
 $ENDCMP
