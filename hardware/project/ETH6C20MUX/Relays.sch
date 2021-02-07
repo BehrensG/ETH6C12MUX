@@ -2332,7 +2332,7 @@ RELAYA
 Wire Wire Line
 	5000 1250 5450 1250
 Wire Wire Line
-	2700 1450 3150 1450
+	2700 1650 3150 1650
 Wire Wire Line
 	2700 5850 3150 5850
 Wire Wire Line
@@ -2345,7 +2345,7 @@ Wire Wire Line
 	5000 1550 5450 1550
 Text Label 5450 1250 2    50   ~ 0
 RELAY16C
-Text Label 3150 1450 2    50   ~ 0
+Text Label 3150 1650 2    50   ~ 0
 RELAY14C
 Text Label 3150 5850 2    50   ~ 0
 RELAY13C
@@ -2360,7 +2360,7 @@ RELAY9C
 Wire Wire Line
 	5000 1150 5450 1150
 Wire Wire Line
-	2700 1350 3150 1350
+	2700 5450 3150 5450
 Wire Wire Line
 	2700 5750 3150 5750
 Wire Wire Line
@@ -2372,7 +2372,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 1450 5450 1450
 Wire Wire Line
-	2700 1750 3150 1750
+	2700 1550 3150 1550
 Wire Wire Line
 	5000 1650 5450 1650
 Wire Wire Line
@@ -2384,12 +2384,12 @@ Wire Wire Line
 Wire Wire Line
 	5000 4500 5450 4500
 Wire Wire Line
-	2700 1550 3150 1550
+	2700 1450 3150 1450
 Wire Wire Line
-	2700 2350 3150 2350
+	2700 1850 3150 1850
 Text Label 5450 1150 2    50   ~ 0
 RELAY16B
-Text Label 3150 1350 2    50   ~ 0
+Text Label 3150 5450 2    50   ~ 0
 RELAY14B
 Text Label 3150 5750 2    50   ~ 0
 RELAY13B
@@ -2401,9 +2401,9 @@ Text Label 3150 3600 2    50   ~ 0
 RELAY10B
 Text Label 5450 1450 2    50   ~ 0
 RELAY9B
-Text Label 3150 2350 2    50   ~ 0
+Text Label 3150 1850 2    50   ~ 0
 RELAY8B
-Text Label 3150 1550 2    50   ~ 0
+Text Label 3150 1450 2    50   ~ 0
 RELAY7B
 Text Label 5450 4500 2    50   ~ 0
 RELAY6B
@@ -2415,7 +2415,7 @@ Text Label 5450 2050 2    50   ~ 0
 RELAY3B
 Text Label 5450 1650 2    50   ~ 0
 RELAY2B
-Text Label 3150 1750 2    50   ~ 0
+Text Label 3150 1550 2    50   ~ 0
 RELAY1B
 Wire Wire Line
 	2700 3200 3150 3200
@@ -2424,12 +2424,12 @@ Wire Wire Line
 Wire Wire Line
 	5000 4600 5450 4600
 Wire Wire Line
-	2700 1650 3150 1650
-Wire Wire Line
 	2700 2450 3150 2450
-Text Label 3150 2450 2    50   ~ 0
+Wire Wire Line
+	2700 1750 3150 1750
+Text Label 3150 1750 2    50   ~ 0
 RELAY8C
-Text Label 3150 1650 2    50   ~ 0
+Text Label 3150 2450 2    50   ~ 0
 RELAY7C
 Text Label 5450 4600 2    50   ~ 0
 RELAY6C
@@ -2440,7 +2440,7 @@ RELAY4C
 Wire Wire Line
 	5000 1050 5450 1050
 Wire Wire Line
-	2700 1250 3150 1250
+	2700 5350 3150 5350
 Wire Wire Line
 	2700 5650 3150 5650
 Wire Wire Line
@@ -2469,7 +2469,7 @@ Wire Wire Line
 	2700 2250 3150 2250
 Text Label 5450 1050 2    50   ~ 0
 RELAY16A
-Text Label 3150 1250 2    50   ~ 0
+Text Label 3150 5350 2    50   ~ 0
 RELAY14A
 Text Label 3150 5650 2    50   ~ 0
 RELAY13A
@@ -3603,7 +3603,7 @@ Text Label 8200 5350 1    50   ~ 0
 RELAY20C
 Wire Wire Line
 	8200 4950 8200 5350
-Text Label 3150 1850 2    50   ~ 0
+Text Label 3150 2550 2    50   ~ 0
 RELAY1C
 Text Label 5450 1850 2    50   ~ 0
 RELAY2C
@@ -3614,8 +3614,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 1850 5450 1850
 Wire Wire Line
-	2700 1850 3150 1850
-NoConn ~ 2700 2550
+	2700 2550 3150 2550
 NoConn ~ 5000 2550
 NoConn ~ 2700 4700
 Wire Wire Line
@@ -3659,12 +3658,12 @@ Wire Wire Line
 Text Label 3150 5550 2    50   ~ 0
 RELAY20C
 Wire Wire Line
-	2700 5450 3150 5450
-Text Label 3150 5450 2    50   ~ 0
+	2700 1350 3150 1350
+Text Label 3150 1350 2    50   ~ 0
 RELAY20B
 Wire Wire Line
-	2700 5350 3150 5350
-Text Label 3150 5350 2    50   ~ 0
+	2700 1250 3150 1250
+Text Label 3150 1250 2    50   ~ 0
 RELAY20A
 Wire Wire Line
 	7750 9300 7550 9300
@@ -4048,7 +4047,7 @@ U 1 1 5D929B09
 P 4300 6450
 F 0 "C301" H 4415 6496 50  0000 L CNN
 F 1 "100n" H 4415 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4338 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4338 6300 50  0001 C CNN
 F 3 "~" H 4300 6450 50  0001 C CNN
 	1    4300 6450
 	1    0    0    -1  
@@ -4059,7 +4058,7 @@ U 1 1 5D94B2B0
 P 4750 6450
 F 0 "C302" H 4865 6496 50  0000 L CNN
 F 1 "100n" H 4865 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4788 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4788 6300 50  0001 C CNN
 F 3 "~" H 4750 6450 50  0001 C CNN
 	1    4750 6450
 	1    0    0    -1  
@@ -4070,7 +4069,7 @@ U 1 1 5D94B9B5
 P 5200 6450
 F 0 "C303" H 5315 6496 50  0000 L CNN
 F 1 "100n" H 5315 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5238 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5238 6300 50  0001 C CNN
 F 3 "~" H 5200 6450 50  0001 C CNN
 	1    5200 6450
 	1    0    0    -1  
@@ -4081,7 +4080,7 @@ U 1 1 5D94E683
 P 5650 6450
 F 0 "C304" H 5765 6496 50  0000 L CNN
 F 1 "100n" H 5765 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5688 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5688 6300 50  0001 C CNN
 F 3 "~" H 5650 6450 50  0001 C CNN
 	1    5650 6450
 	1    0    0    -1  
@@ -4092,7 +4091,7 @@ U 1 1 5D94EF35
 P 6100 6450
 F 0 "C305" H 6215 6496 50  0000 L CNN
 F 1 "100n" H 6215 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6138 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6138 6300 50  0001 C CNN
 F 3 "~" H 6100 6450 50  0001 C CNN
 	1    6100 6450
 	1    0    0    -1  
@@ -4103,7 +4102,7 @@ U 1 1 5D9E96D0
 P 6550 6450
 F 0 "C306" H 6665 6496 50  0000 L CNN
 F 1 "100n" H 6665 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6588 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 6588 6300 50  0001 C CNN
 F 3 "~" H 6550 6450 50  0001 C CNN
 	1    6550 6450
 	1    0    0    -1  
@@ -4114,7 +4113,7 @@ U 1 1 5D9E96D6
 P 7000 6450
 F 0 "C307" H 7115 6496 50  0000 L CNN
 F 1 "100n" H 7115 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7038 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7038 6300 50  0001 C CNN
 F 3 "~" H 7000 6450 50  0001 C CNN
 	1    7000 6450
 	1    0    0    -1  
@@ -4125,7 +4124,7 @@ U 1 1 5D9E96DC
 P 7450 6450
 F 0 "C308" H 7565 6496 50  0000 L CNN
 F 1 "100n" H 7565 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7488 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7488 6300 50  0001 C CNN
 F 3 "~" H 7450 6450 50  0001 C CNN
 	1    7450 6450
 	1    0    0    -1  
@@ -4136,7 +4135,7 @@ U 1 1 5D9E96E2
 P 7900 6450
 F 0 "C309" H 8015 6496 50  0000 L CNN
 F 1 "100n" H 8015 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7938 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 7938 6300 50  0001 C CNN
 F 3 "~" H 7900 6450 50  0001 C CNN
 	1    7900 6450
 	1    0    0    -1  
@@ -4147,7 +4146,7 @@ U 1 1 5D9E96E8
 P 8350 6450
 F 0 "C310" H 8465 6496 50  0000 L CNN
 F 1 "100n" H 8465 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8388 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8388 6300 50  0001 C CNN
 F 3 "~" H 8350 6450 50  0001 C CNN
 	1    8350 6450
 	1    0    0    -1  
