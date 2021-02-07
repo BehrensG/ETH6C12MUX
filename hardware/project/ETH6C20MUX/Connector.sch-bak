@@ -310,11 +310,11 @@ Text Label 3500 1400 2    50   ~ 0
 B
 Text Label 3500 1500 2    50   ~ 0
 C
-Text Label 3500 1600 2    50   ~ 0
+Text Label 3500 1800 2    50   ~ 0
 D
 Text Label 3500 1700 2    50   ~ 0
 E
-Text Label 3500 1800 2    50   ~ 0
+Text Label 3500 1600 2    50   ~ 0
 F
 $Comp
 L Connector_Generic:Conn_01x06 J?
@@ -336,11 +336,11 @@ Wire Wire Line
 Wire Wire Line
 	3250 1500 3500 1500
 Wire Wire Line
-	3250 1600 3500 1600
+	3250 1800 3500 1800
 Wire Wire Line
 	3250 1700 3500 1700
 Wire Wire Line
-	3250 1800 3500 1800
+	3250 1600 3500 1600
 NoConn ~ 5650 2200
 NoConn ~ 5650 2300
 NoConn ~ 5650 3000

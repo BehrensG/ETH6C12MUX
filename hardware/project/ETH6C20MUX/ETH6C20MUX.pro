@@ -1,4 +1,4 @@
-update=Thu Oct 10 22:00:17 2019
+update=Fri Feb  5 00:05:58 2021
 version=1
 last_client=kicad
 [general]
@@ -42,6 +42,7 @@ TrackWidth1=0.127
 TrackWidth2=0.254
 TrackWidth3=0.381
 TrackWidth4=0.508
+TrackWidth5=1.27
 ViaDiameter1=0.5
 ViaDrill1=0.2
 ViaDiameter2=0.5
@@ -256,7 +257,7 @@ dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Relay signal 100V
 Clearance=0.3
-TrackWidth=0.381
+TrackWidth=0.254
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3
