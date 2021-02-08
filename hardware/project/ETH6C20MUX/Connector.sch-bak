@@ -304,43 +304,30 @@ F 3 "" H 3550 2300 50  0001 C CNN
 	1    3550 2300
 	0    1    1    0   
 $EndComp
-Text Label 3500 1300 2    50   ~ 0
+Text Label 3700 1400 2    50   ~ 0
 A
-Text Label 3500 1400 2    50   ~ 0
+Text Label 3700 1500 2    50   ~ 0
 B
-Text Label 3500 1500 2    50   ~ 0
+Text Label 3700 1600 2    50   ~ 0
 C
-Text Label 3500 1800 2    50   ~ 0
+Text Label 3700 1900 2    50   ~ 0
 D
-Text Label 3500 1700 2    50   ~ 0
+Text Label 3700 1800 2    50   ~ 0
 E
-Text Label 3500 1600 2    50   ~ 0
+Text Label 3700 1700 2    50   ~ 0
 F
-$Comp
-L Connector_Generic:Conn_01x06 J?
-U 1 1 5D777B7C
-P 3050 1500
-AR Path="/5D7599BA/5D777B7C" Ref="J?"  Part="1" 
-AR Path="/5DB25E5A/5D777B7C" Ref="J501"  Part="1" 
-F 0 "J501" H 2968 1917 50  0000 C CNN
-F 1 "Conn_01x06" H 2968 1826 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 3050 1500 50  0001 C CNN
-F 3 "~" H 3050 1500 50  0001 C CNN
-	1    3050 1500
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	3250 1300 3500 1300
+	3450 1400 3700 1400
 Wire Wire Line
-	3250 1400 3500 1400
+	3450 1500 3700 1500
 Wire Wire Line
-	3250 1500 3500 1500
+	3450 1600 3700 1600
 Wire Wire Line
-	3250 1800 3500 1800
+	3450 1900 3700 1900
 Wire Wire Line
-	3250 1700 3500 1700
+	3450 1800 3700 1800
 Wire Wire Line
-	3250 1600 3500 1600
+	3450 1700 3700 1700
 NoConn ~ 5650 2200
 NoConn ~ 5650 2300
 NoConn ~ 5650 3000
@@ -503,4 +490,39 @@ RELAY2_~CS4
 Wire Wire Line
 	3550 3000 3450 3000
 NoConn ~ 3450 2700
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J501
+U 1 1 6024031A
+P 3150 1600
+F 0 "J501" H 3200 2017 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 3200 1926 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 3150 1600 50  0001 C CNN
+F 3 "~" H 3150 1600 50  0001 C CNN
+	1    3150 1600
+	1    0    0    -1  
+$EndComp
+Text Label 2700 1400 0    50   ~ 0
+A
+Text Label 2700 1500 0    50   ~ 0
+B
+Text Label 2700 1600 0    50   ~ 0
+C
+Text Label 2700 1900 0    50   ~ 0
+D
+Text Label 2700 1800 0    50   ~ 0
+E
+Text Label 2700 1700 0    50   ~ 0
+F
+Wire Wire Line
+	2950 1400 2700 1400
+Wire Wire Line
+	2950 1500 2700 1500
+Wire Wire Line
+	2950 1600 2700 1600
+Wire Wire Line
+	2950 1900 2700 1900
+Wire Wire Line
+	2950 1800 2700 1800
+Wire Wire Line
+	2950 1700 2700 1700
 $EndSCHEMATC
