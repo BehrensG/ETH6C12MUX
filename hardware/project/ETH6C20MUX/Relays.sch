@@ -2306,186 +2306,166 @@ F 3 "" H 2800 10800 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	2700 6250 3150 6250
-Wire Wire Line
-	2700 6350 3150 6350
-Wire Wire Line
-	2700 6450 3150 6450
-Wire Wire Line
-	2700 6550 3150 6550
-Wire Wire Line
-	2700 6650 3150 6650
-Wire Wire Line
-	2700 6750 3150 6750
-Text Label 3150 6250 2    50   ~ 0
-RELAYF
-Text Label 3150 6350 2    50   ~ 0
-RELAYE
-Text Label 3150 6450 2    50   ~ 0
-RELAYD
-Text Label 3150 6550 2    50   ~ 0
-RELAYC
-Text Label 3150 6650 2    50   ~ 0
-RELAYB
-Text Label 3150 6750 2    50   ~ 0
-RELAYA
-Wire Wire Line
-	2700 4600 3150 4600
-Wire Wire Line
-	-750 1850 -300 1850
-Wire Wire Line
-	2700 5850 3150 5850
-Wire Wire Line
-	5000 4300 5450 4300
-Wire Wire Line
-	2700 4500 3150 4500
-Wire Wire Line
-	2700 3500 3150 3500
-Wire Wire Line
-	5000 2050 5450 2050
-Text Label 3150 4600 2    50   ~ 0
-RELAY16C
-Text Label -300 1850 2    50   ~ 0
-RELAY14C
-Text Label 3150 5850 2    50   ~ 0
-RELAY13C
-Text Label 5450 4300 2    50   ~ 0
-RELAY12C
-Text Label 3150 4500 2    50   ~ 0
-RELAY11C
-Text Label 3150 3500 2    50   ~ 0
-RELAY10C
-Text Label 5450 2050 2    50   ~ 0
-RELAY9C
-Wire Wire Line
-	2700 4100 3150 4100
-Wire Wire Line
-	2700 5450 3150 5450
-Wire Wire Line
-	2700 5750 3150 5750
-Wire Wire Line
-	5000 4200 5450 4200
-Wire Wire Line
-	2700 4200 3150 4200
-Wire Wire Line
-	2700 3800 3150 3800
-Wire Wire Line
-	5000 1050 5450 1050
-Wire Wire Line
-	2700 1250 3150 1250
-Wire Wire Line
-	2700 2350 3150 2350
-Wire Wire Line
-	5000 1850 5450 1850
-Wire Wire Line
-	2700 3700 3150 3700
-Wire Wire Line
-	2700 4300 3150 4300
-Wire Wire Line
-	5000 4500 5450 4500
-Wire Wire Line
-	2700 2450 3150 2450
-Text Label 3150 4100 2    50   ~ 0
-RELAY16B
-Text Label 3150 5450 2    50   ~ 0
-RELAY14B
-Text Label 3150 5750 2    50   ~ 0
-RELAY13B
-Text Label 5450 4200 2    50   ~ 0
-RELAY12B
-Text Label 3150 4200 2    50   ~ 0
-RELAY11B
-Text Label 3150 3800 2    50   ~ 0
-RELAY10B
-Text Label 5450 1050 2    50   ~ 0
-RELAY9B
-Text Label 3150 2450 2    50   ~ 0
-RELAY8B
-Text Label 5450 4500 2    50   ~ 0
-RELAY6B
-Text Label 3150 4300 2    50   ~ 0
-RELAY5B
-Text Label 3150 3700 2    50   ~ 0
-RELAY4B
-Text Label 5450 1850 2    50   ~ 0
-RELAY3B
-Text Label 3150 2350 2    50   ~ 0
-RELAY2B
-Text Label 3150 1250 2    50   ~ 0
-RELAY1B
-Wire Wire Line
-	2700 3400 3150 3400
-Wire Wire Line
-	2700 4400 3150 4400
-Wire Wire Line
-	5000 4600 5450 4600
-Wire Wire Line
-	2700 1150 3150 1150
-Wire Wire Line
-	5000 1650 5450 1650
-Text Label 5450 1650 2    50   ~ 0
-RELAY8C
-Text Label 3150 1150 2    50   ~ 0
-RELAY7C
-Text Label 5450 4600 2    50   ~ 0
-RELAY6C
-Text Label 3150 4400 2    50   ~ 0
-RELAY5C
-Text Label 3150 3400 2    50   ~ 0
-RELAY4C
-Wire Wire Line
-	2700 5350 3150 5350
+	2700 5550 3150 5550
 Wire Wire Line
 	2700 5650 3150 5650
 Wire Wire Line
-	5000 4100 5450 4100
+	2700 5750 3150 5750
 Wire Wire Line
-	2700 3200 3150 3200
+	2700 6850 3150 6850
 Wire Wire Line
-	5000 2350 5450 2350
+	2700 6550 3150 6550
 Wire Wire Line
-	5000 1350 5450 1350
+	2700 6450 3150 6450
+Text Label 3150 5550 2    50   ~ 0
+RELAYF
+Text Label 3150 5650 2    50   ~ 0
+RELAYE
+Text Label 3150 5750 2    50   ~ 0
+RELAYD
+Text Label 3150 6850 2    50   ~ 0
+RELAYC
+Text Label 3150 6550 2    50   ~ 0
+RELAYB
+Text Label 3150 6450 2    50   ~ 0
+RELAYA
 Wire Wire Line
-	2700 1750 3150 1750
+	5000 4500 5450 4500
 Wire Wire Line
-	2700 2150 3150 2150
+	2700 6750 3150 6750
 Wire Wire Line
-	5000 1250 5450 1250
+	2700 5850 3150 5850
 Wire Wire Line
-	5000 2250 5450 2250
+	5000 3400 5450 3400
+Wire Wire Line
+	5000 3700 5450 3700
+Wire Wire Line
+	2700 4200 3150 4200
 Wire Wire Line
 	2700 4000 3150 4000
+Text Label 5450 4500 2    50   ~ 0
+RELAY16C
+Text Label 3150 6750 2    50   ~ 0
+RELAY14C
+Text Label 3150 5850 2    50   ~ 0
+RELAY13C
+Text Label 5450 3400 2    50   ~ 0
+RELAY12C
+Text Label 5450 3700 2    50   ~ 0
+RELAY11C
+Text Label 3150 4200 2    50   ~ 0
+RELAY10C
+Text Label 3150 4000 2    50   ~ 0
+RELAY9C
 Wire Wire Line
 	5000 4400 5450 4400
 Wire Wire Line
+	2700 6650 3150 6650
+Wire Wire Line
+	2700 5950 3150 5950
+Wire Wire Line
+	5000 3500 5450 3500
+Wire Wire Line
+	5000 3800 5450 3800
+Wire Wire Line
+	2700 4300 3150 4300
+Wire Wire Line
+	5000 1050 5450 1050
+Wire Wire Line
+	2700 3300 3150 3300
+Wire Wire Line
+	2700 4600 3150 4600
+Wire Wire Line
+	5000 3300 5450 3300
+Wire Wire Line
+	5000 4200 5450 4200
+Wire Wire Line
+	5000 1550 5450 1550
+Text Label 5450 4400 2    50   ~ 0
+RELAY16B
+Text Label 3150 6650 2    50   ~ 0
+RELAY14B
+Text Label 3150 5950 2    50   ~ 0
+RELAY13B
+Text Label 5450 3500 2    50   ~ 0
+RELAY12B
+Text Label 5450 3800 2    50   ~ 0
+RELAY11B
+Text Label 3150 4300 2    50   ~ 0
+RELAY10B
+Text Label 5450 1550 2    50   ~ 0
+RELAY8B
+Text Label 5450 4200 2    50   ~ 0
+RELAY6B
+Text Label 5450 3300 2    50   ~ 0
+RELAY5B
+Text Label 3150 4600 2    50   ~ 0
+RELAY4B
+Text Label 3150 3300 2    50   ~ 0
+RELAY3B
+Text Label 5450 1050 2    50   ~ 0
+RELAY2B
+Wire Wire Line
+	2700 4500 3150 4500
+Wire Wire Line
+	5000 4000 5450 4000
+Wire Wire Line
+	5000 4300 5450 4300
+Wire Wire Line
+	2700 2350 3150 2350
+Text Label 3150 2350 2    50   ~ 0
+RELAY7C
+Text Label 5450 4300 2    50   ~ 0
+RELAY6C
+Text Label 5450 4000 2    50   ~ 0
+RELAY5C
+Text Label 3150 4500 2    50   ~ 0
+RELAY4C
+Wire Wire Line
+	2700 6050 3150 6050
+Wire Wire Line
+	2700 6150 3150 6150
+Wire Wire Line
+	5000 3600 5450 3600
+Wire Wire Line
+	2700 4100 3150 4100
+Wire Wire Line
+	2700 4400 3150 4400
+Wire Wire Line
+	2700 1750 3150 1750
+Wire Wire Line
+	2700 2550 3150 2550
+Wire Wire Line
+	2700 4700 3150 4700
+Wire Wire Line
+	5000 3200 5450 3200
+Wire Wire Line
+	5000 4100 5450 4100
+Wire Wire Line
 	2700 1650 3150 1650
 Wire Wire Line
-	2700 2050 3150 2050
-Text Label 3150 5350 2    50   ~ 0
+	5000 1150 5450 1150
+Text Label 3150 6050 2    50   ~ 0
 RELAY14A
-Text Label 3150 5650 2    50   ~ 0
+Text Label 3150 6150 2    50   ~ 0
 RELAY13A
-Text Label 5450 4100 2    50   ~ 0
+Text Label 5450 3600 2    50   ~ 0
 RELAY12A
-Text Label 3150 3200 2    50   ~ 0
+Text Label 3150 4100 2    50   ~ 0
 RELAY11A
-Text Label 5450 2350 2    50   ~ 0
+Text Label 3150 4400 2    50   ~ 0
 RELAY10A
-Text Label 5450 1350 2    50   ~ 0
-RELAY9A
-Text Label 3150 2050 2    50   ~ 0
+Text Label 5450 1150 2    50   ~ 0
 RELAY8A
 Text Label 3150 1650 2    50   ~ 0
 RELAY7A
-Text Label 5450 4400 2    50   ~ 0
+Text Label 5450 4100 2    50   ~ 0
 RELAY6A
-Text Label 3150 4000 2    50   ~ 0
+Text Label 5450 3200 2    50   ~ 0
 RELAY5A
-Text Label 5450 2250 2    50   ~ 0
+Text Label 3150 4700 2    50   ~ 0
 RELAY4A
-Text Label 5450 1250 2    50   ~ 0
-RELAY3A
-Text Label 3150 2150 2    50   ~ 0
+Text Label 3150 2550 2    50   ~ 0
 RELAY2A
 Text Label 3150 1750 2    50   ~ 0
 RELAY1A
@@ -3595,63 +3575,43 @@ Text Label 8200 5350 1    50   ~ 0
 RELAY20C
 Wire Wire Line
 	8200 4950 8200 5350
-Text Label 3150 1850 2    50   ~ 0
+Text Label 3150 2250 2    50   ~ 0
 RELAY1C
-Text Label 5450 1550 2    50   ~ 0
-RELAY2C
-Text Label 5450 2150 2    50   ~ 0
+Text Label 3150 3900 2    50   ~ 0
 RELAY3C
 Wire Wire Line
-	5000 2150 5450 2150
+	2700 3900 3150 3900
 Wire Wire Line
-	5000 1550 5450 1550
+	2700 2250 3150 2250
 Wire Wire Line
-	2700 1850 3150 1850
-NoConn ~ 5000 2550
-NoConn ~ 2700 4700
+	2700 3500 3150 3500
+Text Label 3150 3500 2    50   ~ 0
+RELAY17C
 Wire Wire Line
 	2700 3600 3150 3600
 Text Label 3150 3600 2    50   ~ 0
-RELAY17C
-Wire Wire Line
-	2700 3900 3150 3900
-Text Label 3150 3900 2    50   ~ 0
 RELAY17B
 Wire Wire Line
-	5000 2450 5450 2450
-Text Label 5450 2450 2    50   ~ 0
+	2700 3700 3150 3700
+Text Label 3150 3700 2    50   ~ 0
 RELAY17A
 Wire Wire Line
-	5000 1950 5450 1950
-Text Label 5450 1950 2    50   ~ 0
+	2700 3800 3150 3800
+Text Label 3150 3800 2    50   ~ 0
 RELAY18C
 Wire Wire Line
-	5000 1150 5450 1150
-Text Label 5450 1150 2    50   ~ 0
-RELAY18B
-Wire Wire Line
-	5000 1450 5450 1450
-Text Label 5450 1450 2    50   ~ 0
-RELAY18A
-Wire Wire Line
-	5000 1750 5450 1750
-Text Label 5450 1750 2    50   ~ 0
-RELAY19C
-Wire Wire Line
-	2700 2550 3150 2550
-Text Label 3150 2550 2    50   ~ 0
+	5000 2350 5450 2350
+Text Label 5450 2350 2    50   ~ 0
 RELAY19B
 Wire Wire Line
-	2700 1950 3150 1950
-Text Label 3150 1950 2    50   ~ 0
+	5000 1250 5450 1250
+Text Label 5450 1250 2    50   ~ 0
 RELAY19A
-Wire Wire Line
-	2700 1050 3150 1050
-Text Label 3150 1050 2    50   ~ 0
+Text Label 3150 2450 2    50   ~ 0
 RELAY20C
 Wire Wire Line
-	2700 1450 3150 1450
-Text Label 3150 1450 2    50   ~ 0
+	2700 1250 3150 1250
+Text Label 3150 1250 2    50   ~ 0
 RELAY20B
 Wire Wire Line
 	2700 1550 3150 1550
@@ -4015,24 +3975,14 @@ Wire Wire Line
 	11200 10100 11450 10100
 Text Label 11450 10100 2    50   ~ 0
 PIN20
-Text Label -300 2150 2    50   ~ 0
-RELAY15A
-Wire Wire Line
-	-750 2150 -300 2150
-Text Label -300 2250 2    50   ~ 0
+Text Label 5450 4700 2    50   ~ 0
 RELAY15B
 Wire Wire Line
-	-750 2250 -300 2250
-Text Label -300 2350 2    50   ~ 0
+	5000 4700 5450 4700
+Text Label 5450 3900 2    50   ~ 0
 RELAY15C
 Wire Wire Line
-	-750 2350 -300 2350
-NoConn ~ 5000 3500
-NoConn ~ 5000 3600
-NoConn ~ 5000 3700
-NoConn ~ 5000 3800
-NoConn ~ 5000 3900
-NoConn ~ 5000 4000
+	5000 3900 5450 3900
 $Comp
 L Device:C C301
 U 1 1 5D929B09
@@ -4279,7 +4229,6 @@ F 3 "" H 7450 6200 50  0001 C CNN
 	1    7450 6200
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5000 4700
 $Comp
 L ETH6C20MUX:HE3600 K367
 U 1 1 5EB2648E
@@ -4428,29 +4377,80 @@ Wire Wire Line
 	15200 4950 15200 5300
 Wire Wire Line
 	13150 9350 13400 9350
-Text Label 3150 5950 2    50   ~ 0
+Text Label 3150 5350 2    50   ~ 0
 RELAYBA
 Wire Wire Line
-	2700 5950 3150 5950
-Text Label 3150 6050 2    50   ~ 0
+	2700 5350 3150 5350
+Text Label 3150 6250 2    50   ~ 0
 RELAYEA
 Wire Wire Line
-	2700 6050 3150 6050
-Text Label 3150 6150 2    50   ~ 0
+	2700 6250 3150 6250
+Text Label 3150 6350 2    50   ~ 0
 RELAYAB
 Wire Wire Line
-	2700 6150 3150 6150
-Text Label 3150 6850 2    50   ~ 0
+	2700 6350 3150 6350
+Text Label 3150 5450 2    50   ~ 0
 RELAYFA
 Wire Wire Line
-	2700 6850 3150 6850
-Text Label 3150 1350 2    50   ~ 0
+	2700 5450 3150 5450
+Text Label 3150 1150 2    50   ~ 0
 RELAY7B
 Wire Wire Line
-	2700 1350 3150 1350
-NoConn ~ 2700 2250
-Text Label 3150 3300 2    50   ~ 0
+	2700 1150 3150 1150
+Text Label 3150 3400 2    50   ~ 0
 RELAY16A
 Wire Wire Line
-	2700 3300 3150 3300
+	2700 3400 3150 3400
+Wire Wire Line
+	5000 4600 5450 4600
+Text Label 5450 4600 2    50   ~ 0
+RELAY15A
+Text Label 5450 2550 2    50   ~ 0
+RELAY18A
+Wire Wire Line
+	5000 2550 5450 2550
+Text Label 5450 1750 2    50   ~ 0
+RELAY9A
+Wire Wire Line
+	5000 1750 5450 1750
+Text Label 5450 2450 2    50   ~ 0
+RELAY18B
+Wire Wire Line
+	5000 2450 5450 2450
+Text Label 3150 3200 2    50   ~ 0
+RELAY3A
+Wire Wire Line
+	2700 3200 3150 3200
+Text Label 5450 1650 2    50   ~ 0
+RELAY9B
+Wire Wire Line
+	5000 1650 5450 1650
+Text Label 5450 2150 2    50   ~ 0
+RELAY2C
+Wire Wire Line
+	5000 2150 5450 2150
+Text Label 5450 2250 2    50   ~ 0
+RELAY19C
+Wire Wire Line
+	5000 2250 5450 2250
+Text Label 5450 1450 2    50   ~ 0
+RELAY8C
+Wire Wire Line
+	5000 1450 5450 1450
+Wire Wire Line
+	2700 2450 3150 2450
+Text Label 3150 1050 2    50   ~ 0
+RELAY1B
+Wire Wire Line
+	2700 1050 3150 1050
+NoConn ~ 2700 2150
+NoConn ~ 2700 2050
+NoConn ~ 2700 1950
+NoConn ~ 2700 1850
+NoConn ~ 2700 1450
+NoConn ~ 2700 1350
+NoConn ~ 5000 1350
+NoConn ~ 5000 1850
+NoConn ~ 5000 1950
+NoConn ~ 5000 2050
 $EndSCHEMATC
