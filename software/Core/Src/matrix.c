@@ -543,8 +543,6 @@ void MATRIX_InitMain()
 	matrix.relays[65].MCZ33996.out = 9;
     matrix.relays[65].index = 4;
 
-
-
 	matrix.relays[66].id = "01A";
 	matrix.relays[66].state = OPEN;
 	matrix.relays[66].type = MODULE;

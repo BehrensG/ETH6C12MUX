@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <tcp_raw.h>
 
 // SCPI library code
 #include "scpi/scpi.h"
@@ -46,7 +45,7 @@ static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, ui
 
 	for(uint16_t x = 0; x < index; x++)
 	{
-		spi_cmd_idx = matrix.relays[x].index;
+		spi_cmd_idx = matrix.relays[array[x].row].index;
 
 		if(CLOSE == state)
 		{
@@ -66,7 +65,7 @@ static void SCPI_CreateSPICommands(scpi_channel_value_t* array, size_t index, ui
 	{
 		matrix.spi_commands[i].tx_data[0] = 0x00;
 		matrix.spi_commands[i].tx_data[1] = (uint8_t)(matrix.spi_commands[i].tx_tmp >> 8);
-		matrix.spi_commands[i].tx_data[2] = (uint8_t)(matrix.spi_commands[i].tx_tmp);
+		matrix.spi_commands[i].tx_data[2] = (uint8_t)(matrix.spi_commands[i].tx_tmp * 0xFF);
 	}
 }
 
@@ -311,17 +310,19 @@ static void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t inde
 
 	switch(matrix.spi_commands[index].cs)
 	{
-	case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, OFF); break;
-	case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, OFF); break;
-	case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, OFF); break;
-	case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, OFF); break;
-	case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, OFF); break;
-	case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, OFF); break;
-	case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, OFF); break;
-	case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, OFF); break;
-	case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, OFF); break;
-	case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, OFF); break;
+		case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, OFF); break;
+		case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, OFF); break;
+		case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, OFF); break;
+		case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, OFF); break;
+		case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, OFF); break;
+		case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, OFF); break;
+		case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, OFF); break;
+		case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, OFF); break;
+		case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, OFF); break;
+		case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, OFF); break;
 	}
+
+	//osDelay(pdMS_TO_TICKS(1));
 
 	if(SPI4_ID == matrix.spi_commands[index].spi)
 	{
@@ -332,18 +333,20 @@ static void SCPI_SPITransmit(uint8_t cs_number, uint8_t spi_number, uint8_t inde
 		HAL_SPI_Transmit(&hspi5, matrix.spi_commands[index].tx_data, 3, timeout);
 	}
 
+	//osDelay(pdMS_TO_TICKS(1));
+
 	switch(matrix.spi_commands[index].cs)
 	{
-	case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON); break;
-	case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, ON); break;
-	case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, ON); break;
-	case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, ON); break;
-	case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, ON); break;
-	case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, ON); break;
-	case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, ON); break;
-	case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, ON); break;
-	case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, ON); break;
-	case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, ON); break;
+		case CS0: HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON); break;
+		case CS1: HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, ON); break;
+		case CS2: HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, ON); break;
+		case CS3: HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, ON); break;
+		case CS4: HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, ON); break;
+		case CS5: HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, ON); break;
+		case CS6: HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, ON); break;
+		case CS7: HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, ON); break;
+		case CS8: HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, ON); break;
+		case CS9: HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, ON); break;
 	}
 
 }
@@ -359,51 +362,6 @@ void SCPI_SendSPICommand()
 	}
 }
 
-size_t SCPI_Write(scpi_t* context, const char * data, size_t len)
-{
-    (void) context;
-    //err_t wr_err = ERR_OK;
-
-    strcat(es_scpi->p->payload, data);
-
-    es_scpi->p->len += len;
-    return es_scpi->p->len;
-}
-
-scpi_result_t SCPI_Flush(scpi_t* context)
-{
-    (void) context;
-
-    return SCPI_RES_OK;
-}
-
-int SCPI_Error(scpi_t* context, int_fast16_t err)
-{
-    (void) context;
-
-    fprintf(stderr, "**ERROR: %d, \"%s\"\r\n", (int16_t) err, SCPI_ErrorTranslate(err));
-    return 0;
-}
-
-scpi_result_t SCPI_Control(scpi_t* context, scpi_ctrl_name_t ctrl, scpi_reg_val_t val)
-{
-    (void) context;
-
-    if (SCPI_CTRL_SRQ == ctrl) {
-        fprintf(stderr, "**SRQ: 0x%X (%d)\r\n", val, val);
-    } else {
-        fprintf(stderr, "**CTRL %02x: 0x%X (%d)\r\n", ctrl, val, val);
-    }
-    return SCPI_RES_OK;
-}
-
-scpi_result_t SCPI_Reset(scpi_t* context)
-{
-    (void) context;
-
-    NVIC_SystemReset();
-    return SCPI_RES_OK;
-}
 
 static scpi_result_t My_CoreTstQ(scpi_t* context)
 {
@@ -471,7 +429,7 @@ static scpi_result_t SCPI_RouteCloseQ(scpi_t* context)
 
     for(uint16_t i = 0; i < arr_index; i++)
     {
-    	(CLOSE == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
+    	(CLOSE == matrix.relays[array[arr_index -1].row].state) ? (state = TRUE) : (state = FALSE);
     	SCPI_ResultBool(context, state);
     }
     return SCPI_RES_OK;
@@ -560,7 +518,7 @@ static scpi_result_t SCPI_RouteOpenQ(scpi_t* context)
 
     for(uint16_t i = 0; i < arr_index; i++)
     {
-    	(OPEN == matrix.relays[i].state) ? (state = TRUE) : (state = FALSE);
+    	(OPEN == matrix.relays[array[arr_index -1].row].state) ? (state = TRUE) : (state = FALSE);
     	SCPI_ResultBool(context, state);
     }
     return SCPI_RES_OK;
@@ -639,7 +597,7 @@ static scpi_result_t SCPI_SystemCommunicationLanGatewayQ(scpi_t* context) //done
 
 static scpi_result_t SCPI_SystemCommunicationLanHostname(scpi_t* context)
 {
-	int8_t hostname[NET_HOSTNAME] = {0};
+	char hostname[NET_HOSTNAME] = {0};
 	size_t length = 0;
 
 	if(!SCPI_ParamCopyText(context, hostname, NET_HOSTNAME, &length, TRUE))
@@ -831,6 +789,28 @@ static scpi_result_t SCPI_SystemCommunicationLanPortQ(scpi_t* context)
     return SCPI_RES_OK;
 }
 
+static scpi_result_t SCPI_SystemCommunicationLanHWCode(scpi_t* context)
+{
+	scpi_bool_t hw_code = 0;
+
+	if(!SCPI_ParamBool(context, &hw_code, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+
+	board.ip4_current.hw_code = (uint8_t)hw_code;
+
+    return SCPI_RES_OK;
+}
+
+static scpi_result_t SCPI_SystemCommunicationLanHWCodeQ(scpi_t* context)
+{
+	SCPI_ResultUInt16(context, board.ip4_current.hw_code);
+    return SCPI_RES_OK;
+}
+
+
 static scpi_result_t SCPI_SystemServiceLanMAC(scpi_t* context)
 {
 	uint8_t str[18] = {0};
@@ -991,6 +971,8 @@ const scpi_command_t scpi_commands[] = {
 	{.pattern = "SYSTem:COMMunication:LAN:UPDate", .callback = SCPI_SystemCommunicationLanUpdate,},
 	{.pattern = "SYSTem:COMMunication:LAN:PORT", .callback = SCPI_SystemCommunicationLanPort,}, // <port number>
 	{.pattern = "SYSTem:COMMunication:LAN:PORT?", .callback = SCPI_SystemCommunicationLanPortQ,},
+	{.pattern = "SYSTem:COMMunication:LAN:HWCODE", .callback = SCPI_SystemCommunicationLanHWCode,},
+	{.pattern = "SYSTem:COMMunication:LAN:HWCODE?", .callback = SCPI_SystemCommunicationLanHWCodeQ,},
 
 	// Relay card  service commands
 	{.pattern = "SYSTem:SERVice:LAN:MAC", .callback = SCPI_SystemServiceLanMAC,}, // "<MAC address, IP4>"

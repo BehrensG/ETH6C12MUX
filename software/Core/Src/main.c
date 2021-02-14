@@ -25,9 +25,9 @@
 #include "stm32f7xx_hal_spi.h"
 
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "lwip.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -55,6 +55,13 @@ SPI_HandleTypeDef hspi3;
 SPI_HandleTypeDef hspi4;
 SPI_HandleTypeDef hspi5;
 
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 128 * 4
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -65,6 +72,8 @@ static void MX_GPIO_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_SPI4_Init(void);
+void StartDefaultTask(void *argument);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -72,15 +81,15 @@ static void MX_SPI4_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-void BOARD_CreateDefaultData()
+void BSP_CreateDefaultData()
 {
-	default_board.scpi_info.manufacturer = (int8_t)malloc(SCPI_MANUFACTURER_STRING_LENGTH*sizeof(int8_t));
-	default_board.scpi_info.device = (int8_t)malloc(SCPI_DEVICE_STRING_LENGTH*sizeof(int8_t));
-	default_board.scpi_info.serial_number = (int8_t)malloc(SCPI_SERIALNUMBER_STRING_LENGTH*sizeof(int8_t));
-	default_board.scpi_info.software_version = (int8_t)malloc(SCPI_SOFTWAREVERSION_STRING_LENGTH*sizeof(int8_t));
-	default_board.security.password = (int8_t)malloc(PASSWORD_LENGTH*sizeof(int8_t));
-	default_board.ip4_current.hostname = (int8_t)malloc(NET_HOSTNAME*sizeof(int8_t));
-	default_board.ip4_static.hostname = (int8_t)malloc(NET_HOSTNAME*sizeof(int8_t));
+	default_board.scpi_info.manufacturer = (char)malloc(SCPI_MANUFACTURER_STRING_LENGTH*sizeof(char));
+	default_board.scpi_info.device = (char)malloc(SCPI_DEVICE_STRING_LENGTH*sizeof(char));
+	default_board.scpi_info.serial_number = (char)malloc(SCPI_SERIALNUMBER_STRING_LENGTH*sizeof(char));
+	default_board.scpi_info.software_version = (char)malloc(SCPI_SOFTWAREVERSION_STRING_LENGTH*sizeof(char));
+	default_board.security.password = (char)malloc(PASSWORD_LENGTH*sizeof(char));
+	default_board.ip4_current.hostname = (char)malloc(NET_HOSTNAME*sizeof(char));
+	default_board.ip4_static.hostname = (char)malloc(NET_HOSTNAME*sizeof(char));
 
 	default_board.scpi_info.manufacturer = SCPI_IDN1;
 	default_board.scpi_info.device = SCPI_IDN2;
@@ -108,7 +117,9 @@ void BOARD_CreateDefaultData()
 	default_board.ip4_static.gateway[2] = default_board.ip4_current.gateway[2] = GATEWAY_ADDRESS2;
 	default_board.ip4_static.gateway[3] = default_board.ip4_current.gateway[3] = GATEWAY_ADDRESS3;
 
-	default_board.ip4_static.port = default_board.ip4_current.port = TCPIP_PORT;
+	default_board.ip4_static.hw_code = default_board.ip4_current.hw_code = 0;
+	default_board.ip4_static.hw_code = default_board.ip4_current.hw_code = 0;
+
 
 	default_board.ip4_static.MAC[0] = default_board.ip4_current.MAC[0] = MAC0;
 	default_board.ip4_static.MAC[1] = default_board.ip4_current.MAC[1] = MAC1;
@@ -123,28 +134,23 @@ void BOARD_CreateDefaultData()
 
 }
 
-void BOARD_DetectDefaultConfig()
+uint8_t BSP_ReadHWCode()
+{
+	uint8_t result = 0;
+
+	result = (uint8_t)((HAL_GPIO_ReadPin(ETH_CODE4_GPIO_Port, ETH_CODE4_Pin) << 4) | (HAL_GPIO_ReadPin(ETH_CODE3_GPIO_Port, ETH_CODE3_Pin) << 3) |
+			 (HAL_GPIO_ReadPin(ETH_CODE2_GPIO_Port, ETH_CODE2_Pin) << 2) | (HAL_GPIO_ReadPin(ETH_CODE1_GPIO_Port, ETH_CODE1_Pin) << 1) |
+			 (HAL_GPIO_ReadPin(ETH_CODE0_GPIO_Port, ETH_CODE0_Pin)));
+
+	return result;
+}
+
+void BSP_DetectDefaultConfig()
 {
 	board.default_config = !HAL_GPIO_ReadPin(MCU_DEFAULT_GPIO_Port, MCU_DEFAULT_Pin);
 }
 
-void BOARD_PinInit()
-{
-	HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, ON);
-	HAL_GPIO_WritePin(RELAY2_nRST_GPIO_Port, RELAY2_nRST_Pin, ON);
 
-	HAL_GPIO_WritePin(RELAY1_nCS0_GPIO_Port, RELAY1_nCS0_Pin, ON);
-	HAL_GPIO_WritePin(RELAY1_nCS1_GPIO_Port, RELAY1_nCS1_Pin, ON);
-	HAL_GPIO_WritePin(RELAY1_nCS2_GPIO_Port, RELAY1_nCS2_Pin, ON);
-	HAL_GPIO_WritePin(RELAY1_nCS3_GPIO_Port, RELAY1_nCS3_Pin, ON);
-	HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, ON);
-
-	HAL_GPIO_WritePin(RELAY2_nCS0_GPIO_Port, RELAY2_nCS0_Pin, ON);
-	HAL_GPIO_WritePin(RELAY2_nCS1_GPIO_Port, RELAY2_nCS1_Pin, ON);
-	HAL_GPIO_WritePin(RELAY2_nCS2_GPIO_Port, RELAY2_nCS2_Pin, ON);
-	HAL_GPIO_WritePin(RELAY2_nCS3_GPIO_Port, RELAY2_nCS3_Pin, ON);
-	HAL_GPIO_WritePin(RELAY2_nCS4_GPIO_Port, RELAY2_nCS4_Pin, ON);
-}
 /* USER CODE END 0 */
 
 /**
@@ -156,7 +162,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -176,14 +181,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_SPI5_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-  MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
 
-  BOARD_CreateDefaultData();
-  BOARD_DetectDefaultConfig();
-  BOARD_PinInit();
+  BSP_CreateDefaultData();
+  BSP_DetectDefaultConfig();
+  //BSP_PinInit();
 
   MX_LWIP_Init();
 
@@ -193,22 +198,49 @@ int main(void)
   MATRIX_InitMain();
   MATRIX_ResetSPICommands();
 
-  tcp_raw_init();
-  SCPI_Init(&scpi_context,
-           scpi_commands,
-           &scpi_interface,
-           scpi_units_def,
-           board.scpi_info.manufacturer, board.scpi_info.device, board.scpi_info.serial_number, board.scpi_info.software_version,
-           scpi_input_buffer, SCPI_INPUT_BUFFER_LENGTH,
-           scpi_error_queue_data, SCPI_ERROR_QUEUE_SIZE);
-
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* creation of defaultTask */
+  //defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  scpi_server_init();
+  /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while(1)
   {
-	  MX_LWIP_Process();
+
   }
 
     /* USER CODE END WHILE */
@@ -226,11 +258,12 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage 
+  /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -244,13 +277,13 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Activate the Over-Drive mode 
+  /** Activate the Over-Drive mode
   */
   if (HAL_PWREx_EnableOverDrive() != HAL_OK)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -326,7 +359,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.Direction = SPI_DIRECTION_2LINES;
   hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi4.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi4.Init.NSS = SPI_NSS_SOFT;
   hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
   hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
@@ -334,7 +367,7 @@ static void MX_SPI4_Init(void)
   hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi4.Init.CRCPolynomial = 7;
   hspi4.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi4.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi4.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi4) != HAL_OK)
   {
     Error_Handler();
@@ -366,7 +399,7 @@ static void MX_SPI5_Init(void)
   hspi5.Init.Direction = SPI_DIRECTION_2LINES;
   hspi5.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi5.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi5.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi5.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi5.Init.NSS = SPI_NSS_SOFT;
   hspi5.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
   hspi5.Init.FirstBit = SPI_FIRSTBIT_MSB;
@@ -374,7 +407,7 @@ static void MX_SPI5_Init(void)
   hspi5.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
   hspi5.Init.CRCPolynomial = 7;
   hspi5.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi5.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
+  hspi5.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
   if (HAL_SPI_Init(&hspi5) != HAL_OK)
   {
     Error_Handler();
@@ -402,19 +435,26 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(RELAY1_nRST_GPIO_Port, RELAY1_nRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin|RELAY1_nCS4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, MCU_FLASH1_CS_Pin|MCU_FLASH2_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(RELAY1_nCS4_GPIO_Port, RELAY1_nCS4_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin 
-                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOG, RELAY1_nCS3_Pin|RELAY1_nCS2_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin
+                          |RELAY2_nCS1_Pin|RELAY2_nCS2_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, LED_RED_Pin|LED_GREEN_Pin|LED_BLUE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : RELAY1_nRST_Pin */
   GPIO_InitStruct.Pin = RELAY1_nRST_Pin;
@@ -437,9 +477,9 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RELAY1_nCS1_Pin RELAY1_nCS0_Pin RELAY2_nRST_Pin RELAY2_nCS0_Pin 
+  /*Configure GPIO pins : RELAY1_nCS1_Pin RELAY1_nCS0_Pin RELAY2_nRST_Pin RELAY2_nCS0_Pin
                            RELAY2_nCS1_Pin RELAY2_nCS3_Pin RELAY2_nCS4_Pin */
-  GPIO_InitStruct.Pin = RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin 
+  GPIO_InitStruct.Pin = RELAY1_nCS1_Pin|RELAY1_nCS0_Pin|RELAY2_nRST_Pin|RELAY2_nCS0_Pin
                           |RELAY2_nCS1_Pin|RELAY2_nCS3_Pin|RELAY2_nCS4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
@@ -453,8 +493,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(RELAY2_nCS2_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MODULE_DETECT1_Pin MODULE_DETECT0_Pin */
-  GPIO_InitStruct.Pin = MODULE_DETECT1_Pin|MODULE_DETECT0_Pin;
+  /*Configure GPIO pins : MODULE_DETECT1_Pin MODULE_DETECT0_Pin ETH_CODE4_Pin ETH_CODE3_Pin
+                           ETH_CODE2_Pin */
+  GPIO_InitStruct.Pin = MODULE_DETECT1_Pin|MODULE_DETECT0_Pin|ETH_CODE4_Pin|ETH_CODE3_Pin
+                          |ETH_CODE2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -465,11 +507,65 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(MCU_DEFAULT_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : ETH_CODE1_Pin ETH_CODE0_Pin */
+  GPIO_InitStruct.Pin = ETH_CODE1_Pin|ETH_CODE0_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_RED_Pin LED_GREEN_Pin LED_BLUE_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin|LED_GREEN_Pin|LED_BLUE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* init code for LWIP */
+  MX_LWIP_Init();
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END 5 */
+}
+
+ /**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM1 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM1) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
@@ -492,7 +588,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

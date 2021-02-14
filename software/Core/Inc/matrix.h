@@ -63,7 +63,7 @@ struct _relay_t
 {
 	uint8_t state;
 	low_switch_t MCZ33996;
-	int8_t* id;
+	char* id;
 	uint8_t type;
 	uint8_t index;
 
