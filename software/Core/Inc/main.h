@@ -29,7 +29,6 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
-#include "matrix.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -93,16 +92,30 @@ void Error_Handler(void);
 #define MODULE_DETECT0_GPIO_Port GPIOB
 #define MCU_DEFAULT_Pin GPIO_PIN_12
 #define MCU_DEFAULT_GPIO_Port GPIOB
-
-
+#define ETH_CODE4_Pin GPIO_PIN_13
+#define ETH_CODE4_GPIO_Port GPIOB
+#define ETH_CODE3_Pin GPIO_PIN_14
+#define ETH_CODE3_GPIO_Port GPIOB
+#define ETH_CODE2_Pin GPIO_PIN_15
+#define ETH_CODE2_GPIO_Port GPIOB
+#define ETH_CODE1_Pin GPIO_PIN_8
+#define ETH_CODE1_GPIO_Port GPIOD
+#define ETH_CODE0_Pin GPIO_PIN_9
+#define ETH_CODE0_GPIO_Port GPIOD
+#define LED_RED_Pin GPIO_PIN_11
+#define LED_RED_GPIO_Port GPIOD
+#define LED_GREEN_Pin GPIO_PIN_12
+#define LED_GREEN_GPIO_Port GPIOD
+#define LED_BLUE_Pin GPIO_PIN_13
+#define LED_BLUE_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 struct _scpi_info
 {
-	int8_t* manufacturer;
-	int8_t* device;
-	int8_t* serial_number;
-	int8_t* software_version;
+	char* manufacturer;
+	char* device;
+	char* serial_number;
+	char* software_version;
 
 };
 
@@ -119,12 +132,13 @@ struct _ip4_lan
 	uint8_t MAC[6];
 	int8_t* hostname;
 	uint16_t port;
+	uint8_t hw_code;
 };
 
 struct _security
 {
 	uint8_t on;
-	int8_t* password;
+	char* password;
 };
 
 typedef struct _ip4_lan ip4_lan_t;

@@ -23,5 +23,7 @@ scpi_result_t SCPI_Control(scpi_t * context, scpi_ctrl_name_t ctrl, scpi_reg_val
 scpi_result_t SCPI_Reset(scpi_t * context);
 scpi_result_t SCPI_Flush(scpi_t * context);
 
+void scpi_server_init(void);
+scpi_result_t SCPI_SystemCommTcpipControlQ(scpi_t * context);
 
 #endif /* INC_SCPI_DEF_H_ */
